@@ -9808,7 +9808,7 @@ typedef struct {
 
 #define EXP_PARAM_STR(_name) const char *_name[] = {\
 "[.]",\
-  "Comment = STRING : [80] DAQ",\
+  "Comment = STRING : [80] caen2018 frontend",\
   "NDigitizers = INT : 11",\
   "",\
   "[CAEN_Library_Information]",\

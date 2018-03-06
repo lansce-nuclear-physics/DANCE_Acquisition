@@ -245,9 +245,9 @@ INT frontend_init()
   //Write the original crontab file 
   system("crontab -l > .crontab_init");
   //Copy the file
-  system("cp .crontab_init crontab_run");
+  system("cp .crontab_init .crontab_run");
   //Add the caen2018 status to the crontab_run 
-  system("echo \"14,29,44,59 * * * * /home/daq/NAS_DAQ/caen2018_status\" >> crontab_run");
+  system("echo \"14,29,44,59 * * * * /home/daq/caen2018/caen2018_status\" >> .crontab_run");
   //tell cron to change to running crontab
   system("crontab .crontab_run");
 
@@ -388,6 +388,24 @@ INT frontend_init()
     
   std::ifstream tmpfile;
   char buf[32];
+  
+  //Get the frontend version
+  tmpfile.open(".version");
+  std::string FEVersion;
+  tmpfile >> FEVersion;
+
+  std::stringstream ssFEVer;
+  ssFEVer.str("");
+  ssFEVer << FEVer;
+
+  char FEVerbuf[80];
+  sprintf(FEVerbuf,"caen2018 frontend %s",ssFEVer.str().c_str());
+  sprintf(buf,"Comment");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&FEVerbuf,sizeof(FEVerbuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","caen2018 frontend %s",ssFEVer.str().c_str());
+  tmpfile.close();
+
 
   //Get the information about the Comm libraries
   system("readlink $CAENCOMMSYS > .caencommversion");
