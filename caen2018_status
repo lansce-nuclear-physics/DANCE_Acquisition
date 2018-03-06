@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Check if frontend is running
+# -x flag only match processes whose name (or command line if -f is
+# specified) exactly match the pattern. 
+
+if pgrep -x "frontend" > /dev/null
+then
+    echo "frontend running"
+else
+    #frontend has crashed
+    echo "frontend stopped"
+    
+    #stop current run
+    odbedit -c stop
+    echo "run stopped"
+    sleep 15
+    
+    #start the frontend
+    echo "starting the frontend"
+    /home/daq/NAS_DAQ/frontend -D
+    sleep 60
+
+    if pgrep -x "frontend" > /dev/null
+    then
+	echo "frontend running"
+	odbedit -c 'start now'
+	echo "starting a run"
+    fi
+fi
+
+
+if pgrep -x "mlogger" > /dev/null
+then
+    echo "mlogger running"
+else
+    echo "mlogger stopped"
+fi
