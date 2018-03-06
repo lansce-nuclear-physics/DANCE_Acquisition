@@ -396,7 +396,7 @@ INT frontend_init()
 
   std::stringstream ssFEVer;
   ssFEVer.str("");
-  ssFEVer << FEVer;
+  ssFEVer << FEVersion;
 
   char FEVerbuf[80];
   sprintf(FEVerbuf,"caen2018 frontend %s",ssFEVer.str().c_str());
