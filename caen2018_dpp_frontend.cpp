@@ -143,7 +143,7 @@ extern "C" {
 
   INT read_trigger_event(char *pevent, INT off);
   //INT read_scaler_event(char *pevent, INT off);
-  INT dummy_read_scaler_event(char *pevent, INT off);
+  INT read_diagnostics_event(char *pevent, INT off);
 
   void register_cnaf_callback(int debug);
 
@@ -169,9 +169,9 @@ extern "C" {
      read_digitizer_event,      /* readout routine */
     },
   
-    { "Scalers",                     // equipment name
+    { "Diagnostics",                     // equipment name
       {
-	2, 0,                    // event ID, trigger mask
+	8, 0,                    // event ID, trigger mask
 	"SYSTEM",                     // event buffer
 	EQ_PERIODIC,                  // equipment type
 	0,                            // event source
@@ -184,7 +184,7 @@ extern "C" {
 	0,                                // log history
 	"", "", "",
       },
-      dummy_read_scaler_event,        // readout routine
+      read_diagnostics_event,        // readout routine
     },
 
     {""}
@@ -928,12 +928,9 @@ INT read_digitizer_event(char *pevent, INT off) {
 
 //============================================================================
 
-/** provides a dummy scaler event -- with time stamp,
- * so that software scalers can be accumulated.
- * Our current digitizer setups do not directly support
- * hardware scalers.
- */
-INT dummy_read_scaler_event (char *pevent, INT off) {
+//Write the diagnostics
+
+INT read_diagnostics_event (char *pevent, INT off) {
 
   //----------------------------------------------------------------------------
 

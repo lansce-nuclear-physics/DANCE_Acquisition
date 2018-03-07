@@ -11,3 +11,5 @@ The purpose of this document is to allow users to more efficiently track and und
 Version 1.0.0 - Start of the release notes. Base version of caen2018 frontend
 
 Version 1.0.1 - Added frontend code version to the ODB
+
+Version 2.0.0 - Changed the Diagnostics from eventid 2 to eventid 8 as to not interfere with the VME scalers
