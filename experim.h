@@ -19631,9 +19631,9 @@ BOOL      hidden;
     "Num subevents = DWORD : 0",					\
     "Log history = INT : 0",						\
     "Frontend host = STRING : [32] localhost",				\
-    "Frontend name = STRING : [32] Production Frontend",		\
-    "Frontend file name = STRING : [256] frontend.cpp",			\
-    "Status = STRING : [256] Production Frontend@localhost",		\
+    "Frontend name = STRING : [32] caen2018 VX1730 Frontend",		\
+    "Frontend file name = STRING : [256] caen2018_dpp_frontend.cpp",	\
+    "Status = STRING : [256] caen2018 VX1730 Frontend@localhost",		\
     "Status color = STRING : [32] greenLight",				\
     "Hidden = BOOL : n",						\
     "",									\
@@ -19668,7 +19668,7 @@ BOOL      hidden;
 
 #define SCALERS_COMMON_STR(_name) const char *_name[] = {		\
 							     "[.]",	\
-							     "Event ID = WORD : 2", \
+							     "Event ID = WORD : 8", \
 							     "Trigger mask = WORD : 0",	\
 							     "Buffer = STRING : [32] SYSTEM", \
 							     "Type = INT : 1", \
@@ -19681,10 +19681,10 @@ BOOL      hidden;
 							     "Num subevents = DWORD : 0", \
 							     "Log history = INT : 0", \
 							     "Frontend host = STRING : [32] localhost",	\
-							     "Frontend name = STRING : [32] Production Frontend", \
-							     "Frontend file name = STRING : [256] frontend.cpp", \
-							     "Status = STRING : [256] Production Frontend@localhost", \
-							     "Status color = STRING : [32] greenLight",	\
+   "Frontend name = STRING : [32] caen2018 VX1730 Frontend",		\
+    "Frontend file name = STRING : [256] caen2018_dpp_frontend.cpp",	\
+    "Status = STRING : [256] caen2018 VX1730 Frontend@localhost",		\
+    "Status color = STRING : [32] greenLight",				\
 							     "Hidden = BOOL : n", \
 							     "",	\
 							     NULL }
