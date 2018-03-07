@@ -73,7 +73,7 @@ uint32_t Scaler_Totals[MAXNB];       //Readout rate from each board
 INT Read_Fails[MAXNB];               //keep track of any failures to read data from the modules
 INT Poll_Fails[MAXNB];               //keep track of any failures to poll the module
 
-enum HWScalerID { NumTriggers, PollErrors, ReadErrors, NumHWScalers };
+//enum HWScalerID { NumTriggers, PollErrors, ReadErrors, NumHWScalers };
 
 /* ###########################################################################
  *  Functions
@@ -389,6 +389,7 @@ INT frontend_init()
   std::ifstream tmpfile;
   char buf[32];
   
+  /*
   //Get the frontend version
   tmpfile.open(".version");
   std::string FEVersion;
@@ -405,7 +406,7 @@ INT frontend_init()
   db_set_data(hDB,genHdl,&FEVerbuf,sizeof(FEVerbuf),1,TID_STRING);
   cm_msg(MINFO,"frontend_init","caen2018 frontend %s",ssFEVer.str().c_str());
   tmpfile.close();
-
+  */
 
   //Get the information about the Comm libraries
   system("readlink $CAENCOMMSYS > .caencommversion");
