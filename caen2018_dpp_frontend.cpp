@@ -241,6 +241,7 @@ INT frontend_init()
     buffer[zee] = NULL;
   }
 
+  /*
   cm_msg(MINFO,"frontend_init","Telling cron to watch my status\n");
   //Write the original crontab file 
   system("crontab -l > .crontab_init");
@@ -250,7 +251,7 @@ INT frontend_init()
   system("echo \"14,29,44,59 * * * * /home/daq/caen2018/caen2018_status\" >> .crontab_run");
   //tell cron to change to running crontab
   system("crontab .crontab_run");
-
+  */
   
   // ODB interactions start here
   cm_get_experiment_database( &hDB, NULL);
@@ -521,9 +522,11 @@ INT frontend_exit()
     CAEN_DGTZ_CloseDigitizer(handle[eye]);
   }
   
+  /*
   //tell cron to change to running crontab
   system("crontab .crontab_init");
-  
+  */
+
   return SUCCESS;
 }
 
