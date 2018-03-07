@@ -19641,9 +19641,9 @@ BOOL      hidden;
 
 #endif
 
-#ifndef EXCL_SCALERS
+#ifndef EXCL_DIAGNOSTICS
 
-#define SCALERS_COMMON_DEFINED
+#define DIAGNOSTICS_COMMON_DEFINED
 
 							   typedef struct {
 							     WORD      event_id;
@@ -19664,9 +19664,9 @@ BOOL      hidden;
 							     char      status[256];
 							     char      status_color[32];
 							     BOOL      hidden;
-							   } SCALERS_COMMON;
+							   } DIAGNOSTICS_COMMON;
 
-#define SCALERS_COMMON_STR(_name) const char *_name[] = {		\
+#define DIAGNOSTICS_COMMON_STR(_name) const char *_name[] = {		\
 							     "[.]",	\
 							     "Event ID = WORD : 8", \
 							     "Trigger mask = WORD : 0",	\
