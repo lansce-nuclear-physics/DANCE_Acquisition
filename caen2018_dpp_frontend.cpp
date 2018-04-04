@@ -100,7 +100,7 @@ extern "C" {
 #endif
 
   /* The frontend name (client name) as seen by other MIDAS clients   */
-  char *frontend_name = "caen2018 VX1730 Frontend";
+  char *frontend_name = "caen2018_dpp_frontend";
 
   /* The frontend file name, don't change it */
   char *frontend_file_name = __FILE__;
