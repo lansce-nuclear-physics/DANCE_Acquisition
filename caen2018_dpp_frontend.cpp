@@ -406,6 +406,7 @@ INT frontend_init()
   //Get the frontend version
   tmpfile.open(".version");
   std::string FEVersion;
+  tmpfile >> FEVersion; //This first part is just the word "version"
   tmpfile >> FEVersion;
 
   std::stringstream ssFEVer;
@@ -413,11 +414,11 @@ INT frontend_init()
   ssFEVer << FEVersion;
 
   char FEVerbuf[80];
-  sprintf(FEVerbuf,"caen2018 frontend %s",ssFEVer.str().c_str());
+  sprintf(FEVerbuf,"caen2018 version %s",ssFEVer.str().c_str());
   sprintf(buf,"Comment");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&FEVerbuf,sizeof(FEVerbuf),1,TID_STRING);
-  cm_msg(MINFO,"frontend_init","caen2018 frontend %s",ssFEVer.str().c_str());
+  cm_msg(MINFO,"frontend_init","caen2018 frontend version %s",ssFEVer.str().c_str());
   tmpfile.close();
   
   //Get the information about the Comm libraries
