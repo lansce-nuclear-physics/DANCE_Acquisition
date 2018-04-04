@@ -92,7 +92,6 @@ CAEN_DGTZ_DPP_AcqMode_t interpret_dppacq_mode(const char *acqmode) {
   }
   else {
     cm_msg(MERROR,"interpret_connection","Could not interpret dppacqmode type %s\n", acqmode);
-    exit(1);
   }
 }
 
@@ -336,7 +335,6 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   CAEN_DGTZ_DPP_AcqMode_t dpp_acq_mode = interpret_dppacq_mode(buf);
   cm_msg(MINFO,"General_Board_Registers","Board %d Setting ACQMode %s",eye,buf);
   ret = CAEN_DGTZ_SetDPPAcquisitionMode(handle[eye], (CAEN_DGTZ_DPP_AcqMode_t)dpp_acq_mode, CAEN_DGTZ_DPP_SAVE_PARAM_EnergyAndTime);
-
   if(ret) {
     cm_msg( MERROR, "frontend_init", "Board %i. cannot set DPP Acq Mode.",eye);
     return -1;
