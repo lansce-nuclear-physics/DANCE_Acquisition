@@ -87,7 +87,7 @@ CAEN_DGTZ_DPP_AcqMode_t interpret_dppacq_mode(const char *acqmode) {
   else if (strcmp(acqmode,"CAEN_DGTZ_DPP_ACQ_MODE_List") == 0) {
     return CAEN_DGTZ_DPP_ACQ_MODE_List;
   }
-  else if {strcmp(acqmode,"CAEN_DGTZ_DPP_ACQ_MODE_Oscilloscope") == 0) {
+  else if (strcmp(acqmode,"CAEN_DGTZ_DPP_ACQ_MODE_Oscilloscope") == 0) {
     return CAEN_DGTZ_DPP_ACQ_MODE_Oscilloscope;
   }
   else {
