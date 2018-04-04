@@ -87,8 +87,12 @@ CAEN_DGTZ_DPP_AcqMode_t interpret_dppacq_mode(const char *acqmode) {
   else if (strcmp(acqmode,"CAEN_DGTZ_DPP_ACQ_MODE_List") == 0) {
     return CAEN_DGTZ_DPP_ACQ_MODE_List;
   }
-  else {
+  else if {strcmp(acqmode,"CAEN_DGTZ_DPP_ACQ_MODE_Oscilloscope") == 0) {
     return CAEN_DGTZ_DPP_ACQ_MODE_Oscilloscope;
+  }
+  else {
+    cm_msg(MERROR,"interpret_connection","Could not interpret dppacqmode type %s\n", acqmode);
+    exit(1);
   }
 }
 
@@ -118,14 +122,14 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   address = 0xF080;
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&register_value);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF080... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF080, retval: %i  Exiting",eye,ret);
     return -1;
   }
   SerialNumber[eye] = register_value & 0xFF;
   address = 0xF084;
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&register_value);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF084... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF084, retval: %i  Exiting",eye,ret);
     return -1;
   }
   SerialNumber[eye] += register_value & 0xFF;
@@ -134,7 +138,7 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   address = 0x8140;
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&register_value);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8140... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8140, retval: %i  Exiting",eye,ret);
     return -1;
   }
   NChannels[eye] = (register_value >> 16) & 0xFF;
@@ -143,7 +147,7 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   address = 0x8124;
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&register_value);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8124... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8124, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ROC_MinRev[eye] = register_value & 0xFF;
@@ -153,7 +157,7 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   address = 0x108C;
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&register_value);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x108C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x108C, retval: %i  Exiting",eye,ret);
     return -1;
   }
   AMC_MinRev[eye] = register_value & 0xFF;
@@ -163,7 +167,7 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   address = 0xF030;
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&register_value);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF030... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF030, retval: %i  Exiting",eye,ret);
     return -1;
   }
   DigitizerCode[eye] = register_value & 0xFF;
@@ -172,7 +176,7 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   address = 0xF034;
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&register_value);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF034... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xF034, retval: %i  Exiting",eye,ret);
     return -1;
   }
   FormFactorCode[eye] = register_value & 0xFF;
@@ -395,12 +399,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x8000;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8000);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8000... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8000, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8000[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8000... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8000, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //cm_msg(MINFO,"frontend_init","Board %i 0x8000 %lu from digitizer",eye,Board_0x8000[eye]);
@@ -441,12 +445,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x800C;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x800C);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x800C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x800C, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x800C[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x800C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x800C, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x800C %i from digitizer",eye,Board_0x800C[eye]);
@@ -504,12 +508,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x8100;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8100);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8100... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8100, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8100[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8100... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8100, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x8100 %lu from digitizer",eye,Board_0x8100[eye]);
@@ -553,12 +557,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x810C;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x810C);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x810C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x810C, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x810C[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x810C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x810C, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x810C %lu from digitizer",eye,Board_0x810C[eye]);
@@ -598,12 +602,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x8110;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8110);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8110... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8110, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8110[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8110... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8110, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //  cm_msg(MINFO,"frontend_init","Board %i 0x8110 %lu from digitizer",eye,Board_0x8110[eye]);
@@ -646,12 +650,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x811C;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x811C);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x811C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x811C, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x811C[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x811C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x811C, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x811C %lu from digitizer",eye,Board_0x811C[eye]);
@@ -692,12 +696,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x8138;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8138);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8138... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8138, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8138[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8138... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8138, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //  cm_msg(MINFO,"frontend_init","Board %i 0x8138 %lu from digitizer",eye,Board_0x8138[eye]);
@@ -737,12 +741,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x8144;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8144);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8144... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8144, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8144[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8144... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8144, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //  cm_msg(MINFO,"frontend_init","Board %i 0x8144 %lu from digitizer",eye,Board_0x8144[eye]);
@@ -782,12 +786,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x8170;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8170);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8170... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8170, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8170[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8170... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8170, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //  cm_msg(MINFO,"frontend_init","Board %i 0x8170 %lu from digitizer",eye,Board_0x8170[eye]);
@@ -826,12 +830,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x817C;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x817C);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x817C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x817C, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x817C[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x817C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x817C, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //  cm_msg(MINFO,"frontend_init","Board %i 0x817C %lu from digitizer",eye,Board_0x817C[eye]);
@@ -872,12 +876,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0x81A0;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x81A0);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x81A0... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x81A0, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x81A0[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x81A0... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x81A0, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //  cm_msg(MINFO,"frontend_init","Board %i 0x81A0 %lu from digitizer",eye,Board_0x81A0[eye]);
@@ -917,12 +921,12 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
   address = 0xEF00;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0xEF00);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0xEF00... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0xEF00, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0xEF00[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xEF00... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0xEF00, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   //  cm_msg(MINFO,"frontend_init","Board %i 0xEF00 %lu from digitizer",eye,Board_0xEF00[eye]);
@@ -992,12 +996,12 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x8180;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8180);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8180... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8180, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8180[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8180... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8180, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x8180 %lu from digitizer",eye,Board_0x8180[eye]);
@@ -1037,12 +1041,12 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x8184;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8184);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8184... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8184, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8184[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8184... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8184, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x8184 %lu from digitizer",eye,Board_0x8184[eye]);
@@ -1082,12 +1086,12 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x8188;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8188);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8188... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8188, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8188[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8188... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8188, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x8188 %lu from digitizer",eye,Board_0x8188[eye]);
@@ -1127,12 +1131,12 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x818C;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x818C);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x818C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x818C, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x818C[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x818C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x818C, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x818C %lu from digitizer",eye,Board_0x818C[eye]);
@@ -1171,12 +1175,12 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x8190;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8190);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8190... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8190, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8190[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8190... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8190, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x8190 %lu from digitizer",eye,Board_0x8190[eye]);
@@ -1216,19 +1220,19 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x8194;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8194);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8194... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8194, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8194[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8194... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8194, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x8194 %lu from digitizer",eye,Board_0x8194[eye]);
 
   //Make sure the settings we think we have are really on the board
   if(Board_0x8194[eye] != ODB_0x8194) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. ODB and Board 0x8194 do not match!... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. ODB and Board 0x8194 do not match!, retval: %i  Exiting",eye,ret);
     return -1;
   }
 
@@ -1261,12 +1265,12 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x8198;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8198);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8198... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8198, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8198[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8198... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8198, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x8198 %lu from digitizer",eye,Board_0x8198[eye]);
@@ -1306,12 +1310,12 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   address = 0x819C;
   ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x819C);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x819C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x819C, retval: %i  Exiting",eye,ret);
     return -1;
   }
   ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x819C[eye]);
   if(ret) {
-    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x819C... Exiting ",eye);
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x819C, retval: %i  Exiting",eye,ret);
     return -1;
   }    
   // cm_msg(MINFO,"frontend_init","Board %i 0x819C %lu from digitizer",eye,Board_0x819C[eye]);
@@ -1688,12 +1692,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1028 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n28);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n28... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n28, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n28[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n28... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n28, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       //   cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n28 %i from ODB",eye,jay,ODB_0x1n28);
@@ -1733,12 +1737,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1060 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n60);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n60... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n60, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n60[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n60... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n60, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       //   cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n60 %i from ODB",eye,jay,ODB_0x1n60);
@@ -1769,14 +1773,14 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1098 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n98);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n98... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n98, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
 
       // sleep(1000);
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n98[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n98... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n98, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       //  cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n98 %i from ODB",eye,jay,ODB_0x1n98);
@@ -1806,12 +1810,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1038 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n38);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n38... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n38, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n38[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n38... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n38, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       // cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n38 %i from ODB",eye,jay,ODB_0x1n38);
@@ -1841,12 +1845,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1020 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n20);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n20... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n20, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n20[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n20... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n20, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       // cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n20 %i from ODB",eye,jay,ODB_0x1n20);
@@ -1878,12 +1882,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1034 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n34);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n34... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n34, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n34[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n34... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n34, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       //    cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n34 %i from ODB",eye,jay,ODB_0x1n34);
@@ -1914,12 +1918,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x10D4 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nD4);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1nD4... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1nD4, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1nD4[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1nD4... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1nD4, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       //  cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1nD4 %i from ODB",eye,jay,ODB_0x1nD4);
@@ -1961,12 +1965,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1064 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n64);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n64... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n64, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n64[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n64... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n64, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       // cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n64 %i from ODB",eye,jay,ODB_0x1n64);
@@ -2006,12 +2010,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1070 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n70);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n70... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n70, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n70[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n70... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n70, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       //  cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n70 %i from ODB",eye,jay,ODB_0x1n70);
@@ -2051,12 +2055,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1074 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n74);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n74... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n74, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n74[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n74... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n74, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       // cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n74 %i from ODB",eye,jay,ODB_0x1n74);
@@ -2099,12 +2103,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1080 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n80);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n80... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n80, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n80[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n80... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n80, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       // cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n80 %i from ODB",eye,jay,ODB_0x1n80);
@@ -2145,12 +2149,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1084 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n84);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n84... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n84, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n84[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n84... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n84, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       // cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n84 %i from ODB",eye,jay,ODB_0x1n84);
@@ -2180,12 +2184,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       address =  0x1078 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n78);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n78... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n78, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n78[eye][jay]);
       if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n78... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n78, retval: %i  Exiting",eye,jay,ret);
 	return -1;
       }    
       // cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n78 %i from ODB",eye,jay,ODB_0x1n78);
@@ -2216,12 +2220,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x106C + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n6C);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n6C... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n6C, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n6C[eye][jay]);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n6C... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n6C, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	//	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n6C %i from ODB",eye,jay,ODB_0x1n6C);
@@ -2252,12 +2256,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x103C + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n3C);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n3C... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n3C, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n3C[eye][jay]);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n3C... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n3C, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	//	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n3C %i from ODB",eye,jay,ODB_0x1n3C);
@@ -2284,12 +2288,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x1044 + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n44);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n44... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n44, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n44[eye][jay]);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n44... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n44, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	//	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n44 %i from ODB",eye,jay,ODB_0x1n44);
@@ -2316,12 +2320,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x1054 + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n54);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n54... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n54, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n54[eye][jay]);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n54... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n54, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	//	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n54 %i from ODB",eye,jay,ODB_0x1n54);
@@ -2348,12 +2352,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x1058 + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n58);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n58... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n58, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n58[eye][jay]);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n58... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n58, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	//	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n58 %i from ODB",eye,jay,ODB_0x1n58);
@@ -2381,12 +2385,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x105C + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n5C);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n5C... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n5C, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n5C[eye][jay]);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n5C... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n5C, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	//	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n5C %i from ODB",eye,jay,ODB_0x1n5C);
@@ -2415,12 +2419,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x107C + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1n7C);
 	if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n7C... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1n7C, retval: %i  Exiting",eye,jay,ret);
 	return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1n7C[eye][jay]);
 	if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n7C... Exiting ",eye,jay);
+	cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1n7C, retval: %i  Exiting",eye,jay,ret);
 	return -1;
 	}    
 	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1n7C %i from ODB",eye,jay,ODB_0x1n7C);
@@ -2449,12 +2453,12 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	address =  0x10D8 + (jay << 8);
 	ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nD8);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1nD8... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to write 0x1nD8, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x1nD8[eye][jay]);
 	if(ret) {
-	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1nD8... Exiting ",eye,jay);
+	  cm_msg( MERROR, "frontend_init", ",Board %i, Channel %i. Failure to read 0x1nD8, retval: %i  Exiting",eye,jay,ret);
 	  return -1;
 	}    
 	//	cm_msg(MINFO,"frontend_init","Board %i, Channel %i, 0x1nD8 %i from ODB",eye,jay,ODB_0x1nD8);

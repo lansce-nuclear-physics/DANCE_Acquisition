@@ -20,6 +20,7 @@
 #include <sstream>
 #include <fstream>
 #include <string.h>
+#include <stdint.h>
 
 #define WAIT_FOR_EVENT_SLEEP 10 /* ms */
 
@@ -84,8 +85,12 @@ CAEN_DGTZ_ConnectionType interpret_connection(const char *ltype) {
   if (strcmp(ltype,"CAEN_DGTZ_PCIE_OpticalLink") == 0) {
     return CAEN_DGTZ_PCIE_OpticalLink;
   }
-  else {
+  else if(strcmp(ltype,"CAEN_DGTZ_PCIE_USB") == 0) {
     return CAEN_DGTZ_USB;
+  }
+  else {
+    cm_msg(MERROR,"interpret_connection","Could not interpret connection type %s\n", ltype);
+    exit(1);
   }
 }
 
@@ -235,6 +240,7 @@ INT frontend_init()
 {
  
   cm_msg(MINFO,"frontend_init","Begin frontend initialization\n");
+
   // initialize the buffer pointers here
   int zee=0;
   for (zee=0;zee<MAXNB;++zee) {
@@ -272,6 +278,12 @@ INT frontend_init()
   db_get_data(hDB,genHdl,&N_ODB_DIG_BOARDS,&size,TID_INT);
   cm_msg(MINFO,"frontend_init","ODB says we have %i boards\n",N_ODB_DIG_BOARDS);
   // end ODB basic interactions
+
+  //Check to make sure that the number of digitizers does not exceed the MAXNB
+  if(N_ODB_DIG_BOARDS > MAXNB) {
+    cm_msg(MERROR,"frontend_init","NDigitizers (%i) > MAXNB (%i). Exiting",N_ODB_DIG_BOARDS,MAXNB);
+    exit(1);
+  }
   
   // Begin communicating with digitizers
   int eye;
@@ -390,7 +402,7 @@ INT frontend_init()
   std::ifstream tmpfile;
   char buf[32];
   
-  /*
+  
   //Get the frontend version
   tmpfile.open(".version");
   std::string FEVersion;
@@ -407,8 +419,7 @@ INT frontend_init()
   db_set_data(hDB,genHdl,&FEVerbuf,sizeof(FEVerbuf),1,TID_STRING);
   cm_msg(MINFO,"frontend_init","caen2018 frontend %s",ssFEVer.str().c_str());
   tmpfile.close();
-  */
-
+  
   //Get the information about the Comm libraries
   system("readlink $CAENCOMMSYS > .caencommversion");
   tmpfile.open(".caencommversion");
@@ -633,12 +644,12 @@ INT resume_run(INT run_number, char *error) {
     //Set the Memory Configuration on the boards.  I feel it is best to let it determine for itself
     ret = CAEN_DGTZ_SetNumEventsPerAggregate(handle[eye],1023);  //Set this to the max value
     if(ret != 0) {
-      cm_msg(MERROR,"resume_run","Cannot set NumEventsPerAggregate.  Exiting. \n");
+      cm_msg(MERROR,"resume_run","Cannot set NumEventsPerAggregate on Board: %d, ret val: %i  Exiting. \n", eye,ret);
       exit(1);
     }
     ret = CAEN_DGTZ_SetDPPEventAggregation(handle[eye],0,0); //Let the board figure it out
     if(ret != 0) {
-      cm_msg(MERROR,"resume_run","Cannot set DPPEventAggregation.  Exiting. \n");
+      cm_msg(MERROR,"resume_run","Cannot set DPPEventAggregation on Board: %d, ret val: %i  Exiting. \n", eye,ret);
       exit(1);      
     }
         
@@ -650,6 +661,9 @@ INT resume_run(INT run_number, char *error) {
 
     //Calibrate ADC 
     ret = CAEN_DGTZ_WriteRegister(handle[eye], 0x809C, 0); // calibration command (direct access to register)
+    if(ret != 0) {
+      cm_msg(MERROR,"resume_run","Cannot Calibrate  Board: %d, ret val: %i \n", eye,ret);
+    }
     
     //Sleep for 100 ms to allow calibration to complete
     sleep(100);
@@ -660,6 +674,10 @@ INT resume_run(INT run_number, char *error) {
     // Allocate memory for the readout buffer /
     cm_msg(MINFO,"resume_run","About to Malloc Readout Buffer Handle %i\n",handle[eye]);
     ret = CAEN_DGTZ_MallocReadoutBuffer(handle[eye], &buffer[eye], &AllocatedSize[eye]);
+    if(ret != 0) {
+      cm_msg(MERROR,"resume_run","Cannot MallocReadoutBuffer  Board: %d, ret val: %i \n", eye,ret);
+    }
+    
     // cm_msg(MINFO,"resume_run","Allocated Size for Board: %d is %lu \n",eye,AllocatedSize[eye]);
 
     //Check to see if its ok to run
