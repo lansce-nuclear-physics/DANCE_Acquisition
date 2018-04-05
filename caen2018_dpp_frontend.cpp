@@ -564,6 +564,7 @@ INT frontend_init()
   sprintf(buf,"CAEN_Library_Information/CAENvmelibsys_Compile");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
+  db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
   cm_msg(MINFO,"frontend_init","CAEN VME Lib Version Compile: %s",sscaenvmelibver_compile.str().c_str());
   tmpfile.close();
 
