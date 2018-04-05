@@ -2,7 +2,7 @@
 #*    Christopher J. Prokop      *#
 #*    cprokop@lanl.gov           *#
 #*    global.h                   *# 
-#*    Last Edit: 03/06/18        *#  
+#*    Last Edit: 04/05/18        *#  
 #*********************************#
 
 # The MIDASSYS should be defined prior the use of this Makefile
@@ -49,6 +49,12 @@ all: $(UFE)
 
 $(UFE): $(LIB) $(LIB_DIR)/mfe.o $(OBJECTS) $(SRCS) $(INCLUDES)
 	$(CXX) -w $(CFLAGS) $(OSFLAGS) -o $(UFE) $(OBJECTS) $(CLFAGS) $(LIB_DIR)/mfe.o $(LIB) $(LIBS)
+
+# make some files with the versions used at compilation for frontend	
+	$(shell readlink $(CAENDIGITIZERSYS) > .caendigitizerversion_compile)
+	$(shell readlink $(CAENCOMMSYS) > .caencommversion_compile)
+	$(shell readlink $(CAENVMELIBSYS) > .caenvmelibversion_compile)
+	$(shell readlink $(CAENUPGRADERSYS) > .caenupgraderversion_compile)
 
 %.o: %.c experim.h
 	$(CXX) $(USERFLAGS) $(CFLAGS) $(OSFLAGS) -o $@ -c $<
