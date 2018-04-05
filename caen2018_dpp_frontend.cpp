@@ -423,6 +423,7 @@ INT frontend_init()
   
   //Get the information about the Comm libraries
   system("readlink $CAENCOMMSYS > .caencommversion");
+  usleep(100);
   tmpfile.open(".caencommversion");
   std::string caencommver;
   tmpfile >> caencommver;
@@ -441,6 +442,7 @@ INT frontend_init()
 
  //Get the information about the Digitizer libraries
   system("readlink $CAENDIGITIZERSYS > .caendigitizerversion");
+  usleep(100);
   tmpfile.open(".caendigitizerversion");
   std::string caendigver;
   tmpfile >> caendigver;
@@ -460,6 +462,7 @@ INT frontend_init()
 
 //Get the information about the Upgrader libraries
   system("readlink $CAENUPGRADERSYS > .caenupgraderversion");
+  usleep(100);
   tmpfile.open(".caenupgraderversion");
   std::string caenupgraderver;
   tmpfile >> caenupgraderver;
@@ -478,6 +481,7 @@ INT frontend_init()
 
   //Get the information about the VME libraries
   system("readlink $CAENVMELIBSYS > .caenvmelibversion");
+  usleep(100);
   tmpfile.open(".caenvmelibversion");
   std::string caenvmelibver;
   tmpfile >> caenvmelibver;
@@ -491,7 +495,7 @@ INT frontend_init()
   sprintf(buf,"CAEN_Library_Information/CAENvmelibsys");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caenvmelibverbuf,sizeof(caenvmelibverbuf),1,TID_STRING);
-  cm_msg(MINFO,"frontend_init","CAEN Vmelib Version: %s",sscaenvmelibver.str().c_str());
+  cm_msg(MINFO,"frontend_init","CAEN VME Lib Version: %s",sscaenvmelibver.str().c_str());
   tmpfile.close();
 
 
@@ -507,7 +511,7 @@ INT frontend_init()
 
   char caencommver_compilebuf[32];
   sprintf(caencommver_compilebuf,"%s",sscaencommver_compile.str().c_str());
-  sprintf(buf,"CAEN_Library_Information/CAENcommsys");
+  sprintf(buf,"CAEN_Library_Information/CAENcommsys_Compile");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caencommver_compilebuf,sizeof(caencommver_compilebuf),1,TID_STRING);
   cm_msg(MINFO,"frontend_init","CAEN Comm Version Compile: %s",sscaencommver_compile.str().c_str());
@@ -523,7 +527,7 @@ INT frontend_init()
 
   char caendigver_compilebuf[32];
   sprintf(caendigver_compilebuf,"%s",sscaendigver_compile.str().c_str());
-  sprintf(buf,"CAEN_Library_Information/CAENdigitizersys");
+  sprintf(buf,"CAEN_Library_Information/CAENdigitizersys_Compile");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caendigver_compilebuf,sizeof(caendigver_compilebuf),1,TID_STRING);
   db_set_data(hDB,genHdl,&caendigver_compilebuf,sizeof(caendigver_compilebuf),1,TID_STRING);
@@ -541,7 +545,7 @@ INT frontend_init()
 
   char caenupgraderver_compilebuf[32];
   sprintf(caenupgraderver_compilebuf,"%s",sscaenupgraderver_compile.str().c_str());
-  sprintf(buf,"CAEN_Library_Information/CAENupgradersys");
+  sprintf(buf,"CAEN_Library_Information/CAENupgradersys_Compile");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caenupgraderver_compilebuf,sizeof(caenupgraderver_compilebuf),1,TID_STRING);
   cm_msg(MINFO,"frontend_init","CAEN Upgrader Version Compile: %s",sscaenupgraderver_compile.str().c_str());
@@ -557,10 +561,10 @@ INT frontend_init()
   sscaenvmelibver_compile << caenvmelibver_compile;
 
   char caenvmelibver_compilebuf[32];
-  sprintf(buf,"CAEN_Library_Information/CAENvmelibsys");
+  sprintf(buf,"CAEN_Library_Information/CAENvmelibsys_Compile");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
-  cm_msg(MINFO,"frontend_init","CAEN Vmelib Version Compile: %s",sscaenvmelibver_compile.str().c_str());
+  cm_msg(MINFO,"frontend_init","CAEN VME Lib Version Compile: %s",sscaenvmelibver_compile.str().c_str());
   tmpfile.close();
 
 
