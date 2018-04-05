@@ -31,6 +31,10 @@ typedef struct {
     char      caencommsys[32];
     char      caenupgradersys[32];
     char      caenvmelibsys[32];
+    char      caendigitizersys_compile[32];
+    char      caencommsys_compile[32];
+    char      caenupgradersys_compile[32];
+    char      caenvmelibsys_compile[32];
   } library_information;
   struct {
     char      comment[64];
@@ -9816,6 +9820,10 @@ typedef struct {
     "CAENcommsys = STRING : [32] NULL",\
     "CAENupgradersys = STRING : [32] NULL",\
     "CAENvmelibsys = STRING : [32] NULL",\
+    "CAENdigitizersys_Compile = STRING : [32] NULL",\
+    "CAENcommsys_Compile = STRING : [32] NULL",\
+    "CAENupgradersys_Compile = STRING : [32] NULL",\
+    "CAENvmelibsys_Compile = STRING : [32] NULL",\
 "",\
   "[Digitizer_0]",\
   "Comment = STRING : [64] VX1730B with DPP-PSD firmware 136.10",\

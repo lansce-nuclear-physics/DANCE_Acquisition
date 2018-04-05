@@ -2,7 +2,7 @@
 //*    Christopher J. Prokop      *//
 //*    cprokop@lanl.gov           *//
 //*    caen2018_DPP_frontend.cpp  *// 
-//*    Last Edit: 03/06/18        *//  
+//*    Last Edit: 04/05/18        *//  
 //*********************************//
 
 //File includes
@@ -493,6 +493,81 @@ INT frontend_init()
   db_set_data(hDB,genHdl,&caenvmelibverbuf,sizeof(caenvmelibverbuf),1,TID_STRING);
   cm_msg(MINFO,"frontend_init","CAEN Vmelib Version: %s",sscaenvmelibver.str().c_str());
   tmpfile.close();
+
+
+
+//Get the information about the Digitizer libraries during compilation
+  tmpfile.open(".caencommversion_compile");
+  std::string caencommver_compile;
+  tmpfile >> caencommver_compile;
+
+  std::stringstream sscaencommver_compile;
+  sscaencommver_compile.str("");
+  sscaencommver_compile << caencommver_compile;
+
+  char caencommver_compilebuf[32];
+  sprintf(caencommver_compilebuf,"%s",sscaencommver_compile.str().c_str());
+  sprintf(buf,"CAEN_Library_Information/CAENcommsys");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&caencommver_compilebuf,sizeof(caencommver_compilebuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","CAEN Comm Version Compile: %s",sscaencommver_compile.str().c_str());
+  tmpfile.close();
+
+  tmpfile.open(".caendigitizerversion_compile");
+  std::string caendigver_compile;
+  tmpfile >> caendigver_compile;
+
+  std::stringstream sscaendigver_compile;
+  sscaendigver_compile.str("");
+  sscaendigver_compile << caendigver_compile;
+
+  char caendigver_compilebuf[32];
+  sprintf(caendigver_compilebuf,"%s",sscaendigver_compile.str().c_str());
+  sprintf(buf,"CAEN_Library_Information/CAENdigitizersys");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&caendigver_compilebuf,sizeof(caendigver_compilebuf),1,TID_STRING);
+  db_set_data(hDB,genHdl,&caendigver_compilebuf,sizeof(caendigver_compilebuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","CAEN Digitizer Version Compile: %s",sscaendigver_compile.str().c_str());
+  tmpfile.close();
+
+//Get the information about the Upgrader libraries
+  tmpfile.open(".caenupgraderversion_compile");
+  std::string caenupgraderver_compile;
+  tmpfile >> caenupgraderver_compile;
+
+  std::stringstream sscaenupgraderver_compile;
+  sscaenupgraderver_compile.str("");
+  sscaenupgraderver_compile << caenupgraderver_compile;
+
+  char caenupgraderver_compilebuf[32];
+  sprintf(caenupgraderver_compilebuf,"%s",sscaenupgraderver_compile.str().c_str());
+  sprintf(buf,"CAEN_Library_Information/CAENupgradersys");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&caenupgraderver_compilebuf,sizeof(caenupgraderver_compilebuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","CAEN Upgrader Version Compile: %s",sscaenupgraderver_compile.str().c_str());
+  tmpfile.close();
+
+  //Get the information about the VME libraries
+  tmpfile.open(".caenvmelibversion_compile");
+  std::string caenvmelibver_compile;
+  tmpfile >> caenvmelibver_compile;
+
+  std::stringstream sscaenvmelibver_compile;
+  sscaenvmelibver_compile.str("");
+  sscaenvmelibver_compile << caenvmelibver_compile;
+
+  char caenvmelibver_compilebuf[32];
+  sprintf(buf,"CAEN_Library_Information/CAENvmelibsys");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","CAEN Vmelib Version Compile: %s",sscaenvmelibver_compile.str().c_str());
+  tmpfile.close();
+
+
+
+
+
+
 
   //Get the information from the boards
   for (eye=0;eye<nactiveboards;++eye) {    
