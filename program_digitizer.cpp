@@ -1039,7 +1039,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x8180
   DWORD ODB_0x8180 = 0;
   size = sizeof(ODB_0x8180);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x8180",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x8180",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x8180,&size,TID_DWORD);
   //  cm_msg(MINFO,"frontend_init","Board %i 0x8180 %lu from ODB",eye,ODB_0x8180);
@@ -1084,7 +1084,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x8184
   DWORD ODB_0x8184 = 0;
   size = sizeof(ODB_0x8184);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x8184",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x8184",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x8184,&size,TID_DWORD);
   // cm_msg(MINFO,"frontend_init","Board %i 0x8184 %lu from ODB",eye,ODB_0x8184);
@@ -1129,7 +1129,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x8188
   DWORD ODB_0x8188 = 0;
   size = sizeof(ODB_0x8188);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x8188",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x8188",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x8188,&size,TID_DWORD);
   // cm_msg(MINFO,"frontend_init","Board %i 0x8188 %lu from ODB",eye,ODB_0x8188);
@@ -1174,7 +1174,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x818C
   DWORD ODB_0x818C = 0;
   size = sizeof(ODB_0x818C);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x818C",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x818C",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x818C,&size,TID_DWORD);
   //cm_msg(MINFO,"frontend_init","Board %i 0x818C %lu from ODB",eye,ODB_0x818C);
@@ -1218,7 +1218,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x8190
   DWORD ODB_0x8190 = 0;
   size = sizeof(ODB_0x8190);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x8190",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x8190",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x8190,&size,TID_DWORD);
   // cm_msg(MINFO,"frontend_init","Board %i 0x8190 %lu from ODB",eye,ODB_0x8190);
@@ -1263,7 +1263,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x8194
   DWORD ODB_0x8194 = 0;
   size = sizeof(ODB_0x8194);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x8194",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x8194",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x8194,&size,TID_DWORD);
   // cm_msg(MINFO,"frontend_init","Board %i 0x8194 %lu from ODB",eye,ODB_0x8194);
@@ -1308,7 +1308,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x8198
   DWORD ODB_0x8198 = 0;
   size = sizeof(ODB_0x8198);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x8198",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x8198",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x8198,&size,TID_DWORD);
   // cm_msg(MINFO,"frontend_init","Board %i 0x8198 %lu from ODB",eye,ODB_0x8198);
@@ -1353,7 +1353,7 @@ int program_trigger_validation_registers(int *handle,int eye, HNDLE hDB, HNDLE *
   // 0x819C
   DWORD ODB_0x819C = 0;
   size = sizeof(ODB_0x819C);
-  sprintf(buf,"Trigger_Validation_Registers/Register_0x819C",eye);
+  sprintf(buf,"CAEN_x725_x730_Settings/Trigger_Validation_Registers/Register_0x819C",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_get_data(hDB,genHdl,&ODB_0x819C,&size,TID_DWORD);
   // cm_msg(MINFO,"frontend_init","Board %i 0x819C %lu from ODB",eye,ODB_0x819C);
@@ -1432,7 +1432,7 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 
     HNDLE genHdlbase;
     char buf[64];
-    sprintf(buf,"Channel_%i",jay);
+    sprintf(buf,"CAEN_x725_x730_Settings/Channel_%i",jay);
     db_find_key(hDB,activeBoards[eye],buf,&genHdlbase);
       
     // Figure out if the channel is enabled
