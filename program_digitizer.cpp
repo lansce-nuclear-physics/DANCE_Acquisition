@@ -974,7 +974,7 @@ int program_general_board_registers(int *handle,int eye, HNDLE hDB, HNDLE *activ
 	  failure = true;
 	}
       }
-      if((jay == 4 || ) && (ModCode[eye] == 2 || ModCode[eye] == 3)) {
+      if(jay == 4 && (ModCode[eye] == 2 || ModCode[eye] == 3)) {
 	if( ((ODB_0xEF00 >> jay)  & 0x1) != 1 ) {
 	  cm_msg( MERROR, "frontend_init", "Board %i. Bit %i of 0xEF00 not 1 in ODB.",eye,jay);
 	  failure = true;
