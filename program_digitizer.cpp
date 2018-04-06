@@ -2580,3 +2580,34 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 
   return 0;
 }
+
+
+
+int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, int *ModType, int *ModCode, int *AMC_MajRev, int *NChannels) {
+
+  cm_msg(MINFO,"frontend_init","Board %i Programming Group Registers Started",eye);
+
+  //return value of reading and writing to boards
+  CAEN_DGTZ_ErrorCode ret;
+  
+  //address of the register to read and write to
+  uint32_t address;     
+  
+  //Checks on registers complying with documentation
+  bool failure = false;
+    
+  //ODB path
+  char buf[100];
+  
+  //Size of ODB variable
+  int size;
+
+  //General handle to the current ODB location
+  HNDLE genHdl;
+
+  /* Begin Channel Specific stuff */
+
+  uint32_t ODB_0x8120 = 0;
+  
+  return 0;
+}
