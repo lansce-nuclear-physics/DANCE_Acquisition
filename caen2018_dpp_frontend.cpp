@@ -1095,7 +1095,7 @@ INT read_diagnostics_event (char *pevent, INT off) {
   bk_create(pevent, "TEMP", TID_WORD, &tempdata);
   
   for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
-    for(int channum=0; channum<NChannels[eye]; channum++) {
+    for(int channum=0; channum<NChannels[boardnum]; channum++) {
       memcpy(tempdata+tempcounter*sizeof(ADC_Temp[boardnum][channum]), &ADC_Temp[boardnum][channum],sizeof(ADC_Temp[boardnum][channum]));
       tempcounter++;
     }
@@ -1108,7 +1108,7 @@ INT read_diagnostics_event (char *pevent, INT off) {
   bk_create(pevent, "CHST", TID_DWORD, &chstatusdata);
   
   for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
-    for(int channum=0; channum<NChannels[eye]; channum++) {
+    for(int channum=0; channum<NChannels[boardnum]; channum++) {
       memcpy(chstatusdata+tempcounter*sizeof(Channel_Status[boardnum][channum]), &Channel_Status[boardnum][channum],sizeof(Channel_Status[boardnum][channum]));
       tempcounter++;
     }
