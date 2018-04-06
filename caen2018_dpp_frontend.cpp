@@ -534,22 +534,6 @@ INT frontend_init()
   cm_msg(MINFO,"frontend_init","CAEN Digitizer Version Compile: %s",sscaendigver_compile.str().c_str());
   tmpfile.close();
 
- //Get the information about the VME libraries
-  tmpfile.open(".caenvmelibversion_compile");
-  std::string caenvmelibver_compile;
-  tmpfile >> caenvmelibver_compile;
-
-  std::stringstream sscaenvmelibver_compile;
-  sscaenvmelibver_compile.str("");
-  sscaenvmelibver_compile << caenvmelibver_compile;
-
-  char caenvmelibver_compilebuf[32];
-  sprintf(buf,"CAEN_Library_Information/CAENvmelibsys_Compile");
-  db_find_key(hDB, runparamKey,buf, &genHdl);
-  db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
-  cm_msg(MINFO,"frontend_init","CAEN VME Lib Version Compile: %s",sscaenvmelibver_compile.str().c_str());
-  tmpfile.close();
-
 //Get the information about the Upgrader libraries
   tmpfile.open(".caenupgraderversion_compile");
   std::string caenupgraderver_compile;
@@ -567,13 +551,23 @@ INT frontend_init()
   cm_msg(MINFO,"frontend_init","CAEN Upgrader Version Compile: %s",sscaenupgraderver_compile.str().c_str());
   tmpfile.close();
 
+ //Get the information about the VME libraries
+  tmpfile.open(".caenvmelibversion_compile");
+  std::string caenvmelibver_compile;
+  tmpfile >> caenvmelibver_compile;
 
+  std::stringstream sscaenvmelibver_compile;
+  sscaenvmelibver_compile.str("");
+  sscaenvmelibver_compile << caenvmelibver_compile;
 
-
-
-
-
-
+  char caenvmelibver_compilebuf[32];
+  sprintf(buf,"CAEN_Library_Information/CAENvmelibsys_Compile");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","CAEN VME Lib Version Compile: %s",sscaenvmelibver_compile.str().c_str());
+  tmpfile.close();
+  
+  usleep(100);
 
   //Get the information from the boards
   for (eye=0;eye<nactiveboards;++eye) {    
