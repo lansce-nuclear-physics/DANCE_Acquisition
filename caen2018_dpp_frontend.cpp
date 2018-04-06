@@ -551,7 +551,7 @@ INT frontend_init()
   cm_msg(MINFO,"frontend_init","CAEN Upgrader Version Compile: %s",sscaenupgraderver_compile.str().c_str());
   tmpfile.close();
 
- //Get the information about the VME libraries
+  //Get the information about the VME libraries
   tmpfile.open(".caenvmelibversion_compile");
   std::string caenvmelibver_compile;
   tmpfile >> caenvmelibver_compile;
@@ -561,6 +561,7 @@ INT frontend_init()
   sscaenvmelibver_compile << caenvmelibver_compile;
 
   char caenvmelibver_compilebuf[32];
+  sprintf(caenvmelibver_compilebuf,"%s",sscaenvmelibver_compile.str().c_str());
   sprintf(buf,"CAEN_Library_Information/CAENvmelibsys_Compile");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
