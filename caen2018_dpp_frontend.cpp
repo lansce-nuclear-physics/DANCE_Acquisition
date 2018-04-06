@@ -10,6 +10,7 @@
 #include "program_digitizer.h"
 #include "functions.h"
 #include "experim.h"
+#include "eventid.h"
 
 //CAEN includes
 #include "CAENDigitizer.h"
@@ -123,7 +124,7 @@ extern "C" {
   INT event_buffer_size = 2*MAX_EVENT_SIZE;
   INT nreads = 0;
 
-  /*-- Function declarations -----------------------------------------*/
+  // Function declarations ..........................................//
   int RegisterSetBits(int handle, uint16_t addr, int start_bit, int end_bit, int val)
   {
     uint32_t mask=0, reg;
@@ -154,41 +155,39 @@ extern "C" {
 
   INT read_digitizer_event(char *pevent, INT off);
 
-  /*-- Equipment list ------------------------------------------------*/
+  // Equipment list ................................................. //
 
   EQUIPMENT equipment[] = {
 
-    {"Digitizer",               /* equipment name */
-     {1, 0,                   /* event ID, trigger mask */
-      "SYSTEM",               /* event buffer */
-      EQ_POLLED,              /* equipment type */
-      0,
-      "MIDAS",                /* format */
-      TRUE,                   /* enabled */
-      RO_RUNNING,             /* read only when running */
-      50,                    /* poll for 500ms */
-      0,                      /* stop run after this event limit */
-      0,                      /* number of sub events */
-      0,                      /* don't log history */
+    {"Digitizer",                    // equipment name
+     {DIGIT_EVENTID, 0,              // event ID, trigger mask
+      "SYSTEM",                      // event buffer
+      EQ_POLLED,                     // equipment type
+      0,                             // event source
+      "MIDAS",                       // format
+      TRUE,                          // enabled 
+      RO_RUNNING,                    // read only when running
+      50,                            // poll for 500ms
+      0,                             // stop run after this event limit
+      0,                             // number of sub events
+      0,                             // don't log history 
       "", "", "",},
-     read_digitizer_event,      /* readout routine */
+     read_digitizer_event,           // readout routine 
     },
   
-    { "Diagnostics",                     // equipment name
-      {
-	8, 0,                    // event ID, trigger mask
-	"SYSTEM",                     // event buffer
-	EQ_PERIODIC,                  // equipment type
-	0,                            // event source
-	"MIDAS",                      // format
-	TRUE,                         // enabled
-	RO_RUNNING, 
-	10000,                        // read interval in ms
-	0,                            // stop run after this event limit
-	0,                            // number of sub events
-	0,                                // log history
-	"", "", "",
-      },
+    {"Diagnostics",                  // equipment name
+      {DIAGNOSTICS_EVENTID, 0,       // event ID, trigger mask
+       "SYSTEM",                     // event buffer
+       EQ_PERIODIC,                  // equipment type
+       0,                            // event source
+       "MIDAS",                      // format
+       TRUE,                         // enabled
+       RO_RUNNING,                   // read only when running
+       10000,                        // read interval in ms
+       0,                            // stop run after this event limit
+       0,                            // number of sub events
+       0,                            // log history
+       "", "", "",},
       read_diagnostics_event,        // readout routine
     },
 
@@ -248,15 +247,15 @@ INT frontend_init()
   }
 
   /*
-  cm_msg(MINFO,"frontend_init","Telling cron to watch my status\n");
-  //Write the original crontab file 
-  system("crontab -l > .crontab_init");
-  //Copy the file
-  system("cp .crontab_init .crontab_run");
-  //Add the caen2018 status to the crontab_run 
-  system("echo \"14,29,44,59 * * * * /home/daq/caen2018/caen2018_status\" >> .crontab_run");
-  //tell cron to change to running crontab
-  system("crontab .crontab_run");
+    cm_msg(MINFO,"frontend_init","Telling cron to watch my status\n");
+    //Write the original crontab file 
+    system("crontab -l > .crontab_init");
+    //Copy the file
+    system("cp .crontab_init .crontab_run");
+    //Add the caen2018 status to the crontab_run 
+    system("echo \"14,29,44,59 * * * * /home/daq/caen2018/caen2018_status\" >> .crontab_run");
+    //tell cron to change to running crontab
+    system("crontab .crontab_run");
   */
   
   // ODB interactions start here
@@ -440,7 +439,7 @@ INT frontend_init()
   cm_msg(MINFO,"frontend_init","CAEN Comm Version: %s",sscaencommver.str().c_str());
   tmpfile.close();
 
- //Get the information about the Digitizer libraries
+  //Get the information about the Digitizer libraries
   system("readlink $CAENDIGITIZERSYS > .caendigitizerversion");
   usleep(100);
   tmpfile.open(".caendigitizerversion");
@@ -460,7 +459,7 @@ INT frontend_init()
   cm_msg(MINFO,"frontend_init","CAEN Digitizer Version: %s",sscaendigver.str().c_str());
   tmpfile.close();
 
-//Get the information about the Upgrader libraries
+  //Get the information about the Upgrader libraries
   system("readlink $CAENUPGRADERSYS > .caenupgraderversion");
   usleep(100);
   tmpfile.open(".caenupgraderversion");
@@ -500,7 +499,7 @@ INT frontend_init()
 
 
 
-//Get the information about the Digitizer libraries during compilation
+  //Get the information about the Digitizer libraries during compilation
   tmpfile.open(".caencommversion_compile");
   std::string caencommver_compile;
   tmpfile >> caencommver_compile;
@@ -534,7 +533,7 @@ INT frontend_init()
   cm_msg(MINFO,"frontend_init","CAEN Digitizer Version Compile: %s",sscaendigver_compile.str().c_str());
   tmpfile.close();
 
-//Get the information about the Upgrader libraries
+  //Get the information about the Upgrader libraries
   tmpfile.open(".caenupgraderversion_compile");
   std::string caenupgraderver_compile;
   tmpfile >> caenupgraderver_compile;
@@ -916,16 +915,16 @@ INT poll_event(INT source, INT count, BOOL test)
 	ret = CAEN_DGTZ_ReadData(handle[boardnum], CAEN_DGTZ_SLAVE_TERMINATED_READOUT_MBLT, buffer[boardnum], &BufferSize[boardnum]);
 	
 	/*
-	if(ret) {
+	  if(ret) {
 	  cm_msg(MERROR,"poll_event","Readout Error 2 board: %d, buffer size: %lu, ret val: %i\n",boardnum,BufferSize[boardnum],ret);
 	  Read_Fails[boardnum]++;  
 	  BufferSize[boardnum]=0; //Dont put corrupt data into the data stream
 	  // exit(1);
-	}    
-	else {
+	  }    
+	  else {
 	  cm_msg(MERROR,"poll_event","Readout 2 successful board: %d, buffer size: %lu, ret val: %i\n",boardnum,BufferSize[boardnum],ret);
 	  
-	}
+	  }
 	*/
       }
       if (BufferSize[boardnum] == 0) {
@@ -938,10 +937,10 @@ INT poll_event(INT source, INT count, BOOL test)
 	uint32_t *header, d32;
 	header = (uint32_t *)buffer[boardnum];
 	if (header[1] & 0x04000000) {
-	  cm_msg(MERROR,"poll_event","Severe Error Bit in header (board %d)!!!\n", boardnum);
-	  CAEN_DGTZ_ReadRegister(handle[boardnum], 0x8178, &d32);
-	  cm_msg(MERROR,"poll_event","Failure Register %lu \n", d32);
-	  }
+	cm_msg(MERROR,"poll_event","Severe Error Bit in header (board %d)!!!\n", boardnum);
+	CAEN_DGTZ_ReadRegister(handle[boardnum], 0x8178, &d32);
+	cm_msg(MERROR,"poll_event","Failure Register %lu \n", d32);
+	}
        	*/
 
 	Nb += BufferSize[boardnum];
@@ -1014,7 +1013,7 @@ INT read_digitizer_event(char *pevent, INT off) {
       
       //Then put the data in the bank
       memcpy(pdata+sizeof(firmware_version[boardnum]),buffer[boardnum],BufferSize[boardnum]);
-     // memcpy(pdata,buffer[boardnum],BufferSize[boardnum]);
+      // memcpy(pdata,buffer[boardnum],BufferSize[boardnum]);
       bk_close(pevent, pdata+sizeof(firmware_version[boardnum])+BufferSize[boardnum]);
       // bk_close(pevent, pdata+BufferSize[boardnum]);
 

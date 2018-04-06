@@ -19,3 +19,5 @@ Version 2.1.0 - Added return value output for all CAEN related errors. Added che
 Version 2.1.1 - Changed frontend name to from "caen2018 VX1730 Frontend" to "caen2018_dpp_frontend".
 
 Version 2.1.2 - Added the CAEN version outputs to the makefile to give _compile hidden files with the information. 
+
+Version 2.1.3 - Changed the hardcoded eventid for digitizer and diagnositcs to pull from eventid.h.  EventID remains 1 and 8 for digitizer and diagnostics respectively.
