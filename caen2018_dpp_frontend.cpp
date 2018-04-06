@@ -56,7 +56,7 @@ uint32_t Digitizer_Rates[MAXNB];          //Digitizer Read Rates (Bytes/s)
 int AMC_MinRev[MAXNB];               //AMC Minor Revision 
 int AMC_MajRev[MAXNB];               //AMC Major Revision (136 is PSD, 139 is PHA)
 int NChannels[MAXNB];                //Number of channels 8 or 16
-int ModType[MAXNB];                  //725 or 730
+int ModType[MAXNB];                  //725, 730, or 740
 int ModCode[MAXNB];                  //numerical way to say NIM, VME, etc
 int SerialNumber[MAXNB];             //Serial number of the board
 
@@ -705,19 +705,31 @@ INT resume_run(INT run_number, char *error) {
       exit(1);
     }
 
-    //Program trigger validation masks
-    function_return = program_trigger_validation_registers(handle,eye,hDB,activeBoards,ModType,ModCode,AMC_MajRev,NChannels);
-    if(function_return != 0) {
-      exit(1);
-    }
-    
-    //Program channel by channel stuff
-    function_return = program_channel_registers(handle,eye,hDB,activeBoards,ModType,ModCode,AMC_MajRev,NChannels);
-    if(function_return != 0) {
-      exit(1);
+    //725-730 PSD and PHA
+    if((ModType[eye] == 725 || ModType[eye] == 730) && (AMC_MajRev[eye] == 136 || AMC_MajRev[eye] == 139)) {
+      //Program trigger validation masks
+      function_return = program_trigger_validation_registers(handle,eye,hDB,activeBoards,ModType,ModCode,AMC_MajRev,NChannels);
+      if(function_return != 0) {
+	exit(1);
+      }
+      
+      //Program channel by channel stuff
+      function_return = program_channel_registers(handle,eye,hDB,activeBoards,ModType,ModCode,AMC_MajRev,NChannels);
+      if(function_return != 0) {
+	exit(1);
+      }
     }
 
-    //Set the Memory Configuration on the boards.  I feel it is best to let it determine for itself
+    //740 QDC
+    if(ModType[eye] == 740 && AMC_MajRev[eye] == 135) {
+       //Program group by group stuff
+      function_return = program_group_registers(handle,eye,hDB,activeBoards,ModType,ModCode,AMC_MajRev,NChannels);
+      if(function_return != 0) {
+	exit(1);
+      }
+    }
+
+    //Set the Memory Configuration on the boards.  
     ret = CAEN_DGTZ_SetNumEventsPerAggregate(handle[eye],1023);  //Set this to the max value
     if(ret != 0) {
       cm_msg(MERROR,"resume_run","Cannot set NumEventsPerAggregate on Board: %d, ret val: %i  Exiting. \n", eye,ret);
@@ -729,10 +741,11 @@ INT resume_run(INT run_number, char *error) {
       exit(1);      
     }
         
-    //Make the 32-bit word that tells the analyzer what firmware is being run
+    //Make the 32-bit word that tells the analyzer what board and firmware is being run
     firmware_version[eye] = 0;
     firmware_version[eye] += AMC_MajRev[eye];           //bits 0 to 7 are Major Revision
     firmware_version[eye] += (AMC_MinRev[eye] << 8);    //bits 8 to 13 are Minor Revision
+    firmware_version[eye] += (ModType[eye] << 14);      //bits 14 to 25 are the Module Type (725,730,740,etc)
     firmware_version[eye] += (eye << 26);               //bits 26 to 31 are Board Number (redudancy) 
 
     //Calibrate ADC 
@@ -831,7 +844,7 @@ INT poll_event(INT source, INT count, BOOL test)
     //Check some diagnostics things from the boards
     if(should_swpoll) {
       for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
-	for(int channum=0; channum<MAXNCH; channum++) {
+	for(int channum=0; channum<NChannels[boardnum]; channum++) {
 	  
 	  //Channel n temp
 	  address = 0x10A8 + (channum<<8);
@@ -907,26 +920,11 @@ INT poll_event(INT source, INT count, BOOL test)
       hasdata[boardnum]=0;      
       ret = CAEN_DGTZ_ReadData(handle[boardnum], CAEN_DGTZ_SLAVE_TERMINATED_READOUT_MBLT, buffer[boardnum], &BufferSize[boardnum]);
       
-      //Read Error
+      //Read Error need to exit...
       if (ret) {
 	cm_msg(MERROR,"poll_event","Readout Error 1 board: %d, buffer size: %lu, ret val: %i\n",boardnum,BufferSize[boardnum],ret);
-	
-	//try again
-	ret = CAEN_DGTZ_ReadData(handle[boardnum], CAEN_DGTZ_SLAVE_TERMINATED_READOUT_MBLT, buffer[boardnum], &BufferSize[boardnum]);
-	
-	/*
-	  if(ret) {
-	  cm_msg(MERROR,"poll_event","Readout Error 2 board: %d, buffer size: %lu, ret val: %i\n",boardnum,BufferSize[boardnum],ret);
-	  Read_Fails[boardnum]++;  
-	  BufferSize[boardnum]=0; //Dont put corrupt data into the data stream
-	  // exit(1);
-	  }    
-	  else {
-	  cm_msg(MERROR,"poll_event","Readout 2 successful board: %d, buffer size: %lu, ret val: %i\n",boardnum,BufferSize[boardnum],ret);
-	  
-	  }
-	*/
       }
+
       if (BufferSize[boardnum] == 0) {
 	hasdata[boardnum]=0;
 	continue;
@@ -946,7 +944,6 @@ INT poll_event(INT source, INT count, BOOL test)
 	Nb += BufferSize[boardnum];
 	Scaler_Totals[boardnum] += BufferSize[boardnum];
 	hasdata[boardnum]=1;
-	//	cm_msg(MINFO,"poll","polling for data, have data");
       }
     } // loop on boards
 
@@ -1098,13 +1095,12 @@ INT read_diagnostics_event (char *pevent, INT off) {
   bk_create(pevent, "TEMP", TID_WORD, &tempdata);
   
   for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
-    for(int channum=0; channum<MAXNCH; channum++) {
+    for(int channum=0; channum<NChannels[eye]; channum++) {
       memcpy(tempdata+tempcounter*sizeof(ADC_Temp[boardnum][channum]), &ADC_Temp[boardnum][channum],sizeof(ADC_Temp[boardnum][channum]));
       tempcounter++;
     }
   }  
   bk_close(pevent,tempdata+tempcounter*sizeof(uint16_t));
-
 
   tempcounter=0;
   //Write Channel Status data to file
@@ -1112,7 +1108,7 @@ INT read_diagnostics_event (char *pevent, INT off) {
   bk_create(pevent, "CHST", TID_DWORD, &chstatusdata);
   
   for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
-    for(int channum=0; channum<MAXNCH; channum++) {
+    for(int channum=0; channum<NChannels[eye]; channum++) {
       memcpy(chstatusdata+tempcounter*sizeof(Channel_Status[boardnum][channum]), &Channel_Status[boardnum][channum],sizeof(Channel_Status[boardnum][channum]));
       tempcounter++;
     }

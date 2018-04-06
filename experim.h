@@ -68,6 +68,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+    struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -733,6 +734,7 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
   } digitizer_0;
   struct {
     char      comment[64];
@@ -766,6 +768,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -1431,6 +1434,7 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
   } digitizer_1;
  struct {
     char      comment[64];
@@ -1464,6 +1468,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -2129,6 +2134,7 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
   } digitizer_2;
  struct {
     char      comment[64];
@@ -2162,6 +2168,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -2827,6 +2834,7 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
   } digitizer_3;
  struct {
     char      comment[64];
@@ -2860,6 +2868,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -3525,7 +3534,9 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
   } digitizer_4;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -3558,6 +3569,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -4223,7 +4235,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_5;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -4256,6 +4271,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -4921,7 +4937,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_6;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -4954,6 +4973,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -5619,7 +5639,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_7;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -5652,6 +5675,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -6317,7 +6341,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_8;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -6350,6 +6377,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -7015,7 +7043,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_9;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -7048,6 +7079,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct{
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -7713,7 +7745,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_10;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -7746,6 +7781,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -8411,7 +8447,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_11;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -8444,6 +8483,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -9109,7 +9149,10 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_12;
+
  struct {
     char      comment[64];
     BOOL      enabled;
@@ -9142,6 +9185,7 @@ typedef struct {
       DWORD     register_0xef00;
     } general_board_registers;
     struct {
+      struct {
       DWORD     register_0x8180;
       DWORD     register_0x8184;
       DWORD     register_0x8188;
@@ -9807,6 +9851,8 @@ typedef struct {
 	DWORD   register_0x1na0; 
       } dpp_pha_params;
     } channel_15;
+    } model_725_730_settings;
+
   } digitizer_13;
 } EXP_PARAM;
 
@@ -9857,7 +9903,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_0/Trigger_Validation_Registers]",\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -9867,7 +9913,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_0/Channel_0]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -9881,7 +9927,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -9894,7 +9940,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -9908,7 +9954,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_0/Channel_1]",						\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -9922,7 +9968,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_0/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -9935,7 +9981,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_0/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -9949,7 +9995,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_0/Channel_2]",						\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -9963,7 +10009,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -9976,7 +10022,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -9990,7 +10036,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_0/Channel_3]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10004,7 +10050,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10017,7 +10063,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10031,7 +10077,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_0/Channel_4]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10045,7 +10091,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10058,7 +10104,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10072,7 +10118,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_0/Channel_5]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10086,7 +10132,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10099,7 +10145,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10113,7 +10159,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_0/Channel_6]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_6]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10127,7 +10173,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10140,7 +10186,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10154,7 +10200,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_0/Channel_7]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10168,7 +10214,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10181,7 +10227,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10195,7 +10241,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_0/Channel_8]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_8]",			\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10209,7 +10255,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10222,7 +10268,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10236,7 +10282,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_0/Channel_9]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10250,7 +10296,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10263,7 +10309,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10277,7 +10323,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_0/Channel_10]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10291,7 +10337,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10304,7 +10350,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10318,7 +10364,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_0/Channel_11]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10332,7 +10378,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10345,7 +10391,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10359,7 +10405,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_0/Channel_12]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10373,7 +10419,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10386,7 +10432,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10400,7 +10446,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_0/Channel_13]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10414,7 +10460,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10427,7 +10473,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10441,7 +10487,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_0/Channel_14]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10455,7 +10501,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10468,7 +10514,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10482,7 +10528,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_0/Channel_15]",		 \
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10496,7 +10542,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_0/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10509,7 +10555,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_0/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_0/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10555,7 +10601,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_1/Trigger_Validation_Registers]",\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -10565,7 +10611,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_1/Channel_0]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10579,7 +10625,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10592,7 +10638,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10606,7 +10652,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_1/Channel_1]",						\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -10620,7 +10666,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_1/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -10633,7 +10679,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_1/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -10647,7 +10693,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_1/Channel_2]",						\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10661,7 +10707,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10674,7 +10720,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10688,7 +10734,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_1/Channel_3]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10702,7 +10748,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10715,7 +10761,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10729,7 +10775,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_1/Channel_4]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10743,7 +10789,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10756,7 +10802,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10770,7 +10816,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_1/Channel_5]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10784,7 +10830,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10797,7 +10843,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10811,7 +10857,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_1/Channel_6]",						\
+    "[Digitizer_1/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10825,7 +10871,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10838,7 +10884,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10852,7 +10898,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_7]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10866,7 +10912,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10879,7 +10925,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10893,7 +10939,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_8]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10907,7 +10953,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10920,7 +10966,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10934,7 +10980,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_9]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10948,7 +10994,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -10961,7 +11007,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -10975,7 +11021,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_1/Channel_10]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -10989,7 +11035,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11002,7 +11048,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11016,7 +11062,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_11]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11030,7 +11076,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11043,7 +11089,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11057,7 +11103,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_12]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11071,7 +11117,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11084,7 +11130,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11098,7 +11144,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_13]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11112,7 +11158,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11125,7 +11171,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11139,7 +11185,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_14]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11153,7 +11199,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11166,7 +11212,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11180,7 +11226,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_1/Channel_15]",		 \
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11194,7 +11240,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_1/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11207,7 +11253,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_1/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_1/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11253,7 +11299,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_2/Trigger_Validation_Registers]",\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -11263,7 +11309,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_2/Channel_0]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11277,7 +11323,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11290,7 +11336,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11304,7 +11350,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_2/Channel_1]",						\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -11318,7 +11364,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_2/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -11331,7 +11377,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_2/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -11345,7 +11391,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_2/Channel_2]",						\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11359,7 +11405,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11372,7 +11418,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11386,7 +11432,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_2/Channel_3]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11400,7 +11446,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11413,7 +11459,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11427,7 +11473,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_2/Channel_4]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11441,7 +11487,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11454,7 +11500,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11468,7 +11514,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_2/Channel_5]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11482,7 +11528,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11495,7 +11541,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11509,7 +11555,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_2/Channel_6]",						\
+    "[Digitizer_2/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11523,7 +11569,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11536,7 +11582,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11550,7 +11596,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_7]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11564,7 +11610,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11577,7 +11623,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11591,7 +11637,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_8]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11605,7 +11651,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11618,7 +11664,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11632,7 +11678,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_9]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11646,7 +11692,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11659,7 +11705,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11673,7 +11719,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_2/Channel_10]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11687,7 +11733,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11700,7 +11746,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11714,7 +11760,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_11]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11728,7 +11774,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11741,7 +11787,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11755,7 +11801,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_12]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11769,7 +11815,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11782,7 +11828,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11796,7 +11842,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_13]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11810,7 +11856,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11823,7 +11869,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11837,7 +11883,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_14]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11851,7 +11897,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11864,7 +11910,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11878,7 +11924,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_2/Channel_15]",		 \
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11892,7 +11938,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_2/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11905,7 +11951,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_2/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_2/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -11951,7 +11997,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_3/Trigger_Validation_Registers]",\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -11961,7 +12007,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_3/Channel_0]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -11975,7 +12021,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -11988,7 +12034,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12002,7 +12048,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_3/Channel_1]",						\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -12016,7 +12062,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_3/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -12029,7 +12075,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_3/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -12043,7 +12089,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_3/Channel_2]",						\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12057,7 +12103,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12070,7 +12116,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12084,7 +12130,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_3/Channel_3]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12098,7 +12144,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12111,7 +12157,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12125,7 +12171,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_3/Channel_4]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12139,7 +12185,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12152,7 +12198,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12166,7 +12212,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_3/Channel_5]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12180,7 +12226,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12193,7 +12239,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12207,7 +12253,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_3/Channel_6]",						\
+    "[Digitizer_3/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12221,7 +12267,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12234,7 +12280,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12248,7 +12294,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_7]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12262,7 +12308,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12275,7 +12321,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12289,7 +12335,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_8]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12303,7 +12349,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12316,7 +12362,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12330,7 +12376,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_9]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12344,7 +12390,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12357,7 +12403,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12371,7 +12417,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_3/Channel_10]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12385,7 +12431,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12398,7 +12444,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12412,7 +12458,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_11]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12426,7 +12472,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12439,7 +12485,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12453,7 +12499,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_12]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12467,7 +12513,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12480,7 +12526,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12494,7 +12540,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_13]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12508,7 +12554,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12521,7 +12567,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12535,7 +12581,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_14]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12549,7 +12595,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12562,7 +12608,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12576,7 +12622,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_3/Channel_15]",		 \
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12590,7 +12636,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_3/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12603,7 +12649,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_3/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_3/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12649,7 +12695,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_4/Trigger_Validation_Registers]",\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -12659,7 +12705,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_4/Channel_0]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12673,7 +12719,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12686,7 +12732,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12700,7 +12746,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_4/Channel_1]",						\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -12714,7 +12760,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_4/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -12727,7 +12773,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_4/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -12741,7 +12787,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_4/Channel_2]",						\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12755,7 +12801,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12768,7 +12814,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12782,7 +12828,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_4/Channel_3]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12796,7 +12842,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12809,7 +12855,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12823,7 +12869,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_4/Channel_4]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12837,7 +12883,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12850,7 +12896,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12864,7 +12910,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_4/Channel_5]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12878,7 +12924,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12891,7 +12937,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12905,7 +12951,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_4/Channel_6]",						\
+    "[Digitizer_4/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12919,7 +12965,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12932,7 +12978,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12946,7 +12992,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_7]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -12960,7 +13006,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -12973,7 +13019,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -12987,7 +13033,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_8]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13001,7 +13047,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13014,7 +13060,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13028,7 +13074,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_9]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13042,7 +13088,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13055,7 +13101,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13069,7 +13115,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_4/Channel_10]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13083,7 +13129,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13096,7 +13142,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13110,7 +13156,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_11]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13124,7 +13170,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13137,7 +13183,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13151,7 +13197,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_12]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13165,7 +13211,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13178,7 +13224,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13192,7 +13238,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_13]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13206,7 +13252,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13219,7 +13265,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13233,7 +13279,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_14]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13247,7 +13293,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13260,7 +13306,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13274,7 +13320,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_4/Channel_15]",		 \
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13288,7 +13334,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_4/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13301,7 +13347,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_4/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_4/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13347,7 +13393,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_5/Trigger_Validation_Registers]",\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -13357,7 +13403,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_5/Channel_0]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13371,7 +13417,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13384,7 +13430,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13398,7 +13444,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_5/Channel_1]",						\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -13412,7 +13458,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_5/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -13425,7 +13471,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_5/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -13439,7 +13485,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_5/Channel_2]",						\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13453,7 +13499,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13466,7 +13512,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13480,7 +13526,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_5/Channel_3]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13494,7 +13540,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13507,7 +13553,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13521,7 +13567,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_5/Channel_4]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13535,7 +13581,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13548,7 +13594,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13562,7 +13608,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_5/Channel_5]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13576,7 +13622,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13589,7 +13635,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13603,7 +13649,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_5/Channel_6]",						\
+    "[Digitizer_5/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13617,7 +13663,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13630,7 +13676,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13644,7 +13690,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_7]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13658,7 +13704,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13671,7 +13717,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13685,7 +13731,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_8]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13699,7 +13745,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13712,7 +13758,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13726,7 +13772,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_9]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13740,7 +13786,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13753,7 +13799,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13767,7 +13813,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_5/Channel_10]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13781,7 +13827,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13794,7 +13840,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13808,7 +13854,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_11]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13822,7 +13868,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13835,7 +13881,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13849,7 +13895,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_12]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13863,7 +13909,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13876,7 +13922,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13890,7 +13936,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_13]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13904,7 +13950,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13917,7 +13963,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13931,7 +13977,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_14]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13945,7 +13991,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13958,7 +14004,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -13972,7 +14018,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_5/Channel_15]",		 \
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -13986,7 +14032,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_5/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -13999,7 +14045,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_5/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_5/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14045,7 +14091,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_6/Trigger_Validation_Registers]",\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -14055,7 +14101,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_6/Channel_0]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14069,7 +14115,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14082,7 +14128,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14096,7 +14142,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_6/Channel_1]",						\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -14110,7 +14156,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_6/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -14123,7 +14169,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_6/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -14137,7 +14183,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_6/Channel_2]",						\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14151,7 +14197,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14164,7 +14210,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14178,7 +14224,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_6/Channel_3]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14192,7 +14238,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14205,7 +14251,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14219,7 +14265,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_6/Channel_4]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14233,7 +14279,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14246,7 +14292,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14260,7 +14306,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_6/Channel_5]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14274,7 +14320,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14287,7 +14333,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14301,7 +14347,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_6/Channel_6]",						\
+    "[Digitizer_6/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14315,7 +14361,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14328,7 +14374,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14342,7 +14388,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_7]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14356,7 +14402,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14369,7 +14415,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14383,7 +14429,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_8]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14397,7 +14443,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14410,7 +14456,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14424,7 +14470,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_9]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14438,7 +14484,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14451,7 +14497,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14465,7 +14511,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_6/Channel_10]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14479,7 +14525,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14492,7 +14538,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14506,7 +14552,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_11]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14520,7 +14566,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14533,7 +14579,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14547,7 +14593,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_12]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14561,7 +14607,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14574,7 +14620,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14588,7 +14634,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_13]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14602,7 +14648,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14615,7 +14661,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14629,7 +14675,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_14]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14643,7 +14689,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14656,7 +14702,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14670,7 +14716,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_6/Channel_15]",		 \
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14684,7 +14730,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_6/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14697,7 +14743,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_6/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_6/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14743,7 +14789,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_7/Trigger_Validation_Registers]",\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -14753,7 +14799,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_7/Channel_0]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14767,7 +14813,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14780,7 +14826,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14794,7 +14840,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_7/Channel_1]",						\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -14808,7 +14854,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_7/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -14821,7 +14867,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_7/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -14835,7 +14881,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_7/Channel_2]",						\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14849,7 +14895,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14862,7 +14908,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14876,7 +14922,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_7/Channel_3]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14890,7 +14936,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14903,7 +14949,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14917,7 +14963,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_7/Channel_4]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14931,7 +14977,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14944,7 +14990,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14958,7 +15004,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_7/Channel_5]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -14972,7 +15018,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -14985,7 +15031,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -14999,7 +15045,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_7/Channel_6]",						\
+    "[Digitizer_7/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15013,7 +15059,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15026,7 +15072,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15040,7 +15086,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_7]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15054,7 +15100,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15067,7 +15113,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15081,7 +15127,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_8]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15095,7 +15141,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15108,7 +15154,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15122,7 +15168,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_9]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15136,7 +15182,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15149,7 +15195,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15163,7 +15209,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_7/Channel_10]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15177,7 +15223,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15190,7 +15236,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15204,7 +15250,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_11]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15218,7 +15264,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15231,7 +15277,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15245,7 +15291,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_12]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15259,7 +15305,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15272,7 +15318,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15286,7 +15332,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_13]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15300,7 +15346,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15313,7 +15359,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15327,7 +15373,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_14]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15341,7 +15387,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15354,7 +15400,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15368,7 +15414,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_7/Channel_15]",		 \
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15382,7 +15428,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_7/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15395,7 +15441,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_7/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_7/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15441,7 +15487,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_8/Trigger_Validation_Registers]",\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -15451,7 +15497,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_8/Channel_0]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15465,7 +15511,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15478,7 +15524,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15492,7 +15538,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_8/Channel_1]",						\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -15506,7 +15552,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_8/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -15519,7 +15565,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_8/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -15533,7 +15579,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_8/Channel_2]",						\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15547,7 +15593,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15560,7 +15606,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15574,7 +15620,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_8/Channel_3]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15588,7 +15634,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15601,7 +15647,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15615,7 +15661,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_8/Channel_4]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15629,7 +15675,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15642,7 +15688,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15656,7 +15702,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_8/Channel_5]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15670,7 +15716,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15683,7 +15729,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15697,7 +15743,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_8/Channel_6]",						\
+    "[Digitizer_8/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15711,7 +15757,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15724,7 +15770,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15738,7 +15784,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_7]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15752,7 +15798,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15765,7 +15811,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15779,7 +15825,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_8]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15793,7 +15839,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15806,7 +15852,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15820,7 +15866,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_9]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15834,7 +15880,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15847,7 +15893,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15861,7 +15907,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_8/Channel_10]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15875,7 +15921,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15888,7 +15934,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15902,7 +15948,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_11]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15916,7 +15962,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15929,7 +15975,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15943,7 +15989,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_12]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15957,7 +16003,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -15970,7 +16016,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -15984,7 +16030,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_13]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -15998,7 +16044,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16011,7 +16057,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16025,7 +16071,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_14]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16039,7 +16085,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16052,7 +16098,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16066,7 +16112,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_8/Channel_15]",		 \
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16080,7 +16126,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_8/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16093,7 +16139,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_8/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_8/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16139,7 +16185,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_9/Trigger_Validation_Registers]",\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -16149,7 +16195,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_9/Channel_0]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16163,7 +16209,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16176,7 +16222,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16190,7 +16236,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_9/Channel_1]",						\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -16204,7 +16250,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_9/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -16217,7 +16263,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_9/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -16231,7 +16277,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_9/Channel_2]",						\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16245,7 +16291,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16258,7 +16304,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16272,7 +16318,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_9/Channel_3]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16286,7 +16332,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16299,7 +16345,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16313,7 +16359,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_9/Channel_4]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16327,7 +16373,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16340,7 +16386,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16354,7 +16400,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_9/Channel_5]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16368,7 +16414,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16381,7 +16427,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16395,7 +16441,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_9/Channel_6]",						\
+    "[Digitizer_9/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16409,7 +16455,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16422,7 +16468,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16436,7 +16482,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_7]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16450,7 +16496,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16463,7 +16509,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16477,7 +16523,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_8]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16491,7 +16537,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16504,7 +16550,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16518,7 +16564,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_9]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16532,7 +16578,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16545,7 +16591,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16559,7 +16605,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_9/Channel_10]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16573,7 +16619,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16586,7 +16632,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16600,7 +16646,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_11]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16614,7 +16660,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16627,7 +16673,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16641,7 +16687,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_12]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16655,7 +16701,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16668,7 +16714,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16682,7 +16728,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_13]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16696,7 +16742,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16709,7 +16755,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16723,7 +16769,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_14]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16737,7 +16783,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16750,7 +16796,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16764,7 +16810,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_9/Channel_15]",		 \
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16778,7 +16824,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_9/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16791,7 +16837,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_9/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_9/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16837,7 +16883,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_10/Trigger_Validation_Registers]",\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -16847,7 +16893,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_10/Channel_0]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16861,7 +16907,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16874,7 +16920,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16888,7 +16934,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_10/Channel_1]",						\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -16902,7 +16948,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_10/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -16915,7 +16961,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_10/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -16929,7 +16975,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_10/Channel_2]",						\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16943,7 +16989,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16956,7 +17002,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -16970,7 +17016,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_10/Channel_3]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -16984,7 +17030,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -16997,7 +17043,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17011,7 +17057,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_10/Channel_4]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17025,7 +17071,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17038,7 +17084,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17052,7 +17098,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_10/Channel_5]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17066,7 +17112,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17079,7 +17125,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17093,7 +17139,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_10/Channel_6]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_6]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17107,7 +17153,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17120,7 +17166,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17134,7 +17180,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_10/Channel_7]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17148,7 +17194,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17161,7 +17207,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17175,7 +17221,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_10/Channel_8]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_8]",			\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17189,7 +17235,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17202,7 +17248,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17216,7 +17262,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_10/Channel_9]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17230,7 +17276,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17243,7 +17289,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17257,7 +17303,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_10/Channel_10]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17271,7 +17317,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17284,7 +17330,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17298,7 +17344,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_10/Channel_11]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17312,7 +17358,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17325,7 +17371,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17339,7 +17385,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_10/Channel_12]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17353,7 +17399,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17366,7 +17412,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17380,7 +17426,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_10/Channel_13]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17394,7 +17440,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17407,7 +17453,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17421,7 +17467,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_10/Channel_14]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17435,7 +17481,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17448,7 +17494,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17462,7 +17508,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_10/Channel_15]",		 \
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17476,7 +17522,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_10/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17489,7 +17535,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_10/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_10/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17535,7 +17581,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_11/Trigger_Validation_Registers]",\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -17545,7 +17591,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_11/Channel_0]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17559,7 +17605,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17572,7 +17618,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17586,7 +17632,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_11/Channel_1]",						\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -17600,7 +17646,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_11/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -17613,7 +17659,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_11/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -17627,7 +17673,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_11/Channel_2]",						\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17641,7 +17687,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17654,7 +17700,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17668,7 +17714,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_11/Channel_3]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17682,7 +17728,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17695,7 +17741,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17709,7 +17755,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_11/Channel_4]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17723,7 +17769,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17736,7 +17782,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17750,7 +17796,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_11/Channel_5]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17764,7 +17810,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17777,7 +17823,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17791,7 +17837,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_11/Channel_6]",						\
+    "[Digitizer_11/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17805,7 +17851,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17818,7 +17864,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17832,7 +17878,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_7]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17846,7 +17892,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17859,7 +17905,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17873,7 +17919,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_8]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17887,7 +17933,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17900,7 +17946,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17914,7 +17960,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_9]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17928,7 +17974,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17941,7 +17987,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17955,7 +18001,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_11/Channel_10]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -17969,7 +18015,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -17982,7 +18028,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -17996,7 +18042,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_11]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18010,7 +18056,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18023,7 +18069,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18037,7 +18083,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_12]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18051,7 +18097,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18064,7 +18110,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18078,7 +18124,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_13]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18092,7 +18138,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18105,7 +18151,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18119,7 +18165,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_14]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18133,7 +18179,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18146,7 +18192,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18160,7 +18206,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_11/Channel_15]",		 \
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18174,7 +18220,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_11/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18187,7 +18233,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_11/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_11/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18233,7 +18279,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_12/Trigger_Validation_Registers]",\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -18243,7 +18289,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_12/Channel_0]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18257,7 +18303,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18270,7 +18316,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18284,7 +18330,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_12/Channel_1]",						\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -18298,7 +18344,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_12/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -18311,7 +18357,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_12/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -18325,7 +18371,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_12/Channel_2]",						\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18339,7 +18385,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18352,7 +18398,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18366,7 +18412,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_12/Channel_3]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18380,7 +18426,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18393,7 +18439,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18407,7 +18453,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_12/Channel_4]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18421,7 +18467,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18434,7 +18480,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18448,7 +18494,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_12/Channel_5]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18462,7 +18508,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18475,7 +18521,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18489,7 +18535,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-    "[Digitizer_12/Channel_6]",						\
+    "[Digitizer_12/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18503,7 +18549,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18516,7 +18562,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18530,7 +18576,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_7]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18544,7 +18590,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18557,7 +18603,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18571,7 +18617,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_8]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18585,7 +18631,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18598,7 +18644,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18612,7 +18658,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_9]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18626,7 +18672,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18639,7 +18685,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18653,7 +18699,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",\
-  "[Digitizer_12/Channel_10]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18667,7 +18713,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18680,7 +18726,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18694,7 +18740,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_11]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18708,7 +18754,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18721,7 +18767,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18735,7 +18781,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_12]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18749,7 +18795,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18762,7 +18808,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18776,7 +18822,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_13]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18790,7 +18836,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18803,7 +18849,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18817,7 +18863,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_14]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18831,7 +18877,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18844,7 +18890,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18858,7 +18904,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 10",					\
   "Register_0x1nA0 = DWORD : 10",					\
     "",									\
-  "[Digitizer_12/Channel_15]",		 \
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18872,7 +18918,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_12/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18885,7 +18931,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_12/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_12/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18931,7 +18977,7 @@ typedef struct {
   "Register_0x81A0 = DWORD : 0x00000222",\
   "Register_0xEF00 = DWORD : 0x00000010",\
   "",\
-  "[Digitizer_13/Trigger_Validation_Registers]",\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Trigger_Validation_Registers]",\
   "Register_0x8180 = DWORD : 0x20000000",\
   "Register_0x8184 = DWORD : 0x20000000",\
   "Register_0x8188 = DWORD : 0x20000000",\
@@ -18941,7 +18987,7 @@ typedef struct {
   "Register_0x8198 = DWORD : 0x20000000",\
   "Register_0x819C = DWORD : 0x20000000",\
   "",					 \
-  "[Digitizer_13/Channel_0]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_0]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -18955,7 +19001,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_0/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_0/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -18968,7 +19014,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_0/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_0/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -18982,7 +19028,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 10",					\
   "",									\
-  "[Digitizer_13/Channel_1]",						\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_1]",						\
   "Enabled = BOOL : y",							\
   "PulsePolarity = STRING : [32] Negative",				\
   "ADC_Range = FLOAT : 2.0",						\
@@ -18996,7 +19042,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",					\
   "Trigger_Hold-Off_Width = WORD : 1",					\
   "",									\
-  "[Digitizer_13/Channel_1/DPP_PSD_Params]",				\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_1/DPP_PSD_Params]",				\
   "Short_Gate = WORD : 11",						\
   "Long_Gate = WORD : 500",						\
   "Gate_Offset = WORD : 16",						\
@@ -19009,7 +19055,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",						\
   "Baseline_Freeze = WORD : 2",						\
   "",									\
-  "[Digitizer_13/Channel_1/DPP_PHA_Params]",				\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_1/DPP_PHA_Params]",				\
   "TF_Rise_Time = WORD : 10",						\
   "TF_Flat_Time = WORD : 10",						\
   "Peaking_Time = WORD : 10",						\
@@ -19023,7 +19069,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
   "",									\
-  "[Digitizer_13/Channel_2]",						\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_2]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19037,7 +19083,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_2/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_2/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19050,7 +19096,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_2/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_2/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19064,7 +19110,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
   "",									\
-  "[Digitizer_13/Channel_3]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_3]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19078,7 +19124,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_3/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_3/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19091,7 +19137,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_3/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_3/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19105,7 +19151,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
   "",									\
-  "[Digitizer_13/Channel_4]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_4]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19119,7 +19165,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_4/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_4/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19132,7 +19178,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_4/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_4/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19146,7 +19192,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
   "",									\
-  "[Digitizer_13/Channel_5]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_5]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19160,7 +19206,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_5/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_5/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19173,7 +19219,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_5/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_5/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19187,7 +19233,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-    "[Digitizer_13/Channel_6]",						\
+    "[Digitizer_13/CAEN_x725_x730_Settings/Channel_6]",						\
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19201,7 +19247,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_6/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_6/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19214,7 +19260,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_6/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_6/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19228,7 +19274,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_7]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_7]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19242,7 +19288,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_7/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_7/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19255,7 +19301,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_7/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_7/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19269,7 +19315,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_8]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_8]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19283,7 +19329,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_8/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_8/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19296,7 +19342,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_8/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_8/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19310,7 +19356,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_9]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_9]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19324,7 +19370,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_9/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_9/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19337,7 +19383,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_9/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_9/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19351,7 +19397,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
   "",\
-  "[Digitizer_13/Channel_10]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_10]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19365,7 +19411,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_10/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_10/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19378,7 +19424,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_10/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_10/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19392,7 +19438,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_11]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_11]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19406,7 +19452,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_11/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_11/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19419,7 +19465,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_11/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_11/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19433,7 +19479,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_12]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_12]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19447,7 +19493,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_12/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_12/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19460,7 +19506,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_12/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_12/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19474,7 +19520,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_13]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_13]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19488,7 +19534,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_13/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_13/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19501,7 +19547,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_13/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_13/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19515,7 +19561,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_14]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_14]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19529,7 +19575,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_14/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_14/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19542,7 +19588,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_14/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_14/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
@@ -19556,7 +19602,7 @@ typedef struct {
   "Register_0x1n80 = DWORD : 0x00443014",					\
   "Register_0x1nA0 = DWORD : 0x00000004",					\
     "",									\
-  "[Digitizer_13/Channel_15]",		 \
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_15]",		 \
   "Enabled = BOOL : y",				\
   "PulsePolarity = STRING : [32] Negative",	\
   "ADC_Range = FLOAT : 2.0",			\
@@ -19570,7 +19616,7 @@ typedef struct {
   "Shaped_Trigger_Width = WORD : 4",		\
   "Trigger_Hold-Off_Width = WORD : 1",		\
   "",						\
-  "[Digitizer_13/Channel_15/DPP_PSD_Params]",	\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_15/DPP_PSD_Params]",	\
   "Short_Gate = WORD : 11",			\
   "Long_Gate = WORD : 500",			\
   "Gate_Offset = WORD : 16",			\
@@ -19583,7 +19629,7 @@ typedef struct {
   "Fixed_Baseline = WORD : 0",					\
   "Baseline_Freeze = WORD : 2",					\
   "",								\
-  "[Digitizer_13/Channel_15/DPP_PHA_Params]",			\
+  "[Digitizer_13/CAEN_x725_x730_Settings/Channel_15/DPP_PHA_Params]",			\
   "TF_Rise_Time = WORD : 10",					\
   "TF_Flat_Time = WORD : 10",					\
   "Peaking_Time = WORD : 10",					\
