@@ -2589,15 +2589,15 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
   //General handle to the current ODB location
   HNDLE genHdl;
 
-  int ngroups
-    //Determine number of groups
-    if(NChannels[eye] == 64) {
-      ngroups=8;
-    }
+  int ngroups;
+  //Determine number of groups
+  if(NChannels[eye] == 64) {
+    ngroups=8;
+  }
   if(NChannels[eye] == 32) {
     ngroups=4;
   }
-
+  
   /* Begin Group Specific stuff */
   uint32_t ODB_0x8120 = 0; //Group enable mask
  
