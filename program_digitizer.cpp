@@ -79,6 +79,17 @@ uint32_t Board_0x1n54[MAXNB][MAXNCH];
 uint32_t Board_0x1n5C[MAXNB][MAXNCH];  
 uint32_t Board_0x1n58[MAXNB][MAXNCH];  
 
+uint32_t Board_0x1n24[MAXNB][MAXNCH];  
+uint32_t Board_0x1n30[MAXNB][MAXNCH];  
+uint32_t Board_0x1n40[MAXNB][MAXNCH];  
+
+uint32_t Board_0x1nD0_4m[MAXNB][8][8];
+uint32_t Board_0x1nA8[MAXNB][8];
+uint32_t Board_0x1nC0[MAXNB][8];
+uint32_t Board_0x1nC4[MAXNB][8];
+
+
+
 //NOTE1: The mallocs must be done AFTER digitizer's configuration!
 CAEN_DGTZ_DPP_AcqMode_t interpret_dppacq_mode(const char *acqmode) {
   if (strcmp(acqmode,"CAEN_DGTZ_DPP_ACQ_MODE_Mixed") == 0) {
@@ -2664,7 +2675,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
       //  cm_msg(MINFO,"frontend_init","Board %i, Group %i, Polarity: %s, %i",eye,jay,buf64,polarity_bit);
 	
       //Add in the polarity bit
-      ODB_0x1n80 += (polarity_bit << 16);
+      ODB_0x1n40 += (polarity_bit << 16);
 	
       WORD dcoffset;
       size = sizeof(dcoffset);
@@ -2777,7 +2788,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 	
 	//Write 0x1nD0_4m (Trigger Threshold)	
 	for(int el = 12; el < 32; el++) {
-	  if( ((ODB_0x1nD0_4m[jay*8=kay] >> el)  & 0x1) != 0 ) {
+	  if( ((ODB_0x1nD0_4m[jay*8+kay] >> el)  & 0x1) != 0 ) {
 	    cm_msg( MERROR, "frontend_init", "Board %i, Group %i, Channel %i. Bit %i of 0x1nD0_4m not 0 in ODB.",eye,jay,kay,el);
 	    failure = true;
 	  }
@@ -2787,12 +2798,12 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 	  return -1;
 	}
 	
-	ret = CAEN_DGTZ_WriteRegister(handle[eye],trigg_address,ODB_0x1nD0_4m[jay*8=kay]);
+	ret = CAEN_DGTZ_WriteRegister(handle[eye],trigg_address,ODB_0x1nD0_4m[jay*8+kay]);
 	if(ret) {
 	  cm_msg( MERROR, "frontend_init", ",Board %i, Group %i, Channel %i. Failure to write 0x1nD0_4m, retval: %i  Exiting",eye,jay,kay,ret);
 	  return -1;
 	}    
-	ret = CAEN_DGTZ_ReadRegister(handle[eye],trigg_address,&Board_0x1nD0_4m[jay*8=kay]);
+	ret = CAEN_DGTZ_ReadRegister(handle[eye],trigg_address,&Board_0x1nD0_4m[eye][jay][kay]);
 	if(ret) {
 	  cm_msg( MERROR, "frontend_init", ",Board %i, Group %i, Channel %i. Failure to read 0x1nD0_4m, retval: %i  Exiting",eye,jay,kay,ret);
 	  return -1;
@@ -2800,7 +2811,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 	//	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nD0_4m %i from ODB",eye,jay,ODB_0x1nD0_4m);
 	//	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nD0_4m %i from digitizer",eye,jay,Board_0x1nD0_4m[eye][jay]);
 	  
-	if(ODB_0x1nD0_4m != Board_0x1nD0_4m[jay*8=kay]) {
+	if(ODB_0x1nD0_4m != Board_0x1nD0_4m[eye][jay][kay]) {
 	  cm_msg( MERROR, "frontend_init", ",Board %i, Group %i, Channel %i. 0x1nD0_4m ODB and Board do not match... Exiting ",eye,jay,kay);
 	  return -1;
 	}
@@ -2879,7 +2890,6 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. 0x1nC4 ODB and Board do not match... Exiting ",eye,jay);
 	return -1;
       }
-
 
 
       //Write 0x1n24 (Waveform Length)	
