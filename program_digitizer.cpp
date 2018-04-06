@@ -2851,7 +2851,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 
 
       //Write 0x1nC0 (Channels 0 to 3 DC Offset Correction)	
-      address =  0x10C0[jay] + (jay << 8);
+      address =  0x10C0 + (jay << 8);
       ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nC0[jay]);
       if(ret) {
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. Failure to write 0x1nC0, retval: %i  Exiting",eye,jay,ret);
