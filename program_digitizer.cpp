@@ -2811,7 +2811,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 	//	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nD0_4m %i from ODB",eye,jay,ODB_0x1nD0_4m);
 	//	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nD0_4m %i from digitizer",eye,jay,Board_0x1nD0_4m[eye][jay]);
 	  
-	if(ODB_0x1nD0_4m != Board_0x1nD0_4m[eye][jay][kay]) {
+	if(ODB_0x1nD0_4m[jay*8+kay] != Board_0x1nD0_4m[eye][jay][kay]) {
 	  cm_msg( MERROR, "frontend_init", ",Board %i, Group %i, Channel %i. 0x1nD0_4m ODB and Board do not match... Exiting ",eye,jay,kay);
 	  return -1;
 	}
@@ -2820,7 +2820,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 
       //Write 0x1nA8 (Channel Enable Mask)	
       for(int kay = 8; kay < 32; kay++) {
-	if( ((ODB_0x1nA8 >> kay)  & 0x1) != 0 ) {
+	if( ((ODB_0x1nA8[jay] >> kay)  & 0x1) != 0 ) {
 	  cm_msg( MERROR, "frontend_init", "Board %i, Group %i. Bit %i of 0x1nA8 not 0 in ODB.",eye,jay,kay);
 	  failure = true;
 	}
@@ -2831,7 +2831,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
       }
 	
       address =  0x10A8 + (jay << 8);
-      ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nA8);
+      ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nA8[jay]);
       if(ret) {
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. Failure to write 0x1nA8, retval: %i  Exiting",eye,jay,ret);
 	return -1;
@@ -2851,8 +2851,8 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 
 
       //Write 0x1nC0 (Channels 0 to 3 DC Offset Correction)	
-      address =  0x10C0 + (jay << 8);
-      ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nC0);
+      address =  0x10C0[jay] + (jay << 8);
+      ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nC0[jay]);
       if(ret) {
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. Failure to write 0x1nC0, retval: %i  Exiting",eye,jay,ret);
 	return -1;
@@ -2865,7 +2865,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
       //	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nC0 %i from ODB",eye,jay,ODB_0x1nC0);
       //	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nC0 %i from digitizer",eye,jay,Board_0x1nC0[eye][jay]);
 	  
-      if(ODB_0x1nC0 != Board_0x1nC0[eye][jay]) {
+      if(ODB_0x1nC0[jay] != Board_0x1nC0[eye][jay]) {
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. 0x1nC0 ODB and Board do not match... Exiting ",eye,jay);
 	return -1;
       }
@@ -2873,7 +2873,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 
       //Write 0x1nC4 (Channels 4 to 7 DC Offset Correction)	
       address =  0x10C4 + (jay << 8);
-      ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nC4);
+      ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x1nC4[jay]);
       if(ret) {
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. Failure to write 0x1nC4, retval: %i  Exiting",eye,jay,ret);
 	return -1;
@@ -2886,7 +2886,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
       //	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nC4 %i from ODB",eye,jay,ODB_0x1nC4);
       //	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nC4 %i from digitizer",eye,jay,Board_0x1nC4[eye][jay]);
 	  
-      if(ODB_0x1nC4 != Board_0x1nC4[eye][jay]) {
+      if(ODB_0x1nC4[jay] != Board_0x1nC4[eye][jay]) {
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. 0x1nC4 ODB and Board do not match... Exiting ",eye,jay);
 	return -1;
       }
@@ -3178,32 +3178,30 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. 0x1n98 ODB and Board do not match... Exiting ",eye,jay);
 	return -1;
       }
-
-      //Group enable mask
-      address = 0x8120;
-      ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8120);
-      if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8120... Exiting ",eye);
-	return -1;
-      }    
-      ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8120[eye]);
-      if(ret) {
-	cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8120... Exiting ",eye);
-	return -1;
-      }    
-      // cm_msg(MINFO,"frontend_init","Board %i 0x8120 %i from ODB",eye,ODB_0x8120);
-      // cm_msg(MINFO,"frontend_init","Board %i 0x8120 %i from digitizer",eye,Board_0x8120[eye]);
-
-      if(ODB_0x8120 != Board_0x8120[eye]) {
-	cm_msg( MERROR, "frontend_init", ",Board %i, 0x8120 ODB and Board do not match... Exiting ",eye);
-	return -1;
-      }
-    
-      cm_msg(MINFO,"frontend_init","Board %i Programming Channel Registers Complete",eye);
-
-
-
-
-      return 0;
-
     }
+  }
+  //Group enable mask
+  address = 0x8120;
+  ret = CAEN_DGTZ_WriteRegister(handle[eye],address,ODB_0x8120);
+  if(ret) {
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to write 0x8120... Exiting ",eye);
+    return -1;
+  }    
+  ret = CAEN_DGTZ_ReadRegister(handle[eye],address,&Board_0x8120[eye]);
+  if(ret) {
+    cm_msg( MERROR, "frontend_init", ",Board %i. Failure to read 0x8120... Exiting ",eye);
+    return -1;
+  }    
+  // cm_msg(MINFO,"frontend_init","Board %i 0x8120 %i from ODB",eye,ODB_0x8120);
+  // cm_msg(MINFO,"frontend_init","Board %i 0x8120 %i from digitizer",eye,Board_0x8120[eye]);
+  
+  if(ODB_0x8120 != Board_0x8120[eye]) {
+    cm_msg( MERROR, "frontend_init", ",Board %i, 0x8120 ODB and Board do not match... Exiting ",eye);
+    return -1;
+  }
+  
+  cm_msg(MINFO,"frontend_init","Board %i Programming Channel Registers Complete",eye);
+    
+  return 0;
+}
+    
