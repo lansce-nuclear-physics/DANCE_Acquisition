@@ -2844,7 +2844,7 @@ int program_group_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards,
       //	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nA8 %i from ODB",eye,jay,ODB_0x1nA8);
       //	cm_msg(MINFO,"frontend_init","Board %i, Group %i, 0x1nA8 %i from digitizer",eye,jay,Board_0x1nA8[eye][jay]);
 	  
-      if(ODB_0x1nA8 != Board_0x1nA8[eye][jay]) {
+      if(ODB_0x1nA8[jay] != Board_0x1nA8[eye][jay]) {
 	cm_msg( MERROR, "frontend_init", ",Board %i, Group %i. 0x1nA8 ODB and Board do not match... Exiting ",eye,jay);
 	return -1;
       }
