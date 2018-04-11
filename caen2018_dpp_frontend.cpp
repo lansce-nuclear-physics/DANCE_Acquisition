@@ -48,6 +48,7 @@ uint32_t Acquisition_Status[MAXNB];       //0x8104 Acquisition Status
 uint32_t Failure_Status[MAXNB];           //0x8178 Board Failure Status
 uint32_t Readout_Status[MAXNB];           //0xEF04 Readout Status
 uint32_t Register_0x8504n[MAXNB][8];      //0x8504n is an undocumented diagnostics register that says the number of buffers acquired and waiting to be read out.
+uint32_t Register_0x1n2C[MAXNB][MAXNCH];  //0x1n2C is an undocumented diagnostics register that reports some internal signals and the status of the baseline recovery system, input discriminator, etc...
 
 //Digitizer Rates
 uint32_t Digitizer_Rates[MAXNB];          //Digitizer Read Rates (Bytes/s)
@@ -785,6 +786,7 @@ INT resume_run(INT run_number, char *error) {
     for(int channum=0; channum<MAXNCH; channum++) {
       ADC_Temp[boardnum][channum] = 0;
       Channel_Status[boardnum][channum] = 0;
+      Register_0x1n2C[boardnum][channum] = 0;
     }
     Acquisition_Status[boardnum] = 0;
     Failure_Status[boardnum] = 0; 
@@ -853,6 +855,14 @@ INT poll_event(INT source, INT count, BOOL test)
 	    cm_msg(MERROR,"poll_event","Problem Obtaining ADC Temp Board: %d, Channel: %d, ret val: %i\n",boardnum,channum,ret);
 	  }
 	  ADC_Temp[boardnum][channum] = register_value & 0xFF;
+
+	  //0x1n2C
+	  address = 0x102C + (channum<<8);
+	  ret = CAEN_DGTZ_ReadRegister(handle[boardnum],address,&register_value);
+	  if(ret) {
+	    cm_msg(MERROR,"poll_event","Problem Obtaining ADC Temp Board: %d, Channel: %d, ret val: %i\n",boardnum,channum,ret);
+	  }
+	  Register_0x1n2C[boardnum][channum] = register_value;
 
 	  //Channel n status
 	  address = 0x1088 + (channum<<8);
@@ -1101,6 +1111,20 @@ INT read_diagnostics_event (char *pevent, INT off) {
     }
   }  
   bk_close(pevent,tempdata+tempcounter*sizeof(uint16_t));
+
+ tempcounter=0;
+  //Write ADC temp data to file
+  void *data_1n2C;
+  bk_create(pevent, "1n2C", TID_DWORD, &data_1n2C);
+  
+  for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
+    for(int channum=0; channum<NChannels[boardnum]; channum++) {
+      memcpy(data_1n2C+tempcounter*sizeof(Register_0x1n2C[boardnum][channum]), &Register_0x1n2C[boardnum][channum],sizeof(Register_0x1n2C[boardnum][channum]));
+      tempcounter++;
+    }
+  }  
+  bk_close(pevent,data_1n2C+tempcounter*sizeof(uint32_t));
+
 
   tempcounter=0;
   //Write Channel Status data to file
