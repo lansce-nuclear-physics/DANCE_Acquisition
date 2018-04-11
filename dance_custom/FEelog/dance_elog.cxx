@@ -385,8 +385,9 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
 extern "C"
 INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still Logger issue
 
-  int status;
-  
+  int status,size;
+  time_t now;
+
   cm_msg( MINFO, "end_of_run", "Enter end_run_entry");
   elog_param.start_message_id=-1;
   
