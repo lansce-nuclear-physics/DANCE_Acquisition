@@ -16,7 +16,7 @@
 #include "midas.h"
 #include "strlcpy.h"
 #include "dance_elog.h"
-//#include "../FEvme/vme_modules.h"
+#include "../FEvme/vme_modules.h"
 //#include "CAENVMEtypes.h"
 //#include "CAENVMElib.h"
 #include "experim.h"
