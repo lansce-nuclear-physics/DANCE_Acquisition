@@ -23,3 +23,5 @@ Version 2.1.2 - Added the CAEN version outputs to the makefile to give _compile 
 Version 2.1.3 - Changed the hardcoded eventid for digitizer and diagnositcs to pull from eventid.h.  EventID remains 1 and 8 for digitizer and diagnostics respectively.
 
 Version 3.0.0 - Started to make the multi-module type compatibility version.  Started adding the x740 module with DPP-QDC firmware.  Board information and general board registers should work fine. Changed experim.h such that settings below "general_board registers" are module type specific.  This way things are organized by type of module followed by the firmware specific settings for each respective module type.  Need to finish the channel and group settings for the x740 stuff. Also need to think harder about the diagnostics client.  The same diagnostics are not all present for the different module types.  There will be much work ahead to test all of this...
+
+Version 3.0.1 - Added Register 0x1n2C to the diagnostics following email correspondance with Carlo.  
