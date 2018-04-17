@@ -225,7 +225,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
     elog_cmd_str<<" -a "  << "Filter=" << elog_param.filter;
   }
 
-  ostringstream message;
+  stringstream message;
   message << "\nDANCE Elog Begin of Run Entry\n";
   message << "Comment: " <<  exp_param.comment << "\n";
   message << "Run Number: " << runinfo.run_number << "\n";
@@ -295,16 +295,19 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   */
  
   // arguments.push_back( message.str() );
-  vector <char*> exec_args;
+  // vector <char*> exec_args;
   // for ( unsigned int i=0; i < arguments.size(); ++i )
     //  {
-  exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
+  //  exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
     //  I'm really worries about what this does
   // }
-  exec_args.push_back( (char *)0 );
+  //  exec_args.push_back( (char *)0 );
   // for ( unsigned int i=0; i < exec_args.size(); ++i )
   // {
-  cm_msg(MERROR,"begin_of_run","%s",exec_args[0]);
+
+  cm_msg(MERROR,"end_of_run","Here is the string: %s  END OF STRING",elog_cmd_str.str());
+
+  //  cm_msg(MERROR,"begin_of_run","%s",exec_args[0]);
   //cout << exec_args[i] << " ";
   // }
   //  cout << endl;
@@ -323,7 +326,9 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
       close( fd[1] );
     }
     // setuid( (uid_t)546 );
-    execv("/opt/elog/pro/elog", &exec_args[0]);
+    //  execv("/opt/elog/pro/elog", &exec_args[0]);
+    system(elog_cmd_str.str().c_str());
+
     cm_msg(MERROR, "begin_of_run", "I am the child--but should never get here");
     _exit(127);
   }
@@ -447,7 +452,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
     scaler_status = false;
   }
 
-  ostringstream message;
+  stringstream message;
   message << "\nAuto Elog End of Run Entry\n";
   message << "Comment: " << exp_param.comment << "\n";
   message << "Run Number:        " << runinfo.run_number << "\n";
@@ -628,14 +633,14 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
 
   arguments.push_back( message.str() );
   */
-  vector <char*> exec_args;
+  // vector <char*> exec_args;
   //for ( unsigned int i=0; i < arguments.size(); ++i )
   // {
-  exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
+  // exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
   // }
-  exec_args.push_back( (char *)0 );
+  // exec_args.push_back( (char *)0 );
 
-  cm_msg(MERROR,"end_of_run","%s",exec_args[0]);
+  cm_msg(MERROR,"end_of_run","Here is the string: %s  END OF STRING",elog_cmd_str.str());
   
 
   pid_t child_pid;
@@ -652,7 +657,9 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
       close( fd[1] );
     }
     // setuid( (uid_t)546 );
-    execv("/opt/elog/pro/elog", &exec_args[0]);
+    system(elog_cmd_str.str().c_str());
+
+    //execv("/opt/elog/pro/elog", &exec_args[0]);
 
     cm_msg(MERROR, "end_of_run", "I am the child--but should never get here");
     _exit(127);
