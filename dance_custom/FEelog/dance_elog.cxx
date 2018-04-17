@@ -241,7 +241,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   elog_cmd_str <<" \" " << message.str() <<" \" ";
   
   //Send command
-  system(elog_cmd_str.str().c_str());
+  //system(elog_cmd_str.str().c_str());
   
 
   /*
@@ -293,21 +293,21 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
           << " (" << gittimeStr << " UTC)\n";
 
   */
-  /*
-  arguments.push_back( message.str() );
+ 
+  // arguments.push_back( message.str() );
   vector <char*> exec_args;
-  for ( unsigned int i=0; i < arguments.size(); ++i )
-  {
-    exec_args.push_back( const_cast<char*>(arguments[i].c_str()) );
+  // for ( unsigned int i=0; i < arguments.size(); ++i )
+    //  {
+  exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
     //  I'm really worries about what this does
-  }
+  // }
   exec_args.push_back( (char *)0 );
-  for ( unsigned int i=0; i < exec_args.size(); ++i )
-  {
+  // for ( unsigned int i=0; i < exec_args.size(); ++i )
+  // {
   //   cm_msg(MERROR,"begin_of_run","%s",exec_args[i]);
-    cout << exec_args[i] << " ";
-  }
-  cout << endl;
+  //   cout << exec_args[i] << " ";
+  // }
+  //  cout << endl;
   pid_t child_pid;
   int status;
   int fd[2];
@@ -375,7 +375,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
     elog_param.start_message_id=ID;
   }
 
-  */
+ 
 
   return SUCCESS;
 }
@@ -477,11 +477,6 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   //Add the message to the elog entry
   elog_cmd_str <<" \" " << message.str() <<" \" ";
   
-  //Send command
-  system(elog_cmd_str.str().c_str());
-  
-
-
   /*
 
 
@@ -634,13 +629,14 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   }
 
   arguments.push_back( message.str() );
-
+  */
   vector <char*> exec_args;
-  for ( unsigned int i=0; i < arguments.size(); ++i )
-  {
-    exec_args.push_back( const_cast<char*>(arguments[i].c_str()) );
-  }
+  //for ( unsigned int i=0; i < arguments.size(); ++i )
+  // {
+  exec_args.push_back( const_cast<char*>( elog_cmd_str/str().c_str()) );
+  // }
   exec_args.push_back( (char *)0 );
+
   pid_t child_pid;
   int fd[2];
   if ( pipe(fd) < 0 )
@@ -656,6 +652,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
     }
     // setuid( (uid_t)546 );
     execv("/opt/elog/pro/elog", &exec_args[0]);
+
     cm_msg(MERROR, "end_of_run", "I am the child--but should never get here");
     _exit(127);
   }
@@ -713,7 +710,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   
     elog_param.start_message_id=ID;
   }
-  */
+ 
   return SUCCESS;
 }
 
