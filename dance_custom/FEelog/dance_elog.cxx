@@ -202,7 +202,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   string attrib_flag="-a";
   
   stringstream elog_cmd_str;
-  elog_cmd_str.str();
+  elog_cmd_str.str("");
   
   elog_cmd_str<<"elog";
   elog_cmd_str<<" -h " << elog_param.hostname;
@@ -305,7 +305,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   // for ( unsigned int i=0; i < exec_args.size(); ++i )
   // {
 
-  cm_msg(MERROR,"end_of_run","Here is the string: %s  END OF STRING",elog_cmd_str.str());
+  cm_msg(MERROR,"end_of_run","Here is the string: %s  END OF STRING",elog_cmd_str.str().c_str());
 
   //  cm_msg(MERROR,"begin_of_run","%s",exec_args[0]);
   //cout << exec_args[i] << " ";
