@@ -209,7 +209,6 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   elog_cmd_str<<" -p " << elog_param.port;
   elog_cmd_str<<" -l " << elog_param.logbook_name;
   elog_cmd_str<<" -u " <<  elog_param.elog_user <<  elog_param.elog_passwd;
-  elog_cmd_str<<" -n 1";
   
   elog_cmd_str<<" -a " <<"\"Run Number\"=" << setw(6) << setfill('0') << runinfo.run_number;
   elog_cmd_str<<" -a " <<"Author=DAQ";
@@ -238,8 +237,94 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   //  message << "Max Channels Per Instrument: " << exp_param.Digitizer.instruments.maxChannelsPerInstrument << "\n";
 
   //Add the message to the elog entry
-  elog_cmd_str <<" \" " << message.str() <<" \" ";
+  elog_cmd_str <<" \"" << message.str() <<" \" ";
+
+  pid_t child_pid;
+  int status;
+  int fd[2];
+  if ( pipe(fd) < 0 ) {
+    cm_msg(MERROR,"begin_of_run","pipe error");      // probably want to change this to midas
+  }
+  child_pid=fork();
+  if (child_pid == 0) { // This is the child
+    // cm_msg(MERROR, "begin_of_run", "Made it to child");
+    close( fd[0] ); //close read end of pipe
+    if ( fd[1] != STDOUT_FILENO ) {
+      if ( dup2( fd[1], STDOUT_FILENO ) != STDOUT_FILENO ) {
+	cm_msg(MERROR, "begin_of_run", "dup2 error to stdout");
+      } 
+      close( fd[1] );
+    }
+    // setuid( (uid_t)546 );
+    system(elog_cmd_str.str().c_str());
+    
+    cm_msg(MERROR, "begin_of_run", "I am the child--but should never get here");
+    _exit(127);
+  }
+  else {         // this is the parent 
+    // cm_msg(MERROR,"begin_of_run","Made it to the parent");
+    close( fd[1] );
+    
+    const size_t return_size=80;
+    char return_text[return_size];
+    char *last_message_ID;
+    int ID;
+    int max_wait=5;
+    int i=0;
+    pid_t finished_pid;
+    while ( (finished_pid = waitpid(child_pid, &status, WNOHANG ) ) == 0 && i < max_wait ) {
+      // cm_msg(MINFO,"begin_of_run","finished_PID=%d    i=%d", finished_pid, i);
+      sleep(1);
+      i++;
+    }
+    if (finished_pid == 0) {
+      kill(child_pid,SIGTERM);  // Do a nice kill SIGKILL also possible
+      cm_msg(MERROR, "begin_of_run", "LENZ elog call did not return after %d seconds--KILLED", i );
+      ID=-1;
+    }
+    else if (finished_pid == child_pid) {
+      read( fd[0], return_text, return_size);
+      // cm_msg(MINFO, "begin_og_run", "From fd[0]: %s", return_text);
+      if ( (last_message_ID=strrchr( return_text, '=' ) ) != NULL ) {
+	last_message_ID++;
+        ID = atoi( last_message_ID );
+        cm_msg(MINFO, "begin_of_run", "MESSAGE ID = %d", ID );
+      }
+      else {
+	cm_msg(MINFO, "begin_of_run", "MESSAGE ID not found" );
+        ID=-1;
+      }
+    }
+    else if (finished_pid < 0) {//wait pid failed, but not timed out
+      cm_msg(MERROR,"begin_of_run", "Not able to get a return from elog call");
+      ID=-1;
+    }
+    else {//This is wierd--we waited for the the wrong process--not sure how possible
+      cm_msg(MERROR,"begin_of_run", "Waited for wrong process");
+      ID=-1;
+    }
+    
+    close( fd[0] ); 
+    
+    elog_param.start_message_id=ID;
+  }
   
+  return SUCCESS;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
   //Send command
   //system(elog_cmd_str.str().c_str());
   
@@ -292,7 +377,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
           << "gittime: " << exp_param.gittime
           << " (" << gittimeStr << " UTC)\n";
 
-  */
+ 
  
   // arguments.push_back( message.str() );
   // vector <char*> exec_args;
@@ -383,6 +468,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
  
 
   return SUCCESS;
+*/
 }
   
 
