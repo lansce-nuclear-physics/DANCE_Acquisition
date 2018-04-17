@@ -304,8 +304,8 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   exec_args.push_back( (char *)0 );
   // for ( unsigned int i=0; i < exec_args.size(); ++i )
   // {
-  //   cm_msg(MERROR,"begin_of_run","%s",exec_args[i]);
-  //   cout << exec_args[i] << " ";
+  cm_msg(MERROR,"begin_of_run","%s",exec_args[0]);
+  //cout << exec_args[i] << " ";
   // }
   //  cout << endl;
   pid_t child_pid;
@@ -634,6 +634,9 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
   // }
   exec_args.push_back( (char *)0 );
+
+  cm_msg(MERROR,"end_of_run","%s",exec_args[0]);
+  
 
   pid_t child_pid;
   int fd[2];
