@@ -477,14 +477,12 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   //Add the message to the elog entry
   elog_cmd_str <<" \" " << message.str() <<" \" ";
   
-  /*
-
-
+ 
   int ID;
   int Mode;
   int status, size;
   time_t now;
-
+  /*
   vector<string> arguments;
   string attrib_flag="-a";
   arguments.push_back("elog");
@@ -633,7 +631,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   vector <char*> exec_args;
   //for ( unsigned int i=0; i < arguments.size(); ++i )
   // {
-  exec_args.push_back( const_cast<char*>( elog_cmd_str/str().c_str()) );
+  exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
   // }
   exec_args.push_back( (char *)0 );
 
