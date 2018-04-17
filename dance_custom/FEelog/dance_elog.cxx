@@ -480,8 +480,8 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
  
   int ID;
   int Mode;
-  int status, size;
-  time_t now;
+  //  int status, size;
+  //time_t now;
   /*
   vector<string> arguments;
   string attrib_flag="-a";
