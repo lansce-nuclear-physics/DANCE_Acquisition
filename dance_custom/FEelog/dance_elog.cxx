@@ -211,7 +211,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   elog_cmd_str<<" -u " <<  elog_param.elog_user <<  elog_param.elog_passwd;
   elog_cmd_str<<" -n 1";
   
-  elog_cmd_str<<" -a " <<"Run Number=" << setw(6) << setfill('0') << runinfo.run_number;
+  elog_cmd_str<<" -a " <<"\"Run Number\"=" << setw(6) << setfill('0') << runinfo.run_number;
   elog_cmd_str<<" -a " <<"Author=DAQ";
 
   // dance elog doesn't have experiment field. Instead, we flag the DAQ-type as the experiment name
@@ -403,7 +403,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   elog_cmd_str<<" -u " <<  elog_param.elog_user <<  elog_param.elog_passwd;
   elog_cmd_str<<" -n 1";
   
-  elog_cmd_str<<" -a " <<"Run Number=" << setw(6) << setfill('0') << runinfo.run_number;
+  elog_cmd_str<<" -a " <<"\"Run Number\"=" << setw(6) << setfill('0') << runinfo.run_number;
   elog_cmd_str<<" -a " <<"Author=DAQ";
 
   // dance elog doesn't have experiment field. Instead, we flag the DAQ-type as the experiment name
