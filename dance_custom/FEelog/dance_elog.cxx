@@ -238,7 +238,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   //  message << "Max Channels Per Instrument: " << exp_param.Digitizer.instruments.maxChannelsPerInstrument << "\n";
 
   //Add the message to the elog entry
-  elog_cmd_str <<" \" " << message.str(); <<" \" ";
+  elog_cmd_str <<" \" " << message.str() <<" \" ";
   
   //Send command
   system(elog_cmd_str.str().c_str());
@@ -475,7 +475,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   }
   
   //Add the message to the elog entry
-  elog_cmd_str <<" \" " << message.str(); <<" \" ";
+  elog_cmd_str <<" \" " << message.str() <<" \" ";
   
   //Send command
   system(elog_cmd_str.str().c_str());
