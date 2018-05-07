@@ -1086,7 +1086,7 @@ INT read_digitizer_event(char *pevent, INT off) {
 
       //Add a word with the firmware major version as the very first thing
       memcpy(pdata, &firmware_version[boardnum],sizeof(firmware_version[boardnum]));
-      memcpy(pdata, &user_extra_word[boardnum],sizeof(user_extra_word[boardnum]));
+      memcpy(pdata+sizeof(firmware_version[boardnum]), &user_extra_word[boardnum],sizeof(user_extra_word[boardnum]));
 
       //Then put the data in the bank
       memcpy(pdata+sizeof(firmware_version[boardnum])+sizeof(user_extra_word[boardnum]),buffer[boardnum],BufferSize[boardnum]);
