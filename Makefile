@@ -55,6 +55,7 @@ $(UFE): $(LIB) $(LIB_DIR)/mfe.o $(OBJECTS) $(SRCS) $(INCLUDES)
 	$(shell readlink $(CAENCOMMSYS) > .caencommversion_compile)
 	$(shell readlink $(CAENVMELIBSYS) > .caenvmelibversion_compile)
 	$(shell readlink $(CAENUPGRADERSYS) > .caenupgraderversion_compile)
+	$(shell readlink $(CAEN_A3818SYS) > .caena3818version_compile)
 
 %.o: %.c experim.h
 	$(CXX) $(USERFLAGS) $(CFLAGS) $(OSFLAGS) -o $@ -c $<

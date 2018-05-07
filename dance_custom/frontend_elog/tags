@@ -11,11 +11,15 @@ CXXFLAGS	Makefile	/^CXXFLAGS = $(CFLAGS) $/;"	m
 DANCEELOG_H	frontend_elog.h	2;"	d
 DIAGNOSTICS_COMMON	experim.h	/^} DIAGNOSTICS_COMMON;$/;"	t	typeref:struct:__anon1769
 DIAGNOSTICS_COMMON_DEFINED	experim.h	31591;"	d
+DIAGNOSTICS_COMMON_DEFINED	experim.h	31647;"	d
 DIAGNOSTICS_COMMON_STR	experim.h	31614;"	d
+DIAGNOSTICS_COMMON_STR	experim.h	31670;"	d
 DIAGNOSTICS_EVENTID	eventid.h	8;"	d
 DIGITIZER_1COMMON	experim.h	/^} DIGITIZER_1COMMON;$/;"	t	typeref:struct:__anon1768
 DIGITIZER_COMMON_DEFINED	experim.h	31541;"	d
+DIGITIZER_COMMON_DEFINED	experim.h	31597;"	d
 DIGITIZER_COMMON_STR	experim.h	31564;"	d
+DIGITIZER_COMMON_STR	experim.h	31620;"	d
 DIGIT_EVENTID	eventid.h	4;"	d
 DRV_DIR	Makefile	/^DRV_DIR         = $(MIDASSYS)\/drivers$/;"	m
 ELOG_EVENTID	eventid.h	7;"	d
@@ -26,6 +30,7 @@ EVENTIDH	eventid.h	2;"	d
 EXP_PARAM	experim.h	/^} EXP_PARAM;$/;"	t	typeref:struct:__anon2
 EXP_PARAM_DEFINED	experim.h	24;"	d
 EXP_PARAM_STR	experim.h	15814;"	d
+EXP_PARAM_STR	experim.h	15842;"	d
 HV_EVENTID	eventid.h	6;"	d
 INC_DIR	Makefile	/^INC_DIR 	= $(MIDASSYS)\/include$/;"	m
 LIB	Makefile	/^LIB = $(LIB_DIR)\/libmidas.a$/;"	m
@@ -276,6 +281,20 @@ adc_range	experim.h	/^	float     adc_range;$/;"	m	struct:__anon2::__anon886::__a
 adc_range	experim.h	/^	float     adc_range;$/;"	m	struct:__anon2::__anon886::__anon889::__anon930
 adc_range	experim.h	/^	float     adc_range;$/;"	m	struct:__anon2::__anon886::__anon889::__anon933
 adc_range	experim.h	/^	float     adc_range;$/;"	m	struct:__anon2::__anon886::__anon889::__anon936
+amc_build	experim.h	/^       INT       amc_build;$/;"	m	struct:__anon2::__anon256::__anon257
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon1012::__anon1013
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon1138::__anon1139
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon1264::__anon1265
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon130::__anon131
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon1390::__anon1391
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon1516::__anon1517
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon1642::__anon1643
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon382::__anon383
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon4::__anon5
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon508::__anon509
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon634::__anon635
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon760::__anon761
+amc_build	experim.h	/^      INT       amc_build;$/;"	m	struct:__anon2::__anon886::__anon887
 amc_major_version	experim.h	/^      INT       amc_major_version;$/;"	m	struct:__anon2::__anon1012::__anon1013
 amc_major_version	experim.h	/^      INT       amc_major_version;$/;"	m	struct:__anon2::__anon1138::__anon1139
 amc_major_version	experim.h	/^      INT       amc_major_version;$/;"	m	struct:__anon2::__anon1264::__anon1265
@@ -290,6 +309,9 @@ amc_major_version	experim.h	/^      INT       amc_major_version;$/;"	m	struct:__
 amc_major_version	experim.h	/^      INT       amc_major_version;$/;"	m	struct:__anon2::__anon634::__anon635
 amc_major_version	experim.h	/^      INT       amc_major_version;$/;"	m	struct:__anon2::__anon760::__anon761
 amc_major_version	experim.h	/^      INT       amc_major_version;$/;"	m	struct:__anon2::__anon886::__anon887
+amc_major_version	experim.h	/^     INT       amc_major_version;$/;"	m	struct:__anon2::__anon1138::__anon1139
+amc_major_version	experim.h	/^     INT       amc_major_version;$/;"	m	struct:__anon2::__anon256::__anon257
+amc_major_version	experim.h	/^     INT       amc_major_version;$/;"	m	struct:__anon2::__anon634::__anon635
 amc_minor_version	experim.h	/^      INT       amc_minor_version;$/;"	m	struct:__anon2::__anon1012::__anon1013
 amc_minor_version	experim.h	/^      INT       amc_minor_version;$/;"	m	struct:__anon2::__anon1138::__anon1139
 amc_minor_version	experim.h	/^      INT       amc_minor_version;$/;"	m	struct:__anon2::__anon1264::__anon1265
@@ -6797,6 +6819,8 @@ nchannels	experim.h	/^      INT       nchannels;$/;"	m	struct:__anon2::__anon508
 nchannels	experim.h	/^      INT       nchannels;$/;"	m	struct:__anon2::__anon634::__anon635
 nchannels	experim.h	/^      INT       nchannels;$/;"	m	struct:__anon2::__anon760::__anon761
 nchannels	experim.h	/^      INT       nchannels;$/;"	m	struct:__anon2::__anon886::__anon887
+nchannels	experim.h	/^     INT       nchannels;$/;"	m	struct:__anon2::__anon256::__anon257
+nchannels	experim.h	/^     INT       nchannels;$/;"	m	struct:__anon2::__anon382::__anon383
 nchannels	vme_modules.h	/^    const int nchannels;     \/\/ Number of channels$/;"	m	struct:__anon1
 ndigitizers	experim.h	/^  INT       ndigitizers;$/;"	m	struct:__anon2
 nevents_per_aggregate	experim.h	/^	WORD      nevents_per_aggregate;$/;"	m	struct:__anon2::__anon1012::__anon1015::__anon1017
@@ -10232,6 +10256,20 @@ rise_time_vw	experim.h	/^	  WORD    rise_time_vw;$/;"	m	struct:__anon2::__anon88
 rise_time_vw	experim.h	/^	  WORD    rise_time_vw;$/;"	m	struct:__anon2::__anon886::__anon889::__anon930::__anon932
 rise_time_vw	experim.h	/^	  WORD    rise_time_vw;$/;"	m	struct:__anon2::__anon886::__anon889::__anon933::__anon935
 rise_time_vw	experim.h	/^	  WORD    rise_time_vw;$/;"	m	struct:__anon2::__anon886::__anon889::__anon936::__anon938
+roc_build	experim.h	/^       INT       roc_build;$/;"	m	struct:__anon2::__anon1138::__anon1139
+roc_build	experim.h	/^       INT       roc_build;$/;"	m	struct:__anon2::__anon256::__anon257
+roc_build	experim.h	/^       INT       roc_build;$/;"	m	struct:__anon2::__anon634::__anon635
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon1012::__anon1013
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon1264::__anon1265
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon130::__anon131
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon1390::__anon1391
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon1516::__anon1517
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon1642::__anon1643
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon382::__anon383
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon4::__anon5
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon508::__anon509
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon760::__anon761
+roc_build	experim.h	/^      INT       roc_build;$/;"	m	struct:__anon2::__anon886::__anon887
 roc_major_version	experim.h	/^      INT       roc_major_version;$/;"	m	struct:__anon2::__anon1012::__anon1013
 roc_major_version	experim.h	/^      INT       roc_major_version;$/;"	m	struct:__anon2::__anon1138::__anon1139
 roc_major_version	experim.h	/^      INT       roc_major_version;$/;"	m	struct:__anon2::__anon1264::__anon1265

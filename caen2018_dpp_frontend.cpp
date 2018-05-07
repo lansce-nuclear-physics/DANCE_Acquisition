@@ -63,6 +63,7 @@ int ModCode[MAXNB];                  //numerical way to say NIM, VME, etc
 int SerialNumber[MAXNB];             //Serial number of the board
 
 uint32_t firmware_version[MAXNB];    //firmware version to be written to the data stream
+uint32_t user_extra_word[MAXNB];    //firmware version to be written to the data stream
 
 char *buffer[MAXNB];                 //Readout Buffer
 int hasdata[MAXNB];                  //Flag to say if board has data
@@ -505,6 +506,24 @@ INT frontend_init()
   cm_msg(MINFO,"frontend_init","CAEN VME Lib Version: %s",sscaenvmelibver.str().c_str());
   tmpfile.close();
 
+  //Get the information about the A3818 libraries
+  system("readlink $CAEN_A3818SYS > .caena3818version");
+  usleep(100);
+  tmpfile.open(".caena3818version");
+  std::string caena3818ver;
+  tmpfile >> caena3818ver;
+
+  std::stringstream sscaena3818ver;
+  sscaena3818ver.str("");
+  sscaena3818ver << caena3818ver;
+
+  char caena3818verbuf[32];
+  sprintf(caena3818verbuf,"%s",sscaena3818ver.str().c_str());
+  sprintf(buf,"CAEN_Library_Information/CAENa3818sys");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&caena3818verbuf,sizeof(caena3818verbuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","CAEN A3818 Version: %s",sscaena3818ver.str().c_str());
+  tmpfile.close();
 
 
   //Get the information about the Digitizer libraries during compilation
@@ -574,6 +593,26 @@ INT frontend_init()
   db_set_data(hDB,genHdl,&caenvmelibver_compilebuf,sizeof(caenvmelibver_compilebuf),1,TID_STRING);
   cm_msg(MINFO,"frontend_init","CAEN VME Lib Version Compile: %s",sscaenvmelibver_compile.str().c_str());
   tmpfile.close();
+
+  //Get the information about the VME libraries
+  tmpfile.open(".caena3818version_compile");
+  std::string caena3818ver_compile;
+  tmpfile >> caena3818ver_compile;
+
+  std::stringstream sscaena3818ver_compile;
+  sscaena3818ver_compile.str("");
+  sscaena3818ver_compile << caena3818ver_compile;
+
+  char caena3818ver_compilebuf[32];
+  sprintf(caena3818ver_compilebuf,"%s",sscaena3818ver_compile.str().c_str());
+  sprintf(buf,"CAEN_Library_Information/CAENa3818sys_Compile");
+  db_find_key(hDB, runparamKey,buf, &genHdl);
+  db_set_data(hDB,genHdl,&caena3818ver_compilebuf,sizeof(caena3818ver_compilebuf),1,TID_STRING);
+  cm_msg(MINFO,"frontend_init","CAEN VME Lib Version Compile: %s",sscaena3818ver_compile.str().c_str());
+  tmpfile.close();
+
+
+
   
   usleep(100);
 
@@ -755,6 +794,9 @@ INT resume_run(INT run_number, char *error) {
     firmware_version[eye] += (AMC_MinRev[eye] << 8);    //bits 8 to 13 are Minor Revision
     firmware_version[eye] += (ModType[eye] << 14);      //bits 14 to 25 are the Module Type (725,730,740,etc)
     firmware_version[eye] += (eye << 26);               //bits 26 to 31 are Board Number (redudancy) 
+
+    //Extra 32-bit word for expandability
+    user_extra_word[eye] = 0;
 
     //Calibrate ADC 
     ret = CAEN_DGTZ_WriteRegister(handle[eye], 0x809C, 0); // calibration command (direct access to register)
@@ -1044,11 +1086,12 @@ INT read_digitizer_event(char *pevent, INT off) {
 
       //Add a word with the firmware major version as the very first thing
       memcpy(pdata, &firmware_version[boardnum],sizeof(firmware_version[boardnum]));
-      
+      memcpy(pdata, &user_extra_word[boardnum],sizeof(user_extra_word[boardnum]));
+
       //Then put the data in the bank
-      memcpy(pdata+sizeof(firmware_version[boardnum]),buffer[boardnum],BufferSize[boardnum]);
+      memcpy(pdata+sizeof(firmware_version[boardnum])+sizeof(user_extra_word[boardnum]),buffer[boardnum],BufferSize[boardnum]);
       // memcpy(pdata,buffer[boardnum],BufferSize[boardnum]);
-      bk_close(pevent, pdata+sizeof(firmware_version[boardnum])+BufferSize[boardnum]);
+      bk_close(pevent, pdata+sizeof(firmware_version[boardnum])+sizeof(user_extra_word[boardnum])+BufferSize[boardnum]);
       // bk_close(pevent, pdata+BufferSize[boardnum]);
 
     }

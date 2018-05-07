@@ -3,7 +3,6 @@
 #include <iomanip>
 #include <string>
 #include <vector>
-//#include <map>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -204,14 +203,14 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   elog_cmd_str<<" -a " <<"Author=DAQ";
 
   // dance elog doesn't have experiment field. Instead, we flag the DAQ-type as the experiment name
-  elog_cmd_str<<" -a " <<"DAQ-type=" << exp_name;
+  elog_cmd_str<<" -a " <<"\"DAQ-type=" << exp_name << "\"";
  
   if ( strlen( elog_param.sample ) != 0 ) {
-    elog_cmd_str<<" -a "  << "Sample=" << elog_param.sample;
+    elog_cmd_str<<" -a "  <<"\"Sample=" << elog_param.sample << "\"";
   }
 
   if ( strlen( elog_param.filter ) != 0 ) {
-    elog_cmd_str<<" -a "  << "Filter=" << elog_param.filter;
+    elog_cmd_str<<" -a "  <<"\"Filter=" << elog_param.filter << "\"";
   }
 
   stringstream message;
@@ -382,11 +381,11 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   elog_cmd_str<<" -a " <<" \"DAQ-type=" << exp_name<<"\"";
  
   if ( strlen( elog_param.sample ) != 0 ) {
-    elog_cmd_str<<" -a "  << "Sample=" << elog_param.sample;
+    elog_cmd_str<<" -a "  <<" \"Sample=" << elog_param.sample << "\"";
   }
 
   if ( strlen( elog_param.filter ) != 0 ) {
-    elog_cmd_str<<" -a "  << "Filter=" << elog_param.filter;
+    elog_cmd_str<<" -a "  <<" \"Filter=" << elog_param.filter << "\"";
   }
 
 

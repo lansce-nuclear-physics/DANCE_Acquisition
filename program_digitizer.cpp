@@ -27,7 +27,8 @@ int ROC_MajRev[MAXNB];               //ROC Major Revision
 int DigitizerCode[MAXNB];            //This says whether its a 725 or 730
 int FormFactorCode[MAXNB];           //This says whether its a V1,VX1,DT5,or N6
 std::stringstream DigType[MAXNB];    //Digitizer Type comments
-
+uint16_t ROC_Build[MAXNB];                //Build of the ROC firmware
+uint16_t AMC_Build[MAXNB];                //Build of the AMC firmware
 
 //Board register storage
 uint32_t Board_0x8000[MAXNB];
@@ -162,6 +163,7 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   }
   ROC_MinRev[eye] = register_value & 0xFF;
   ROC_MajRev[eye] = (register_value >> 8) & 0xFF;
+  ROC_Build[eye] = (register_value >> 16) & 0xFFFF;
     
   //Get the AMC information (Technically this exists for each channel but we dont do different firmware for different channels)
   address = 0x108C;
@@ -172,6 +174,7 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   }
   AMC_MinRev[eye] = register_value & 0xFF;
   AMC_MajRev[eye] = (register_value >> 8) & 0xFF;
+  AMC_Build[eye] = (register_value >> 16) & 0xFFFF;
     
   //Get the digitizer family code
   address = 0xF030;
@@ -214,6 +217,13 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   db_set_data(hDB,genHdl,&AMC_MinRev[eye],sizeof(AMC_MinRev[eye]),1,TID_INT);
   // cm_msg(MINFO,"frontend_init","Board %i AMC Version %i.%i",eye,AMC_MajRev[eye],AMC_MinRev[eye]);
 
+  //Write the AMC Build
+  sprintf(buf,"Digitizer_Information/AMC_Build",eye);
+  db_find_key(hDB, activeBoards[eye],buf, &genHdl);
+  db_set_data(hDB,genHdl,&AMC_Build[eye],sizeof(AMC_Build[eye]),1,TID_INT);
+  // cm_msg(MINFO,"frontend_init","Board %i AMC Version %i.%i",eye,AMC_MajRev[eye],AMC_Build[eye]);
+
+
   //Write the ROC Major Version
   sprintf(buf,"Digitizer_Information/ROC_Major_Version",eye);
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
@@ -224,6 +234,14 @@ int get_board_information(int *handle,int eye, HNDLE hDB, HNDLE *activeBoards, i
   db_find_key(hDB, activeBoards[eye],buf, &genHdl);
   db_set_data(hDB,genHdl,&ROC_MinRev[eye],sizeof(ROC_MinRev[eye]),1,TID_INT);
   // cm_msg(MINFO,"frontend_init","Board %i ROC Version %i.%i",eye,ROC_MajRev[eye],ROC_MinRev[eye]);
+
+ //Write the ROC Build
+  sprintf(buf,"Digitizer_Information/ROC_Build",eye);
+  db_find_key(hDB, activeBoards[eye],buf, &genHdl);
+  db_set_data(hDB,genHdl,&ROC_Build[eye],sizeof(ROC_Build[eye]),1,TID_INT);
+  // cm_msg(MINFO,"frontend_init","Board %i ROC Version %i.%i",eye,ROC_MajRev[eye],ROC_Build[eye]);
+
+
 
   //Clear the stringstream
   DigType[eye].str("");
