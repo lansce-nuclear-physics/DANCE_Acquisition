@@ -4,26 +4,26 @@
 # -x flag only match processes whose name (or command line if -f is
 # specified) exactly match the pattern. 
 
-if pgrep -x "frontend" > /dev/null
+if pgrep -f "./caen2018_dpp_frontend" > /dev/null
 then
-    echo "frontend running"
+    echo "caen2018_dpp_frontend running"
 else
-    #frontend has crashed
-    echo "frontend stopped"
+    #caen2018_dpp_frontend has crashed
+    echo "caen2018_dpp_frontend stopped"
     
     #stop current run
     odbedit -c stop
     echo "run stopped"
     sleep 15
     
-    #start the frontend
-    echo "starting the frontend"
-    /home/daq/NAS_DAQ/frontend -D
+    #start the caen2018_dpp_frontend
+    echo "starting the caen2018_dpp_frontend"
+    /home/daq/caen2018/caen2018_dpp_frontend -D
     sleep 60
 
-    if pgrep -x "frontend" > /dev/null
+    if pgrep -f "./caen2018_dpp_frontend" > /dev/null
     then
-	echo "frontend running"
+	echo "caen2018_dpp_frontend running"
 	odbedit -c 'start now'
 	echo "starting a run"
     fi

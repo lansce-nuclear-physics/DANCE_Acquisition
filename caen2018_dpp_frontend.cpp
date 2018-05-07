@@ -11,6 +11,7 @@
 #include "functions.h"
 #include "experim.h"
 #include "eventid.h"
+#include "editonstart.h"
 
 //CAEN includes
 #include "CAENDigitizer.h"
@@ -126,8 +127,7 @@ extern "C" {
   INT nreads = 0;
 
   // Function declarations ..........................................//
-  int RegisterSetBits(int handle, uint16_t addr, int start_bit, int end_bit, int val)
-  {
+  int RegisterSetBits(int handle, uint16_t addr, int start_bit, int end_bit, int val) {
     uint32_t mask=0, reg;
     int ret;
     int i;
@@ -177,19 +177,19 @@ extern "C" {
     },
   
     {"Diagnostics",                  // equipment name
-      {DIAGNOSTICS_EVENTID, 0,       // event ID, trigger mask
-       "SYSTEM",                     // event buffer
-       EQ_PERIODIC,                  // equipment type
-       0,                            // event source
-       "MIDAS",                      // format
-       TRUE,                         // enabled
-       RO_RUNNING,                   // read only when running
-       10000,                        // read interval in ms
-       0,                            // stop run after this event limit
-       0,                            // number of sub events
-       0,                            // log history
-       "", "", "",},
-      read_diagnostics_event,        // readout routine
+     {DIAGNOSTICS_EVENTID, 0,       // event ID, trigger mask
+      "SYSTEM",                     // event buffer
+      EQ_PERIODIC,                  // equipment type
+      0,                            // event source
+      "MIDAS",                      // format
+      TRUE,                         // enabled
+      RO_RUNNING,                   // read only when running
+      10000,                        // read interval in ms
+      0,                            // stop run after this event limit
+      0,                            // number of sub events
+      0,                            // log history
+      "", "", "",},
+     read_diagnostics_event,        // readout routine
     },
 
     {""}
@@ -261,6 +261,13 @@ INT frontend_init()
   
   // ODB interactions start here
   cm_get_experiment_database( &hDB, NULL);
+
+  EXP_EDIT_STR (editdefined_str);
+ // start questions to set run time parameters
+  db_create_record( hDB, 0,
+                    "/Experiment/Edit On Start", strcomb(editdefined_str));
+
+
   EXP_PARAM_STR (runparam_str);
   db_create_record( hDB, 0,"/Experiment/Run Parameters", strcomb(runparam_str));
   db_find_key( hDB, 0, "/Experiment/Run Parameters", &runparamKey);
@@ -345,7 +352,7 @@ INT frontend_init()
     cm_msg(MINFO,"frontend_init","Board %i conet number %i \n",eye,conetnum);
         
     //  CAEN_DGTZ_SWStopAcquisition(handle[eye]);
-    //  CAEN_DGTZ_CloseDigitizer(handle[eye]);
+    // CAEN_DGTZ_CloseDigitizer(handle[eye]);
     
     //Open the digitizer
     ret = CAEN_DGTZ_OpenDigitizer(connect_type, linknum, conetnum, baddy, &handle[eye]);
@@ -723,7 +730,7 @@ INT resume_run(INT run_number, char *error) {
 
     //740 QDC
     if(ModType[eye] == 740 && AMC_MajRev[eye] == 135) {
-       //Program group by group stuff
+      //Program group by group stuff
       function_return = program_group_registers(handle,eye,hDB,activeBoards,ModType,ModCode,AMC_MajRev,NChannels);
       if(function_return != 0) {
 	exit(1);
@@ -797,6 +804,22 @@ INT resume_run(INT run_number, char *error) {
   }
  
   //Start the acquisition
+
+  /*
+    for(int bnum=0; bnum < nactiveboards; bnum++) {
+    ret = CAEN_DGTZ_SWStartAcquisition(handle[bnum]);
+    if(ret) {
+    cm_msg(MERROR,"resume_run","Failed to Start Acquisition, Ret Val: %i\n",ret);
+    }
+    else {
+    cm_msg(MINFO,"resume_run","Starting Acquisition\n");
+      
+    }
+    
+    }
+  */
+  
+
   ret = CAEN_DGTZ_SWStartAcquisition(handle[0]);
   if(ret) {
     cm_msg(MERROR,"resume_run","Failed to Start Acquisition, Ret Val: %i\n",ret);
@@ -805,7 +828,8 @@ INT resume_run(INT run_number, char *error) {
     cm_msg(MINFO,"resume_run","Starting Acquisition\n");
 
   }
-  
+ 
+
   return SUCCESS;
 }
 
@@ -842,7 +866,45 @@ INT poll_event(INT source, INT count, BOOL test)
       old_time = new_time;
       should_swpoll = TRUE;
     }
-    
+
+
+    //Set number of bytes read to be zero
+    Nb = 0;
+
+    // Read data from the boards 
+    for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
+      hasdata[boardnum]=0;      
+      ret = CAEN_DGTZ_ReadData(handle[boardnum], CAEN_DGTZ_SLAVE_TERMINATED_READOUT_MBLT, buffer[boardnum], &BufferSize[boardnum]);
+      
+      //Read Error need to exit...
+      if (ret) {
+	cm_msg(MERROR,"poll_event","Readout Error 1 board: %d, buffer size: %lu, ret val: %i\n",boardnum,BufferSize[boardnum],ret);
+	//Exit this frontend 
+	frontend_exit();
+      }
+
+      if (BufferSize[boardnum] == 0) {
+	hasdata[boardnum]=0;
+	continue;
+      }
+      else {
+	/*
+	// check error bit in the header
+	uint32_t *header, d32;
+	header = (uint32_t *)buffer[boardnum];
+	if (header[1] & 0x04000000) {
+	cm_msg(MERROR,"poll_event","Severe Error Bit in header (board %d)!!!\n", boardnum);
+	CAEN_DGTZ_ReadRegister(handle[boardnum], 0x8178, &d32);
+	cm_msg(MERROR,"poll_event","Failure Register %lu \n", d32);
+	}
+       	*/
+
+	Nb += BufferSize[boardnum];
+	Scaler_Totals[boardnum] += BufferSize[boardnum];
+	hasdata[boardnum]=1;
+      }
+    } // loop on boards
+
     //Check some diagnostics things from the boards
     if(should_swpoll) {
       for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
@@ -921,41 +983,6 @@ INT poll_event(INT source, INT count, BOOL test)
       } //end loop on boardnum
     } //end check if swpoll
     
-
-    //Set number of bytes read to be zero
-    Nb = 0;
-
-    // Read data from the boards 
-    for(int boardnum=0; boardnum<nactiveboards; boardnum++) {
-      hasdata[boardnum]=0;      
-      ret = CAEN_DGTZ_ReadData(handle[boardnum], CAEN_DGTZ_SLAVE_TERMINATED_READOUT_MBLT, buffer[boardnum], &BufferSize[boardnum]);
-      
-      //Read Error need to exit...
-      if (ret) {
-	cm_msg(MERROR,"poll_event","Readout Error 1 board: %d, buffer size: %lu, ret val: %i\n",boardnum,BufferSize[boardnum],ret);
-      }
-
-      if (BufferSize[boardnum] == 0) {
-	hasdata[boardnum]=0;
-	continue;
-      }
-      else {
-	/*
-	// check error bit in the header
-	uint32_t *header, d32;
-	header = (uint32_t *)buffer[boardnum];
-	if (header[1] & 0x04000000) {
-	cm_msg(MERROR,"poll_event","Severe Error Bit in header (board %d)!!!\n", boardnum);
-	CAEN_DGTZ_ReadRegister(handle[boardnum], 0x8178, &d32);
-	cm_msg(MERROR,"poll_event","Failure Register %lu \n", d32);
-	}
-       	*/
-
-	Nb += BufferSize[boardnum];
-	Scaler_Totals[boardnum] += BufferSize[boardnum];
-	hasdata[boardnum]=1;
-      }
-    } // loop on boards
 
     if (Nb > 0) {
       //cm_msg(MINFO,"polling","Found some data\n");
@@ -1112,7 +1139,7 @@ INT read_diagnostics_event (char *pevent, INT off) {
   }  
   bk_close(pevent,tempdata+tempcounter*sizeof(uint16_t));
 
- tempcounter=0;
+  tempcounter=0;
   //Write ADC temp data to file
   void *data_1n2C;
   bk_create(pevent, "1n2C", TID_DWORD, &data_1n2C);

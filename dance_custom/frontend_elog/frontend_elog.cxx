@@ -3,27 +3,20 @@
 #include <iomanip>
 #include <string>
 #include <vector>
-#include <map>
-
+//#include <map>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
-
 #include <sys/types.h>
 #include <sys/wait.h>
 
 #include "midas.h"
 #include "strlcpy.h"
-#include "dance_elog.h"
-#include "../FEvme/vme_modules.h"
-//#include "CAENVMEtypes.h"
-//#include "CAENVMElib.h"
+#include "frontend_elog.h"
+#include "vme_modules.h"
 #include "experim.h"
 #include "eventid.h"
-// would it be better to add the uac include paths to -I in makefile?
-//#include "digConfig.h"
-//#include "expMIC.h"
 
 using namespace std;
 //using namespace DigitizerMIDAS;
@@ -50,7 +43,7 @@ extern "C" {
 // -----------------------------------------//
 
 // The frontend name (client name) as seen by other MIDAS clients
-const char *frontend_name = "DANCEElog";
+const char *frontend_name = "frontend_elog";
 
 // The frontend file name, don't change it
 const char *frontend_file_name = __FILE__;
@@ -87,25 +80,24 @@ char host_name[256];
 // begin Equipment definition
 
 EQUIPMENT equipment[] = {
-
-  {"DANCEElog",                        // equipment name
-    { ELOG_EVENTID,                     // event ID
-      0,                             // trigger mask
-      "",                         // event buffer 
-      EQ_PERIODIC,                        // equipment type
-      1,                                // event source
-      "MIDAS",                          // data format
-      TRUE,                             // enabled
-      RO_BOR | RO_STOPPED | RO_EOR,     // Enable Readout at these times
-      10000,                             // Readout Period (ms)
-      0,                             // Event limit (force end_of_run)
-      0,                             // number of subevents
-      0,                               // Log history interval (s) (note: 0 disables)
-      "",                               // Reserved
-      "",                               // Reserved
-      "",                               // Reserved
-    },
-    read_elog_event,                  // readout routine
+  {"DANCE_Elog",                        // equipment name
+   { ELOG_EVENTID,                     // event ID
+     0,                             // trigger mask
+     "",                         // event buffer 
+     EQ_PERIODIC,                        // equipment type
+     1,                                // event source
+     "MIDAS",                          // data format
+     TRUE,                             // enabled
+     RO_BOR | RO_STOPPED | RO_EOR,     // Enable Readout at these times
+     10000,                             // Readout Period (ms)
+     0,                             // Event limit (force end_of_run)
+     0,                             // number of subevents
+     0,                               // Log history interval (s) (note: 0 disables)
+     "",                               // Reserved
+     "",                               // Reserved
+     "",                               // Reserved
+   },
+   read_elog_event,                  // readout routine
   },
   {""}
 };
@@ -121,8 +113,7 @@ INT frontend_init() {  // I think I have updated this for the uac
   EXP_PARAM_STR ( exp_param_str );
 
   // Create "Elog Parameters" if necessary //
-  status = db_create_record( hDB, 0, "/Elog/Elog Parameters/",
-                             strcomb(elog_param_str) );
+  status = db_create_record( hDB, 0, "/Elog/Elog Parameters/", strcomb(elog_param_str) );
   if ( status != DB_SUCCESS && status != DB_OPEN_RECORD ) {
     cm_msg( MERROR, "frontend_init"," Failed to create record \"/Elog/Elog Parameters\": %i, EXITING ",status );
     sleep(2);
@@ -202,13 +193,12 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   string attrib_flag="-a";
   
   stringstream elog_cmd_str;
-  elog_cmd_str.str("");
+  elog_cmd_str.str();
   
   elog_cmd_str<<"elog";
   elog_cmd_str<<" -h " << elog_param.hostname;
   elog_cmd_str<<" -p " << elog_param.port;
-  elog_cmd_str<<" -l " << elog_param.logbook_name;
-  elog_cmd_str<<" -u " <<  elog_param.elog_user <<  elog_param.elog_passwd;
+  elog_cmd_str<<" -l \"" << elog_param.logbook_name <<"\"";
   
   elog_cmd_str<<" -a " <<"\"Run Number\"=" << setw(6) << setfill('0') << runinfo.run_number;
   elog_cmd_str<<" -a " <<"Author=DAQ";
@@ -231,13 +221,13 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   message << "Sample: " << elog_param.sample << "\n";
   message << "Filter: " << elog_param.filter << "\n";
   message << "Start Time: " << runinfo.start_time << "\n";
-  message << "\n";
   //  message << "Modules: " << exp_param.Digitizer.modules.number << "\n";
   //  message << "Instruments: " << exp_param.Digitizer.instruments.number << "\n";
   //  message << "Max Channels Per Instrument: " << exp_param.Digitizer.instruments.maxChannelsPerInstrument << "\n";
 
   //Add the message to the elog entry
-  elog_cmd_str <<" \"" << message.str() <<" \" ";
+  elog_cmd_str <<" \"" << message.str() <<" \" -u " <<  elog_param.elog_user <<" "<<  elog_param.elog_passwd;
+  // cm_msg(MERROR,"begin_of_run","Message: %s\n  END",elog_cmd_str.str().c_str());      // probably want to change this to midas
 
   pid_t child_pid;
   int status;
@@ -312,61 +302,44 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   return SUCCESS;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*
-  //Send command
-  //system(elog_cmd_str.str().c_str());
-  
-
-  /*
   size_t enabledInstr = 0;
   size_t enabledChans = 0;
   for ( int i=0; i<exp_param.Digitizer.instruments.number; ++i ) 
   {
-    if (! digParam( i).enabled) continue;
+  if (! digParam( i).enabled) continue;
 
-    ++enabledInstr;
+  ++enabledInstr;
 
-    for ( int c=1; c<=digParam( i).number_channels; ++c ) 
-    {
-      if (!digParam( i, c).enabled) continue;
+  for ( int c=1; c<=digParam( i).number_channels; ++c ) 
+  {
+  if (!digParam( i, c).enabled) continue;
 
-      ++enabledChans;
-    }
+  ++enabledChans;
+  }
   }
   message << "Enabled Instruments: " << enabledInstr << '\n';
   message << "Enabled Channels: " << enabledChans << '\n';
   for ( int i=0; i<exp_param.Digitizer.instruments.number; ++i ) 
   {
-    message << "  instrument " << setw(2) << i
-            << " s/n " << digParam( i).serial_number;
-    if ( ! digParam( i).enabled ) 
-    {
-      message << endl;
-      continue;
-    }
-    message << " channels";
+  message << "  instrument " << setw(2) << i
+  << " s/n " << digParam( i).serial_number;
+  if ( ! digParam( i).enabled ) 
+  {
+  message << endl;
+  continue;
+  }
+  message << " channels";
 
-    for (int c=1; c<=digParam( i).number_channels; ++c) 
-    {
-      if (digParam( i, c).enabled)
-        message << setw(3) << c;
-      else
-        message << setw(3) << "";
-    }
-    message << "     ";
-    message << '\n';
+  for (int c=1; c<=digParam( i).number_channels; ++c) 
+  {
+  if (digParam( i, c).enabled)
+  message << setw(3) << c;
+  else
+  message << setw(3) << "";
+  }
+  message << "     ";
+  message << '\n';
   }
 
   time_t gittime = exp_param.gittime;
@@ -374,102 +347,11 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
   gittimeStr.erase( gittimeStr.length()-1);
   message << '\n';
   message << "githash: " << exp_param.githash << '\n' 
-          << "gittime: " << exp_param.gittime
-          << " (" << gittimeStr << " UTC)\n";
+  << "gittime: " << exp_param.gittime
+  << " (" << gittimeStr << " UTC)\n";
 
- 
- 
-  // arguments.push_back( message.str() );
-  // vector <char*> exec_args;
-  // for ( unsigned int i=0; i < arguments.size(); ++i )
-    //  {
-  //  exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
-    //  I'm really worries about what this does
-  // }
-  //  exec_args.push_back( (char *)0 );
-  // for ( unsigned int i=0; i < exec_args.size(); ++i )
-  // {
-
-  cm_msg(MERROR,"end_of_run","Here is the string: %s  END OF STRING",elog_cmd_str.str().c_str());
-
-  //  cm_msg(MERROR,"begin_of_run","%s",exec_args[0]);
-  //cout << exec_args[i] << " ";
-  // }
-  //  cout << endl;
-  pid_t child_pid;
-  int status;
-  int fd[2];
-  if ( pipe(fd) < 0 )
-    cm_msg(MERROR,"begin_of_run","pipe error");      // probably want to change this to midas
-  child_pid=fork();
-  if (child_pid == 0) { // This is the child
-    // cm_msg(MERROR, "begin_of_run", "Made it to child");
-    close( fd[0] ); //close read end of pipe
-    if ( fd[1] != STDOUT_FILENO ) {
-      if ( dup2( fd[1], STDOUT_FILENO ) != STDOUT_FILENO )
-        cm_msg(MERROR, "begin_of_run", "dup2 error to stdout");
-      close( fd[1] );
-    }
-    // setuid( (uid_t)546 );
-    //  execv("/opt/elog/pro/elog", &exec_args[0]);
-    system(elog_cmd_str.str().c_str());
-
-    cm_msg(MERROR, "begin_of_run", "I am the child--but should never get here");
-    _exit(127);
-  }
-  else {         // this is the parent 
-    // cm_msg(MERROR,"begin_of_run","Made it to the parent");
-    close( fd[1] );
-    
-    const size_t return_size=80;
-    char return_text[return_size];
-    char *last_message_ID;
-    int ID;
-    int max_wait=5;
-    int i=0;
-    pid_t finished_pid;
-    while ( (finished_pid = waitpid(child_pid, &status, WNOHANG ) ) == 0 && i < max_wait ) {
-      // cm_msg(MINFO,"begin_of_run","finished_PID=%d    i=%d", finished_pid, i);
-      sleep(1);
-      i++;
-    }
-    if (finished_pid == 0) {
-      kill(child_pid,SIGTERM);  // Do a nice kill SIGKILL also possible
-      cm_msg(MERROR, "begin_of_run", "DANCE elog call did not return after %d seconds--KILLED", i );
-      ID=-1;
-    }
-    else if (finished_pid == child_pid) {
-      read( fd[0], return_text, return_size);
-      // cm_msg(MINFO, "begin_og_run", "From fd[0]: %s", return_text);
-      if ( (last_message_ID=strrchr( return_text, '=' ) ) != NULL ) {
-        last_message_ID++;
-        ID = atoi( last_message_ID );
-        cm_msg(MINFO, "begin_of_run", "MESSAGE ID = %d", ID );
-      }
-      else {
-        cm_msg(MINFO, "begin_of_run", "MESSAGE ID not found" );
-        ID=-1;
-      }
-    }
-    else if (finished_pid < 0) {//wait pid failed, but not timed out
-      cm_msg(MERROR,"begin_of_run", "Not able to get a return from elog call");
-      ID=-1;
-    }
-    else { //This is wierd--we waited for the the wrong process--not sure how possible
-      cm_msg(MERROR,"begin_of_run", "Waited for wrong process");
-      ID=-1;
-    }
-        
-    close( fd[0] ); 
-  
-    elog_param.start_message_id=ID;
-  }
-
- 
-
-  return SUCCESS;
 */
-}
+//}
   
 
   
@@ -478,6 +360,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
 
   int status,size;
   time_t now;
+  int ID;
 
   cm_msg( MINFO, "end_of_run", "Enter end_run_entry");
   elog_param.start_message_id=-1;
@@ -490,15 +373,13 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   elog_cmd_str<<"elog";
   elog_cmd_str<<" -h " << elog_param.hostname;
   elog_cmd_str<<" -p " << elog_param.port;
-  elog_cmd_str<<" -l " << elog_param.logbook_name;
-  elog_cmd_str<<" -u " <<  elog_param.elog_user <<  elog_param.elog_passwd;
-  elog_cmd_str<<" -n 1";
+  elog_cmd_str<<" -l \"" << elog_param.logbook_name<<"\"";
   
   elog_cmd_str<<" -a " <<"\"Run Number\"=" << setw(6) << setfill('0') << runinfo.run_number;
   elog_cmd_str<<" -a " <<"Author=DAQ";
 
   // dance elog doesn't have experiment field. Instead, we flag the DAQ-type as the experiment name
-  elog_cmd_str<<" -a " <<"DAQ-type=" << exp_name;
+  elog_cmd_str<<" -a " <<" \"DAQ-type=" << exp_name<<"\"";
  
   if ( strlen( elog_param.sample ) != 0 ) {
     elog_cmd_str<<" -a "  << "Sample=" << elog_param.sample;
@@ -530,8 +411,8 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   DWORD scaler[N_SCLR];  //we get n_sclr from vme_modules.h--n_sclr is the number of _modules_
   bool scaler_status = true;
   size = sizeof( scaler );
-  if ( (status=db_get_value( hDB, 0, "/Equipment/Scaler/Variables/SCLR",&scaler, &size, TID_DWORD, 0 ) ) != DB_SUCCESS ) {
-    cm_msg( MERROR, "auto_elog_end_run_entry","Cannot get \"/Equipment/Scaler/Variables/SCLR\": %d", status );
+  if ( (status=db_get_value( hDB, 0, "/Equipment/DANCE_Scalers/Variables/SCLR",&scaler, &size, TID_DWORD, 0 ) ) != DB_SUCCESS ) {
+    cm_msg( MERROR, "auto_elog_end_run_entry","Cannot get \"/Equipment/DANCE_Scalers/Variables/SCLR\": %d", status );
     // so there is a problem, but we shouldn't crash.
     cm_msg( MERROR, "end_of_run", "n_sclr=%d", n_sclr );
     // return 0;
@@ -555,203 +436,42 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
   }
   if ( scaler_status ) {
     message << "Raw T0:            " << scaler[0] << "\n";
-    message << "Live T0:           " << scaler[1] << "\n";
-    message << "Live Percent:      " << 100.*scaler[1]/scaler[0] << "%\n";
     message << "Proton Scaler:     " << scaler[5] << "\n";
     message << "Total Charge:      " << "\n";
-    message << "Live Charge:       " << "\n";
     message << "Fast Background:   " << scaler[6] << "      (First 200 us)\n";
     message << "Total Background:  " << scaler[11] << "\n";
+    message << "Thermal 6Li(n,a)t: " << scaler[7] << "      (Silicon counter)\n";
+    message << "Thermal 3He:       " << scaler[8] << "      (3He counter)\n";
     message << "Thermal Fission:   " << scaler[9] << "      (U fission counter)\n";
   }
   
   //Add the message to the elog entry
   elog_cmd_str <<" \" " << message.str() <<" \" ";
-  
- 
-  int ID;
-  int Mode;
-  //  int status, size;
-  //time_t now;
-  /*
-  vector<string> arguments;
-  string attrib_flag="-a";
-  arguments.push_back("elog");
-  // switch for ssl--now being handled by stunnel
-  // arguments.push_back("-s");  
-  arguments.push_back("-h");
-  arguments.push_back( elog_param.hostname);
-  arguments.push_back("-p");
-  {
-    ostringstream oss;
-    oss << elog_param.port;
-    arguments.push_back( oss.str() );
-  }
-  arguments.push_back("-l");
-  arguments.push_back( elog_param.logbook_name);
-  // arguments.push_back("-w");
-  // arguments.push_back( password);
-  arguments.push_back("-u");
-  arguments.push_back( elog_param.elog_user );
-  arguments.push_back( elog_param.elog_passwd );
-  arguments.push_back("-n");
-  arguments.push_back("1");
-  arguments.push_back( attrib_flag);
-  {
-    ostringstream oss;
-    oss << "Run Number=" << setw(6) << setfill('0') << runinfo.run_number;
-    arguments.push_back( oss.str() );
-  }
-
-  // dance doesn't have a host name/experiment defined.
-  // instead, we flag this as a CAEN-UAC experiment for DANCE
-  if ( strlen( exp_name ) != 0 )
-  {
-    ostringstream oss;
-    arguments.push_back( attrib_flag );
-    oss << "DAQ-type=" << exp_name;
-    arguments.push_back( oss.str() );
-  }
-
-  if ( strlen( elog_param.sample ) != 0 )
-  {
-    ostringstream oss;
-    arguments.push_back( attrib_flag );
-    oss << "Sample=" << elog_param.sample;
-    arguments.push_back( oss.str() );
-  }
-
-  if ( strlen( elog_param.filter ) != 0 )
-  {
-    ostringstream oss;
-    arguments.push_back( attrib_flag );
-    oss << "Filter=" << elog_param.filter;
-    arguments.push_back( oss.str() );
-  }
-
-  {
-    ostringstream oss;
-    arguments.push_back( attrib_flag );
-    oss << "Author=DAQ";
-    arguments.push_back( oss.str() );
-  }
-
-
-  if ( elog_param.start_message_id > 0 )         
-  {
-    // This is the finish of a previous run
-    arguments.push_back("-r");
-    ostringstream oss;
-    oss << elog_param.start_message_id;
-    arguments.push_back( oss.str() );
-    arguments.push_back("-q");
-  }
-
-  double mevents;
-  bool logger_status = true;
-  size = sizeof( mevents );
-  // What if there is no Logger?? Should this be done?
-  if ( (status=db_get_value( hDB, 0, "/Logger/Channels/0/Statistics/Events written", 
-                  &mevents, &size, TID_DOUBLE, 0 ) )
-	 != DB_SUCCESS)
-    {
-      cm_msg( MINFO, "end_of_run",
-              "Cannot get \"/Logger/Channels/0/Statistics/Events written\n Perhaps there is no Logger?\": %d", status );
-      logger_status = false;
-    }
-
-  
-  double bytes;
-  size= sizeof( bytes );
-  if ( (status=db_get_value( hDB, 0, "/Logger/Channels/0/Statistics/Bytes written", 
-                  &bytes, &size, TID_DOUBLE, 0 ) )
-	 != DB_SUCCESS)
-    {
-      cm_msg( MERROR, "end_of_run",
-              "Cannot get \"/Logger/Channels/0/Statistics/Bytes written\": %d", status );
-      logger_status = false;
-    }
-  double Mibytes = bytes / ( 1024 * 1024 ) ;
-
-  // Want to put scalers here...
-  DWORD scaler[N_SCLR];  //we get n_sclr from vme_modules.h--n_sclr is the number of _modules_
-  bool scaler_status = true;
-  size = sizeof( scaler );
-  if ( (status=db_get_value( hDB, 0, "/Equipment/Scaler/Variables/SCLR", 
-                 &scaler, &size, TID_DWORD, 0 ) ) != DB_SUCCESS )
-  {
-    cm_msg( MERROR, "auto_elog_end_run_entry",
-            "Cannot get \"/Equipment/Scaler/Variables/SCLR\": %d", status );
-    // so there is a problem, but we shouldn't crash.
-    cm_msg( MERROR, "end_of_run", "n_sclr=%d", n_sclr );
-    // return 0;
-    scaler_status = false;
-  }
-
-  ostringstream message;
-  message << "\nAuto Elog End of Run Entry\n";
-  message << "Comment: " << exp_param.comment << "\n";
-  message << "Run Number:        " << runinfo.run_number << "\n";
-  message << "Start Time:        " << runinfo.start_time << "\n";
-  message << "Stop Time:         " << runinfo.stop_time << "\n";
-  DWORD elapsed_time;
-  time( &now );
-  elapsed_time = now - runinfo.start_time_binary;
-  message << "Elapsed Time:      " << elapsed_time << "    (seconds)\n";
-  if ( logger_status )
-  {
-    message << "Events Written:    " << mevents << "         (MIDAS Events)\n";
-    message << "MiBytes Written:   " << Mibytes << "\n";
-    message << "Average Event Rate " << double(mevents)/elapsed_time << "     (s^-1)\n";
-  }
-  if ( scaler_status )
-  {
-    message << "Raw T0:            " << scaler[0] << "\n";
-    message << "Live T0:           " << scaler[1] << "\n";
-    message << "Live Percent:      " << 100.*scaler[1]/scaler[0] << "%\n";
-    message << "Proton Scaler:     " << scaler[5] << "\n";
-    message << "Total Charge:      " << "\n";
-    message << "Live Charge:       " << "\n";
-    message << "Fast Background:   " << scaler[6] << "      (First 200 us)\n";
-    message << "Total Background:  " << scaler[11] << "\n";
-    message << "Thermal Fission:   " << scaler[9] << "      (U fission counter)\n";
-  }
-
-  arguments.push_back( message.str() );
-  */
-  // vector <char*> exec_args;
-  //for ( unsigned int i=0; i < arguments.size(); ++i )
-  // {
-  // exec_args.push_back( const_cast<char*>( elog_cmd_str.str().c_str()) );
-  // }
-  // exec_args.push_back( (char *)0 );
-
-  cm_msg(MERROR,"end_of_run","Here is the string: %s  END OF STRING",elog_cmd_str.str());
-  
+  elog_cmd_str<<" -u " <<  elog_param.elog_user <<" "<< elog_param.elog_passwd;
+  // cm_msg(MERROR,"end_of_run","Message: %s\n  END",elog_cmd_str.str().c_str());      // probably want to change this to midas
 
   pid_t child_pid;
   int fd[2];
-  if ( pipe(fd) < 0 )
+  if ( pipe(fd) < 0 ) {
     cm_msg(MERROR,"end_of_run","pipe error");      // probably want to change this to midas
+  }
   child_pid=fork();
   if (child_pid == 0) { // This is the child
     close( fd[0] ); //close read end of pipe
-    if ( fd[1] != STDOUT_FILENO )
-    {
-      if ( dup2( fd[1], STDOUT_FILENO ) != STDOUT_FILENO )
+    if ( fd[1] != STDOUT_FILENO ) {
+      if ( dup2( fd[1], STDOUT_FILENO ) != STDOUT_FILENO ) {
         cm_msg(MERROR, "end_of_run", "dup2 error to stdout");
+      }
       close( fd[1] );
     }
     // setuid( (uid_t)546 );
     system(elog_cmd_str.str().c_str());
-
-    //execv("/opt/elog/pro/elog", &exec_args[0]);
-
+    
     cm_msg(MERROR, "end_of_run", "I am the child--but should never get here");
     _exit(127);
   }
-  else          // this is the parent 
-  {
+  else {          // this is the parent 
+    
     close( fd[1] );
     
     const size_t return_size=80;
@@ -760,52 +480,43 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
     int max_wait=5;
     int i=0;
     pid_t finished_pid;
-    while ( (finished_pid = waitpid(child_pid, &status, WNOHANG ) ) == 0 && i < max_wait )
-    {
+    while ( (finished_pid = waitpid(child_pid, &status, WNOHANG ) ) == 0 && i < max_wait ) {
       cm_msg(MINFO,"end_of_run","finished_PID=%d    i=%d", finished_pid, i);
       sleep(1);
       i++;
     }
-    if (finished_pid == 0)
-    {
+    if (finished_pid == 0) {
       kill(child_pid,SIGTERM);  // Do a nice kill SIGKILL also possible
       cm_msg(MERROR, "end_of_run", "Auto elog call did not return after %d seconds--KILLED", i );
       ID=-1;
     }
-    else if (finished_pid == child_pid) 
-    {
+    else if (finished_pid == child_pid) {
       read( fd[0], return_text, return_size);
-      if ( (last_message_ID=strrchr( return_text, '=' ) ) != NULL )
-      {
-        last_message_ID++;
-        ID = atoi( last_message_ID );
-        cm_msg(MINFO, "end_of_run", "MESSAGE ID = %d", ID );
+      if ( (last_message_ID=strrchr( return_text, '=' ) ) != NULL ) {
+	last_message_ID++;
+	ID = atoi( last_message_ID );
+	cm_msg(MINFO, "end_of_run", "MESSAGE ID = %d", ID );
       }
-      else
-      {
-        cm_msg(MINFO, "end_of_run", "MESSAGE ID not found" );
-        ID=-1;
+      else {
+	cm_msg(MINFO, "end_of_run", "MESSAGE ID not found" );
+	ID=-1;
       }
     }
-    else if (finished_pid < 0) //wait pid failed, but not timed out
-    {
+    else if (finished_pid < 0) {//wait pid failed, but not timed out
       cm_msg(MERROR,"end_of_run", "Not able to get a return from elog call");
       ID=-1;
     }
-    else //This is wierd--we waited for the the wrong process--not sure how possible
-    {
+    else { //This is wierd--we waited for the the wrong process--not sure how possible
       cm_msg(MERROR,"end_of_run", "Waited for wrong process");
       ID=-1;
     }
-        
+    
     close( fd[0] ); 
-
+    
     ID=0;  // set ID to default value after run
-  
+    
     elog_param.start_message_id=ID;
   }
- 
-  return SUCCESS;
 }
 
 

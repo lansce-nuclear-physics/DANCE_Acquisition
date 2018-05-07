@@ -22,12 +22,8 @@
 
 #include "midas.h"
 #include "mcstd.h"
-//#include "experim.h"
-#include "editonstart.h"
 #include "eventid.h"
 #include "vme_modules.h"
-//#include <sys/time.h>   // Needed for gettimeofday
-//#include <time.h>       // check if this is really needed
 
 #include "CAENVMEtypes.h"
 #include "CAENVMElib.h"
@@ -52,7 +48,7 @@ extern "C" {
  * ---------------------- */
 
 /* The frontend name */
-const char	*frontend_name		= "FE_vme";
+const char	*frontend_name		= "frontend_vme";
 
 /* The frontend file name, DON'T CHANGE IT */
 const char	*frontend_file_name	= __FILE__;	// don't change
@@ -94,16 +90,16 @@ namespace {
   int Count;
 };
 
- /* ----------------- *
-  * Setup ODB entries *
-  * ----------------- */
+/* ----------------- *
+ * Setup ODB entries *
+ * ----------------- */
 
- /* -------------- *
-  * Equipment list *
-  * -------------- */
+/* -------------- *
+ * Equipment list *
+ * -------------- */
 EQUIPMENT equipment[] = {
 
-  { "Scaler",	                // equipment name
+  { "DANCE_Scalers",           // equipment name
     { SCALER_EVENTID,         // event ID
       0,                      // trigger mask
       "SYSTEM",               // event buffer
@@ -112,7 +108,7 @@ EQUIPMENT equipment[] = {
       "MIDAS",                // format
       TRUE,                   // enabled
       RO_RUNNING |
-        RO_TRANSITIONS,       // when to read, omit RO_ODB
+      RO_TRANSITIONS,       // when to read, omit RO_ODB
       60000,                  // readout period ms
       0,                      // stop run after this event limit
       0,                      // number of subevents
@@ -135,79 +131,73 @@ extern "C" INT frontend_init(){
   int data;
 
   RUNINFO_STR (runinfo_str);
-  EXP_EDIT_STR (editdefined_str);
 
   /* --------------------------------------------------------------------------- */
 
   // Get handle to ODB for this experiment //
   if ( cm_get_experiment_database( &hDB, NULL ) != CM_SUCCESS ) 
-  {
-    cm_msg( MERROR, "frontend_init",
-            " Failed to get ODB handle for experiment, EXITING " );
-    sleep(2);
-    return 0;
-  }
-
-  // Set start/stop priorities for this frontend //
+    {
+      cm_msg( MERROR, "frontend_init",
+	      " Failed to get ODB handle for experiment, EXITING " );
+      sleep(2);
+      return 0;
+    }
+  
+  // Set start/stop priorities for this frontend 
   //  cm_set_transition_sequence(TR_START, 600);
   cm_set_transition_sequence(TR_STOP,  250);
-
-  // start questions to set run time parameters
-  db_create_record( hDB, 0,
-                    "/Experiment/Edit On Start", strcomb(editdefined_str));
-
-  // It's not clear this is needed--we keep it for now.
-  // Create runinfo if needed, and map to it //
+  
+  // Create runinfo if needed, and map to it 
   status = db_create_record( hDB, 0, "/Runinfo", strcomb(runinfo_str));
   if ( status != DB_SUCCESS && status != DB_OPEN_RECORD ) 
-  {
-    cm_msg( MERROR, "frontend_init",
-            " Failed to create record \"/Runinfo\": %i, EXITING ",
-            status );
-    sleep(2);
-    return 0;
-  }
+    {
+      cm_msg( MERROR, "frontend_init",
+	      " Failed to create record \"/Runinfo\": %i, EXITING ",
+	      status );
+      sleep(2);
+      return 0;
+    }
   
   if ( db_find_key( hDB, 0, "Runinfo", &hKey ) != DB_SUCCESS )
-  {
-    cm_msg( MERROR, "frontend_init",
-            " Cannot find key \"/Runinfo\" in ODB, EXITING ");
-    sleep(2);
-    return 0;
-  }
+    {
+      cm_msg( MERROR, "frontend_init",
+	      " Cannot find key \"/Runinfo\" in ODB, EXITING ");
+      sleep(2);
+      return 0;
+    }
 
   if ( db_open_record( hDB, hKey, &runinfo, sizeof(runinfo),
                        MODE_READ, NULL, NULL ) != DB_SUCCESS ) 
-  {
-    cm_msg( MERROR, "frontend_init",
-            " Cannot open \"/Runinfo\" tree in ODB, EXITING ");
-    sleep(2);
-    return 0;
-  }
+    {
+      cm_msg( MERROR, "frontend_init",
+	      " Cannot open \"/Runinfo\" tree in ODB, EXITING ");
+      sleep(2);
+      return 0;
+    }
 
 
   // VME Initialization //
   if ( CAENVME_Init( VMEBoard, Link, Device, &VMEHndl ) != cvSuccess )
-  {
-    cm_msg (MERROR, "FE_vme", "Error initializing VME controller" );
-    return 0;
-  }
+    {
+      cm_msg (MERROR, "FE_vme", "Error initializing VME controller" );
+      return 0;
+    }
  
   // Initialize V560N scaler(s)
   uint16_t d16=0x0000;
   uint32_t d32=0x0000;
 
   for ( int i=0; i < n_sclr; ++i)
-  {
-    if ( CAENVME_WriteCycle( VMEHndl, sclr[i].baseaddr + V560::clear,
-                             &d16, sclr[i].AddrMode, cvD16 )
-         != cvSuccess)
     {
-      cm_msg( MERROR, "FE_vme", "Failed to clear scaler %d with address %x",
-              i, sclr[i].baseaddr);
-      return 0;
+      if ( CAENVME_WriteCycle( VMEHndl, sclr[i].baseaddr + V560::clear,
+			       &d16, sclr[i].AddrMode, cvD16 )
+	   != cvSuccess)
+	{
+	  cm_msg( MERROR, "FE_vme", "Failed to clear scaler %d with address %x",
+		  i, sclr[i].baseaddr);
+	  return 0;
+	}
     }
-  }
 
   return SUCCESS;
 
@@ -219,8 +209,8 @@ extern "C" INT frontend_init(){
 // ============================================================================
 
 extern "C" INT frontend_exit() {
-    cm_disconnect_experiment();
-    return SUCCESS;
+  cm_disconnect_experiment();
+  return SUCCESS;
 }
 /* --------------------------------------------------------------------------- */
 
@@ -233,7 +223,7 @@ extern "C" INT begin_of_run ( INT run_number, char *error ) {
   int data;
 
   int status;
-/* --------------------------------------------------------------------------- */
+  /* --------------------------------------------------------------------------- */
 
   cm_msg( MINFO, "begin_of_run", " Start of Run %i ", run_number );
 
@@ -278,18 +268,12 @@ extern "C" INT resume_run( INT run_number, char *error )
 // ============================================================================
 extern "C" INT end_of_run( INT run_number, char *error ) {
 
-  int   size;
-  uint16_t d16 = 0x0000;
+  pause_run( run_number, error );
 
+  // cm_msg( MINFO, "FE_vme", " Run %i ended ", run_number );
+  // std::cout << "Leave end_of_run" << std::endl;
 
-    pause_run( run_number, error );
-
-    // There is no end_of_run scaler read--is that a good idea? (ajc)
-
-    // cm_msg( MINFO, "FE_vme", " Run %i ended ", run_number );
-    // std::cout << "Leave end_of_run" << std::endl;
-
-    return SUCCESS;
+  return SUCCESS;
 }
 /* --------------------------------------------------------------------------- */
 
@@ -297,9 +281,6 @@ extern "C" INT end_of_run( INT run_number, char *error ) {
 // ============================================================================
 // ============================================================================
 extern "C" INT pause_run( INT run_number, char *error ) {
-
-  int  size;
-  uint16_t d16;
 
   // cm_msg( MINFO, "pause_run", " Enter Pause Run %i", run_number );
   // std::cout << "Enter pause_run" << std::endl;
@@ -332,9 +313,6 @@ extern "C" INT frontend_loop() {
 // ============================================================================
 extern "C" INT poll_event( INT source, INT count, BOOL test ) {
 
-  uint16_t d16 = 0x0000;
-  int i, size;
-
   return SUCCESS;
 
 }
@@ -345,7 +323,7 @@ extern "C" INT poll_event( INT source, INT count, BOOL test ) {
 // ============================================================================
 extern "C" INT interrupt_configure( INT cmd, INT source, PTYPE adr ) {
 
-    return SUCCESS;
+  return SUCCESS;
 }
 /* --------------------------------------------------------------------------- */
 
@@ -365,7 +343,7 @@ namespace {
     static DWORD old_scaler_array[ N_SCLR ];
     static DWORD old_mltm;
 
-  // --------------------------------------------------------------------------- 
+    // --------------------------------------------------------------------------- 
 
     bk_init32( pevent );
 
@@ -374,41 +352,41 @@ namespace {
     bk_close( pevent, mltm + 1 );
 
     if ( runinfo.state == STATE_RUNNING ) 
-    {
-      bk_create( pevent, "SCLR", TID_DWORD, &pdata );
-      bk_close( pevent, pdata + N_SCLR );
-      bk_create( pevent, "RATE", TID_FLOAT, &rdata );
-      bk_close( pevent, rdata + N_SCLR );
-
-      // we need to read old values to get at rates
-      DWORD *old_scaler = old_scaler_array;
-
-      // read scaler bank 
-      // Loop over scaler modules defined in sclr[] array */
-      for ( int i = 0; i < n_sclr ; ++i ) 
       {
-        // Loop over scaler channels in a modules as defined in sclr[]
-        for ( int chan = 0; chan < sclr[i].nchannels; ++chan ) 
-        {
-          status = CAENVME_ReadCycle( VMEHndl, sclr[i].baseaddr + V560::read[chan], 
-                                      pdata, sclr[i].AddrMode, cvD32 );
-          if ( status != cvSuccess )
-            cm_msg( MERROR, "FE_vme", "Failed to read Scaler: %d Channel %d with Error: %d",
-                    i, chan, status );
+	bk_create( pevent, "SCLR", TID_DWORD, &pdata );
+	bk_close( pevent, pdata + N_SCLR );
+	bk_create( pevent, "RATE", TID_FLOAT, &rdata );
+	bk_close( pevent, rdata + N_SCLR );
 
-          *rdata = (*pdata - *old_scaler)/( (float)( *mltm - old_mltm + 1.e-9) / 1000. );
-          *old_scaler = *pdata;
-          ++pdata;
-          ++old_scaler;
-          ++rdata;
-        }
-      }
-    } 
+	// we need to read old values to get at rates
+	DWORD *old_scaler = old_scaler_array;
+
+	// read scaler bank 
+	// Loop over scaler modules defined in sclr[] array */
+	for ( int i = 0; i < n_sclr ; ++i ) 
+	  {
+	    // Loop over scaler channels in a modules as defined in sclr[]
+	    for ( int chan = 0; chan < sclr[i].nchannels; ++chan ) 
+	      {
+		status = CAENVME_ReadCycle( VMEHndl, sclr[i].baseaddr + V560::read[chan], 
+					    pdata, sclr[i].AddrMode, cvD32 );
+		if ( status != cvSuccess )
+		  cm_msg( MERROR, "FE_vme", "Failed to read Scaler: %d Channel %d with Error: %d",
+			  i, chan, status );
+
+		*rdata = (*pdata - *old_scaler)/( (float)( *mltm - old_mltm + 1.e-9) / 1000. );
+		*old_scaler = *pdata;
+		++pdata;
+		++old_scaler;
+		++rdata;
+	      }
+	  }
+      } 
     else
-    {
-      for ( int i = 0; i < N_SCLR; ++i )
-        old_scaler_array[ i ] = 0;
-    }
+      {
+	for ( int i = 0; i < N_SCLR; ++i )
+	  old_scaler_array[ i ] = 0;
+      }
 
     old_mltm = *mltm; 
 

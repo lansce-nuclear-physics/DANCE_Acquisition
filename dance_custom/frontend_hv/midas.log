@@ -1,0 +1,100 @@
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:39 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=128) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=168) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [system.c:4166:send_tcp,ERROR] send(socket=6,size=88) returned -1, errno: 32 (Broken pipe)
+Sun Oct 18 21:24:40 2015 [frontendSC,ERROR] [midas.c:10289:rpc_call,ERROR] send_tcp() failed

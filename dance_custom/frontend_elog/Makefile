@@ -35,12 +35,12 @@ LDFLAGS += -L$(LIB_DIR) -lmidas
 LDFLAGS += -g
 
 
-PROGS = dance_elog
+PROGS = frontend_elog
 all:: $(PROGS)
 
-dance_elog: $(LIB_DIR)/mfe.o dance_elog.o 
-	$(CXX) $(CXXFLAGS) -o dance_elog $(LIB_DIR)/mfe.o \
-	dance_elog.o $(LIB) $(LDFLAGS) $(LIBS)
+frontend_elog: $(LIB_DIR)/mfe.o frontend_elog.o 
+	$(CXX) $(CXXFLAGS) -o frontend_elog $(LIB_DIR)/mfe.o \
+	frontend_elog.o $(LIB) $(LDFLAGS) $(LIBS)
 
 clean::
 	rm -f *.o *~ \#*
