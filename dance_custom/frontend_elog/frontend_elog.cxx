@@ -268,7 +268,7 @@ INT begin_of_run( INT run_number, char *error ) {  // I think this is updated fo
     }
     if (finished_pid == 0) {
       kill(child_pid,SIGTERM);  // Do a nice kill SIGKILL also possible
-      cm_msg(MERROR, "begin_of_run", "LENZ elog call did not return after %d seconds--KILLED", i );
+      cm_msg(MERROR, "begin_of_run", "DANCE auto elog call did not return after %d seconds--KILLED", i );
       ID=-1;
     }
     else if (finished_pid == child_pid) {
@@ -486,7 +486,7 @@ INT end_of_run( INT run_number, char *error ) {  // Updated for uac--but still L
     }
     if (finished_pid == 0) {
       kill(child_pid,SIGTERM);  // Do a nice kill SIGKILL also possible
-      cm_msg(MERROR, "end_of_run", "Auto elog call did not return after %d seconds--KILLED", i );
+      cm_msg(MERROR, "end_of_run", "DANCE auto elog call did not return after %d seconds--KILLED", i );
       ID=-1;
     }
     else if (finished_pid == child_pid) {

@@ -27,3 +27,5 @@ Version 3.0.0 - Started to make the multi-module type compatibility version.  St
 Version 3.0.1 - Added Register 0x1n2C to the diagnostics following email correspondance with Carlo.  
 
 Version 4.0.0 - This is the "production" mode version with all the dance_custom clients functioning.  Added a 32-bit "user extras" word into the data stream that is just 0 at the moment but allows for future expandability without the need to change the data structure in unpacker codes.    Changed experm.h to link against dance_experim.h in dance_custom.  This can then be changed depending on the experiment for broad applicability.  The full set of features for the 1725,1730,and 1740 is shown in master_template_experim.h.  Same is true for eventid.h and all the clients that live in dance custom.  They are all symbolic links and have canonical names. 
+
+Version 4.1.0 - Made changes to the readlink commands to change them to basename commands to work with the modules that are replacing newversion.  Also changed the output names of the register image files to make them backup easier. 

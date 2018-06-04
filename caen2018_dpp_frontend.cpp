@@ -38,6 +38,8 @@ CAEN_DGTZ_ErrorCode ret;
 //return of ODB calls
 INT status;
 
+char datapath[256];
+
 //Register read and write stuff
 uint32_t address;          //address of the regsister
 uint32_t register_value;   //value from the register
@@ -114,6 +116,7 @@ extern "C" {
 
   /* a frontend status page is displayed with this frequency in ms */
   INT display_period = 3000;
+  // INT display_period = 0;
 
   /* maximum event size produced by this frontend */
   //this should be taken from midas.h
@@ -240,6 +243,11 @@ RUNINFO runInfo;
 INT frontend_init()
 {
  
+
+
+
+
+
   cm_msg(MINFO,"frontend_init","Begin frontend initialization\n");
 
   // initialize the buffer pointers here
@@ -262,6 +270,17 @@ INT frontend_init()
   
   // ODB interactions start here
   cm_get_experiment_database( &hDB, NULL);
+
+  size = sizeof( datapath );
+
+  cm_msg(MINFO,"frontend_init","Acquiring Data Path\n");
+  if ( (status=db_get_value( hDB, 0, "/Logger/Data dir",&datapath, &size, TID_STRING, 0 ) ) != DB_SUCCESS) {
+    cm_msg( MINFO, "end_of_run","Cannot get \"/Logger/Data dir \n Perhaps there is no Logger\?\": %d", status );
+  }
+
+  cm_msg(MINFO,"frontend_init","Data Path: %s \n",datapath);
+    
+
 
   EXP_EDIT_STR (editdefined_str);
  // start questions to set run time parameters
@@ -387,7 +406,7 @@ INT frontend_init()
     }
 
     //Allow digitizer to reset
-    sleep(100);
+    sleep(50);
 
   }
 
@@ -430,8 +449,8 @@ INT frontend_init()
   tmpfile.close();
   
   //Get the information about the Comm libraries
-  system("readlink $CAENCOMMSYS > .caencommversion");
-  usleep(100);
+  system("basename `echo $CAENCOMMSYS` > .caencommversion");
+  usleep(50);
   tmpfile.open(".caencommversion");
   std::string caencommver;
   tmpfile >> caencommver;
@@ -449,8 +468,8 @@ INT frontend_init()
   tmpfile.close();
 
   //Get the information about the Digitizer libraries
-  system("readlink $CAENDIGITIZERSYS > .caendigitizerversion");
-  usleep(100);
+  system("basename `echo $CAENDIGITIZERSYS` > .caendigitizerversion");
+  usleep(50);
   tmpfile.open(".caendigitizerversion");
   std::string caendigver;
   tmpfile >> caendigver;
@@ -469,8 +488,8 @@ INT frontend_init()
   tmpfile.close();
 
   //Get the information about the Upgrader libraries
-  system("readlink $CAENUPGRADERSYS > .caenupgraderversion");
-  usleep(100);
+  system("basename `echo $CAENUPGRADERSYS` > .caenupgraderversion");
+  usleep(50);
   tmpfile.open(".caenupgraderversion");
   std::string caenupgraderver;
   tmpfile >> caenupgraderver;
@@ -488,8 +507,8 @@ INT frontend_init()
   tmpfile.close();
 
   //Get the information about the VME libraries
-  system("readlink $CAENVMELIBSYS > .caenvmelibversion");
-  usleep(100);
+  system("basename `echo $CAENVMELIBSYS` > .caenvmelibversion");
+  usleep(50);
   tmpfile.open(".caenvmelibversion");
   std::string caenvmelibver;
   tmpfile >> caenvmelibver;
@@ -507,8 +526,8 @@ INT frontend_init()
   tmpfile.close();
 
   //Get the information about the A3818 libraries
-  system("readlink $CAEN_A3818SYS > .caena3818version");
-  usleep(100);
+  system("service caen_a3818 version > .caena3818version");
+  usleep(50);
   tmpfile.open(".caena3818version");
   std::string caena3818ver;
   tmpfile >> caena3818ver;
@@ -608,13 +627,13 @@ INT frontend_init()
   sprintf(buf,"CAEN_Library_Information/CAENa3818sys_Compile");
   db_find_key(hDB, runparamKey,buf, &genHdl);
   db_set_data(hDB,genHdl,&caena3818ver_compilebuf,sizeof(caena3818ver_compilebuf),1,TID_STRING);
-  cm_msg(MINFO,"frontend_init","CAEN VME Lib Version Compile: %s",sscaena3818ver_compile.str().c_str());
+  cm_msg(MINFO,"frontend_init","CAEN A3818 Version Compile: %s",sscaena3818ver_compile.str().c_str());
   tmpfile.close();
 
 
 
   
-  usleep(100);
+  usleep(50);
 
   //Get the information from the boards
   for (eye=0;eye<nactiveboards;++eye) {    
@@ -695,7 +714,7 @@ INT pause_run(INT run_number, char *error) {
     //  CAEN_DGTZ_SWStopAcquisition(handle[eye]);
     
     //Save a register image
-    SaveRegImage(handle[eye],run_number,0);
+    SaveRegImage(datapath,handle[eye],run_number,0);
     
     cm_msg(MINFO,"pause_run","Acquisition Stopped for Board %d", eye);
   }
@@ -730,7 +749,7 @@ INT resume_run(INT run_number, char *error) {
     }
     
     //allow the digitizer to reset
-    sleep(100);
+    sleep(50);
 
     //Check to see if its ok to program and run
     address = 0x8104;
@@ -805,10 +824,10 @@ INT resume_run(INT run_number, char *error) {
     }
     
     //Sleep for 100 ms to allow calibration to complete
-    sleep(100);
+    sleep(50);
 
     //Save a register image
-    SaveRegImage(handle[eye],run_number,1);
+    SaveRegImage(datapath,handle[eye],run_number,1);
 
     // Allocate memory for the readout buffer /
     cm_msg(MINFO,"resume_run","About to Malloc Readout Buffer Handle %i\n",handle[eye]);

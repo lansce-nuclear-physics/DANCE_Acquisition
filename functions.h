@@ -11,6 +11,6 @@
 //Fucntions
 #define Sleep(x) usleep((x)*1000)
 
-int SaveRegImage(int handle,int runnum, int start);
+int SaveRegImage(char datapath[256],int handle,int runnum, int start);
 
 #endif

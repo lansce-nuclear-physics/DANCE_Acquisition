@@ -12,9 +12,8 @@
 #include "/opt64/midas/pro/include/midas.h"
 #include "/opt64/midas/pro/include/mcstd.h"
 
-// The following define must be set to the actual number of connected boards
-// This number needs to correspond to the value in the 
-#define MAXNB   14
+// The following define must be set to the upper limit of actual number of connected boards
+#define MAXNB   15
 
 //MaxNChannels for the digitizers (this probably shouldnt change much)
 #define MAXNCH 16

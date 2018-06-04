@@ -14,7 +14,6 @@
 
 typedef struct {
   char      comment[80];
-  BOOL      calibration_run;
   BOOL      write_data;
   BOOL      write_auto_elog;
   char      sample[32];
@@ -24,7 +23,6 @@ typedef struct {
 #define EXP_EDIT_STR(_name) const char *_name[] = {\
 "[.]",\
 "Comment = LINK : [35] /Experiment/Run Parameters/Comment",\
-"Calibration Run = LINK : [43] /Elog/Elog Parameters/Calibration Run",\
 "Logger Active = LINK : [19] /Logger/Write data",\
 "Write Auto Elog = LINK : [33] /Elog/Elog Parameters/Write Elog",\
 "Sample = LINK : [34] /Elog/Elog Parameters/Sample",\

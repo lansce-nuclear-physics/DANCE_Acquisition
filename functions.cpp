@@ -17,16 +17,16 @@
 
 
 //This function saves the register image
-int SaveRegImage(int handle, int runnum, int start) {
+int SaveRegImage(char datapath[256], int handle, int runnum, int start) {
   FILE *regs;
   char fname[100];
   int ret;
   uint32_t addr, reg, ch;
   if(start) {
-    sprintf(fname, "./data/register_images/reg_image_%d_run_%d_start.txt", handle,runnum);
+    sprintf(fname, "%s/register_images/run%06d.%02d.start.txt",datapath,runnum,handle);
   }
   else {
-    sprintf(fname, "./data/register_images/reg_image_%d_run_%d_end.txt", handle,runnum);
+    sprintf(fname, "%s/register_images/run%06d.%02d.end.txt",datapath,runnum,handle);
   }
   regs=fopen(fname, "w");
   if (regs==NULL)

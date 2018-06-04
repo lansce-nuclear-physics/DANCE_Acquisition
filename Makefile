@@ -51,11 +51,11 @@ $(UFE): $(LIB) $(LIB_DIR)/mfe.o $(OBJECTS) $(SRCS) $(INCLUDES)
 	$(CXX) -w $(CFLAGS) $(OSFLAGS) -o $(UFE) $(OBJECTS) $(CLFAGS) $(LIB_DIR)/mfe.o $(LIB) $(LIBS)
 
 # make some files with the versions used at compilation for frontend	
-	$(shell readlink $(CAENDIGITIZERSYS) > .caendigitizerversion_compile)
-	$(shell readlink $(CAENCOMMSYS) > .caencommversion_compile)
-	$(shell readlink $(CAENVMELIBSYS) > .caenvmelibversion_compile)
-	$(shell readlink $(CAENUPGRADERSYS) > .caenupgraderversion_compile)
-	$(shell readlink $(CAEN_A3818SYS) > .caena3818version_compile)
+	$(shell basename `echo $(CAENDIGITIZERSYS)` > .caendigitizerversion_compile)
+	$(shell basename `echo $(CAENCOMMSYS)` > .caencommversion_compile)
+	$(shell basename `echo $(CAENVMELIBSYS)` > .caenvmelibversion_compile)
+	$(shell basename `echo $(CAENUPGRADERSYS)` > .caenupgraderversion_compile)
+	$(shell service caen_a3818 version > .caena3818version_compile)
 
 %.o: %.c experim.h
 	$(CXX) $(USERFLAGS) $(CFLAGS) $(OSFLAGS) -o $@ -c $<
