@@ -1,0 +1,10 @@
+4  1  4
+0	S1H	0
+0	S1I	1
+0	S1G	2
+0	S1F	3
+/home/daq/caen_test_code/caen_test_code/digiTES/Overwatch/MHV4.txt
+
+# of detectors  #of voltage modules #refresh period (s)
+Voltage Module   Detector   Channel
+file names for each module
