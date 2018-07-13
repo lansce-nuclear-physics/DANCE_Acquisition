@@ -1513,7 +1513,7 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
 	polarity_bit=1;
       }
       else if(strcmp(buf64,"Positive") == 0) {
-	polarity_bit=1;
+	polarity_bit=0;
       }
       else {
 	cm_msg(MINFO,"frontend_init","Board %i, Channel %i. Can't understand polarity. Negative or Positive",eye,jay);
@@ -1522,7 +1522,7 @@ int program_channel_registers(int *handle,int eye, HNDLE hDB, HNDLE *activeBoard
       //  cm_msg(MINFO,"frontend_init","Board %i, Channel %i, Polarity: %s, %i",eye,jay,buf64,polarity_bit);
 	
       //Add in the polarity bit
-      ODB_0x1n80 += (polarity_bit << 16);
+      ODB_0x1n80 |= (polarity_bit << 16);
 	
 	
       float adcrange;
