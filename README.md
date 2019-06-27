@@ -1,2 +1,2 @@
-# DANCE_Analysis
-Codebase for analysis of neutron capture data taken with DANCE
+# DANCE_Acquisition
+Codebase for DANCE data acquisition system
