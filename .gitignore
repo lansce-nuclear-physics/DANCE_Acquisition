@@ -1,0 +1,6 @@
+*.o
+tags
+midas.log
+.depend
+*~
+*.bak
