@@ -4,3 +4,5 @@ midas.log
 .depend
 *~
 *.bak
+*.xml
+*.odb
