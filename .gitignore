@@ -6,3 +6,5 @@ midas.log
 *.bak
 *.xml
 *.odb
+caen_firmware
+*_custom
