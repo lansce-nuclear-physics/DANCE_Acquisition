@@ -1,3 +1,22 @@
+# ignore directories that contain experiment-custom code and configuration
+# (thses should be in an independent repo)
+caen_firmware
+*_custom
+
+
+# ignore midas-like files 
+*.xml
+*.odb
+midas.log
+
+# ignore editor backup files
+*~
+*.bak
+
+# exclude make-like remnants
+tags
+.depend
+
 # Prerequisites
 *.d
 

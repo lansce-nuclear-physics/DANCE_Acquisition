@@ -1,0 +1,19 @@
+//***************************//
+//*  Christopher J. Prokop  *//
+//*  cprokop@lanl.gov       *//
+//*  README                 *// 
+//*  Last Edit: 03/06/18    *//  
+//***************************//
+
+The purpose of this document is to explain how the program works.
+
+
+1) Prerequisites 
+
+   One will need to make symbolic links for:
+   'data' (the location of the midas output)
+
+   If this is the first time data is to be written there a directory called "register_images" will need to be created
+ 
+   Compile the code by typing make.  
+

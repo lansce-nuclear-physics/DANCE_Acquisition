@@ -1,0 +1,33 @@
+//***************************//
+//*  Christopher J. Prokop  *//
+//*  cprokop@lanl.gov       *//
+//*  Release_Notes          *// 
+//*  Last Edit: 03/06/18    *//  
+//***************************//
+
+The purpose of this document is to allow users to more efficiently track and understand changes made to the caen2018 acquisition software.
+
+
+Version 1.0.0 - Start of the release notes. Base version of caen2018 frontend
+
+Version 1.0.1 - Added frontend code version to the ODB
+
+Version 2.0.0 - Changed the Diagnostics from eventid 2 to eventid 8 as to not interfere with the VME scalers
+
+Version 2.1.0 - Added return value output for all CAEN related errors. Added check of ndigitizers against MAXNB at initialization.  Changed the interpret functions (connection type and acqusition mode) to explicitly check the ODB setting against all possible options instead of defaulting to one if one or more of the others were not found. 
+
+Version 2.1.1 - Changed frontend name to from "caen2018 VX1730 Frontend" to "caen2018_dpp_frontend".
+
+Version 2.1.2 - Added the CAEN version outputs to the makefile to give _compile hidden files with the information. 
+
+Version 2.1.3 - Changed the hardcoded eventid for digitizer and diagnositcs to pull from eventid.h.  EventID remains 1 and 8 for digitizer and diagnostics respectively.
+
+Version 3.0.0 - Started to make the multi-module type compatibility version.  Started adding the x740 module with DPP-QDC firmware.  Board information and general board registers should work fine. Changed experim.h such that settings below "general_board registers" are module type specific.  This way things are organized by type of module followed by the firmware specific settings for each respective module type.  Need to finish the channel and group settings for the x740 stuff. Also need to think harder about the diagnostics client.  The same diagnostics are not all present for the different module types.  There will be much work ahead to test all of this...
+
+Version 3.0.1 - Added Register 0x1n2C to the diagnostics following email correspondance with Carlo.  
+
+Version 4.0.0 - This is the "production" mode version with all the dance_custom clients functioning.  Added a 32-bit "user extras" word into the data stream that is just 0 at the moment but allows for future expandability without the need to change the data structure in unpacker codes.    Changed experm.h to link against dance_experim.h in dance_custom.  This can then be changed depending on the experiment for broad applicability.  The full set of features for the 1725,1730,and 1740 is shown in master_template_experim.h.  Same is true for eventid.h and all the clients that live in dance custom.  They are all symbolic links and have canonical names. 
+
+Version 4.1.0 - Made changes to the readlink commands to change them to basename commands to work with the modules that are replacing newversion.  Also changed the output names of the register image files to make them backup easier. 
+
+Version 4.1.1 - Fixed polarity setting issue with += to |= for bit 16 of 1n80
